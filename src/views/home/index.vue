@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="edition">
         这是首页页
     </div>
 </template>

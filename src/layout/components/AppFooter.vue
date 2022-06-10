@@ -64,11 +64,9 @@
           </a>
           <a href="#">
             <img src="@/image/信封.png" alt="">
-            111
           </a>
           <a href="#">
             <img src="@/image/网上有害信息.png" alt="">
-            11
           </a>
           <a href="#">
             <img src="@/image/文化.png" alt="">

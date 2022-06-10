@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: "official",
-};
+  name: 'official'
+}
 </script>
 
 <style lang="scss" scoped>

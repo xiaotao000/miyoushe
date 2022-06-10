@@ -18,6 +18,6 @@ export default {
 
 <style lang="scss" scoped>
 .layout-view{
-  padding: 62px 0;
+  padding-top: 62px;
 }
 </style>
