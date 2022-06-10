@@ -13,9 +13,9 @@
       </div>
       <!-- 发布的消息 -->
       <div class="second">
-        <img src="@/pubimg/欠债还钱.png" class="img1" />
+        <img src="@/image/pubimg/欠债还钱.png" class="img1" />
         <span class="span">徐凤年年底睡觉睡觉</span>
-        <img src="@/pubimg/等级8.png" class="img2" />
+        <img src="@/image/pubimg/等级8.png" class="img2" />
         <a class="p">五分钟前</a>
         <div class="zore">零命雷神毕业面板</div>
         <span class="thor"
