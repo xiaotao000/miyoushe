@@ -821,8 +821,7 @@ button {
     background-color: rgba(0,0,0,.5);
 }
 .baNxn{
-    /* padding-top: 30px; */
-    height: 1600px;
+    overflow: hidden;
 }
 ::v-deep .el-carousel__item--card{
   width: 50%;
