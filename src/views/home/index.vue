@@ -71,6 +71,156 @@
               </div>
             </div>
           </div>
+          <div class="nameGl">
+            <div class="kmDnm">
+              <div class="mlAsd">
+                <a href="" class="nmgPls">
+                  <div class="yspAsd">
+                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
+                  </div>
+                </a>
+                <div class="yhMna">
+                  <a href="#" class="fbnQin">
+                    <span class="naMer">迷路的史莱姆酱</span>
+                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
+                  </a>
+                </div>
+                <div class="gzSdf">
+                  <span>关注</span>
+                </div>
+                <p class="wdStd">06-09 • 官方</p>
+              </div>
+            </div>
+            <div href="#">
+              <div class="derTer">
+                <div class="ndx">
+                  <span class="zlkJhp">官方</span>
+                </div>
+                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
+              </div>
+              <div class="sdfAdd">
+                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
+              </div>
+              <div class="npiAdd">
+                <div class="ploAsd1">
+                  <i class="el-icon-video-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="bhf">
+              <div class="poiAdd">
+                <div class="nmfAdd">
+                  <i class="el-icon-view"></i>
+                  <span>100</span>
+                </div>
+                <div class="blq">
+                  <i class="el-icon-chat-dot-round"></i>
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nameGl">
+            <div class="kmDnm">
+              <div class="mlAsd">
+                <a href="" class="nmgPls">
+                  <div class="yspAsd">
+                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
+                  </div>
+                </a>
+                <div class="yhMna">
+                  <a href="#" class="fbnQin">
+                    <span class="naMer">迷路的史莱姆酱</span>
+                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
+                  </a>
+                </div>
+                <div class="gzSdf">
+                  <span>关注</span>
+                </div>
+                <p class="wdStd">06-09 • 官方</p>
+              </div>
+            </div>
+            <div href="#">
+              <div class="derTer">
+                <div class="ndx">
+                  <span class="zlkJhp">官方</span>
+                </div>
+                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
+              </div>
+              <div class="sdfAdd">
+                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
+              </div>
+              <div class="npiAdd">
+                <div class="ploAsd">
+                  <img src="" alt="" width="100%" height="100%">
+                </div>
+              </div>
+            </div>
+            <div class="bhf">
+              <div class="poiAdd">
+                <div class="nmfAdd">
+                  <i class="el-icon-view"></i>
+                  <span>100</span>
+                </div>
+                <div class="blq">
+                  <i class="el-icon-chat-dot-round"></i>
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nameGl">
+            <div class="kmDnm">
+              <div class="mlAsd">
+                <a href="" class="nmgPls">
+                  <div class="yspAsd">
+                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
+                  </div>
+                </a>
+                <div class="yhMna">
+                  <a href="#" class="fbnQin">
+                    <span class="naMer">迷路的史莱姆酱</span>
+                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
+                  </a>
+                </div>
+                <div class="gzSdf">
+                  <span>关注</span>
+                </div>
+                <p class="wdStd">06-09 • 官方</p>
+              </div>
+            </div>
+            <div href="#">
+              <div class="derTer">
+                <div class="ndx">
+                  <span class="zlkJhp">官方</span>
+                </div>
+                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
+              </div>
+              <div class="sdfAdd">
+                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
+              </div>
+              <div class="npiAdd">
+                <div class="ploAsd">
+                  <img src="" alt="" width="100%" height="100%">
+                </div>
+                <div class="ploAsd">
+                  <img src="" alt="" width="100%" height="100%">
+                </div>
+              </div>
+            </div>
+            <div class="bhf">
+              <div class="poiAdd">
+                <div class="nmfAdd">
+                  <i class="el-icon-view"></i>
+                  <span>100</span>
+                </div>
+                <div class="blq">
+                  <i class="el-icon-chat-dot-round"></i>
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -162,9 +312,7 @@
           </div>
         </div>
       </div>
-    <div class="edition">
     </div>
-  </div>
 </div>
 </template>
 
@@ -213,6 +361,30 @@ export default {
 </script>
 
 <style scoped>
+.el-icon-video-play{
+  font-size: 32px;
+  color: rgb(158, 157, 157);
+}
+.ploAsd1{
+  background-image: url(https://upload-bbs.mihoyo.com/upload/2022/06/02/75276539/8233353…_75849691879277551.jpg?x-oss-process=image/resize,s_400/quality,q_80/auto-orient,0/interlace,1/format,jpg);
+}
+.ploAsd1{
+  position: relative;
+    width: 400px;
+    height: 225px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f6f6;
+    flex-direction: column;
+    overflow: hidden;
+}
+.nameGl{
+  border-bottom: 1px solid #ebebeb;
+}
 .blq{
   margin-left: 10px;
   display: flex;
@@ -252,6 +424,7 @@ export default {
   display: flex;
 }
 .ploAsd{
+  margin-right: 5px;
   display: inline-block;
     width: 120px;
     height: 120px;
