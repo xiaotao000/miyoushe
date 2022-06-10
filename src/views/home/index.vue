@@ -1,6 +1,5 @@
 <template>
-  <div class="baNxn edition">
-
+<div class="baNxn edition">
     <div class="zbl">
       <!-- 轮播图 -->
       <div class="adTdm">
@@ -163,8 +162,13 @@
           </div>
         </div>
       </div>
+=======
+    <div class="edition">
+        这是首页页
+>>>>>>> 3c3ffcdfb1ee1dcd6e6bd17c4f617d88d265be0e
     </div>
   </div>
+</div>
 </template>
 
 <script>

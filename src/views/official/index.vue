@@ -1,7 +1,7 @@
 <template>
-    <div>
-        这是官方页面
-    </div>
+  <div class="toal">
+    <div class="filter-first">这是官方页面</div>
+  </div>
 </template>
 
 <script>
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="scss" scoped>
 
 </style>

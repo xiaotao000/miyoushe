@@ -27,6 +27,10 @@ const routes = [
       // 硬核
       { path: '/hardcore', component: () => import('@/views/hardcore') }
     ]
+  },
+  {
+    path: '/register',
+    component: () => import('@/views/register')
   }
 ]
 

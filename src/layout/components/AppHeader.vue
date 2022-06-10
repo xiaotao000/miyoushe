@@ -16,11 +16,11 @@
       <div class="header__navwrap">
         <div class="header__navbar">
           <a href="#" class="header__navitem header__navitemactive">首页</a>
-          <a href="#" class="header__navitem">酒馆</a>
+         <router-link class="header__navitem" to="/pub">酒馆</router-link>
           <a href="#" class="header__navitem">攻略</a>
-          <a href="#" class="header__navitem">官方</a>
-          <a href="#" class="header__navitem">同人图</a>
-          <a href="#" class="header__navitem">cos</a>
+          <router-link class="header__navitem" to="/official">官方</router-link>
+          <router-link to="/peermap" class="header__navitem">同人图</router-link>
+          <router-link to="/cos" class="header__navitem">cos</router-link>
           <a href="#" class="header__navitem">硬核</a>
         </div>
       </div>
