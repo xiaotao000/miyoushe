@@ -15,9 +15,9 @@
       <!-- 导航栏 -->
       <div class="header__navwrap">
         <div class="header__navbar">
-          <a href="#" class="header__navitem header__navitemactive">首页</a>
+          <router-link href="#" class="header__navitem header__navitemactive" to="/home">首页</router-link>
          <router-link class="header__navitem" to="/pub">酒馆</router-link>
-          <a href="#" class="header__navitem">攻略</a>
+          <router-link href="#" class="header__navitem" to="/method">攻略</router-link>
           <router-link class="header__navitem" to="/official">官方</router-link>
           <router-link to="/peermap" class="header__navitem">同人图</router-link>
           <router-link to="/cos" class="header__navitem">cos</router-link>
