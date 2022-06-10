@@ -1,5 +1,5 @@
 <template>
-  <div class="edition">
+  <div class="edition a1">
     <div class="toal">
       <div class="filter-first">
         <div class="first">
@@ -84,8 +84,9 @@
           <a>更多</a>
         </div>
         <div class="side-body">
-          <div class="body-op"></div>
+          <div class="body-op">
           <p class="body-list">米游币抽抽乐-原神专场现已开启！</p>
+          </div>
         </div>
         <div class="list-banner">
           <div class="banner-info">
@@ -185,18 +186,21 @@ export default {
 #app {
   width: 100%;
   height: 100%;
-  background: url(@/image/下载.png) no-repeat 0 62px;
+  // background: url(@/image/下载.png) no-repeat 0 62px;
   background-size: 100%;
+}
+.a1{
+  box-sizing: content-box;
+  overflow:hidden;
 }
 .toal {
   width: 700px;
-  height: 100%;
-  overflow: hidden;
+  border-radius: 4px;
+  background-color: #fff;
+  float: left;
 }
 .code {
-  position: absolute;
-  top: 89px;
-  right: 174px;
+  float: right;
   width: 280px;
   height: 100%;
 }
@@ -204,9 +208,10 @@ export default {
   width: 100%;
   height: 120px;
   padding: 12px 30px;
-  border-bottom: 1px solid #ebebeb;
+  // border-bottom: 1px solid #ebebeb;
 }
 .sem {
+  background-color: #fff;
   padding: 20px 14px;
   display: flex;
   align-items: center;
@@ -336,9 +341,9 @@ export default {
   color: #999;
 }
 .side {
+  background-color: #fff;
   margin-top: 20px;
   border-radius: 4px;
-  height: 396px;
 }
 .side-uster {
   font-size: 15px;
@@ -373,8 +378,8 @@ export default {
 }
 .body-list {
   position: absolute;
-  bottom: 236px;
-  left: 20px;
+  bottom: 0px;
+  left: 0px;
   width: 220px;
   padding: 0 10px;
   height: 32px;
