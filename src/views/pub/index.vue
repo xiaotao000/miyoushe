@@ -191,7 +191,6 @@ export default {
 .toal {
   width: 700px;
   height: 100%;
-  margin: 28px 0 40px 173px;
   overflow: hidden;
 }
 .code {

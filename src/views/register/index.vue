@@ -103,7 +103,7 @@ export default {
   width: 100%;
   min-height: 100%;
   overflow: auto;
-  position: relative;
+  position: absolute;
 }
 .register .mhy-verify-container{
   width: 612px;
