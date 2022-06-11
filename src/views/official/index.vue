@@ -131,7 +131,6 @@ export default {
     margin-top: 6px;
     color: #999;
     overflow: hidden;
-    ine-height: 22px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }

@@ -5,7 +5,7 @@
       <div class="adTdm">
         <template>
           <el-carousel :interval="4000" type="card" height="258px" arrow="always">
-            <el-carousel-item v-for="item in adTml" :key="item" >
+            <el-carousel-item v-for="item in adTml" :key="item.id" >
               <div class="yin">
                  <img :src="item.img" alt="" width="100%" height="234px" class="medium">
               </div>
@@ -222,6 +222,7 @@
             </div>
           </div>
         </div>
+        <dir class="npr">点击加载更多</dir>
       </div>
     </div>
 
@@ -270,7 +271,7 @@
       <div class="mihAyoZj">
         <div class="block">
           <el-carousel trigger="click" height="150px" indicator-position="none" arrow="never">
-            <el-carousel-item v-for="item in mihAyoTop" :key="item">
+            <el-carousel-item v-for="item in mihAyoTop" :key="item.id">
                 <img :src="item.img" alt="" width="100%" height="100%">
             </el-carousel-item>
           </el-carousel>
@@ -288,7 +289,7 @@
             <p class="nmfGer">【转发抽奖】丽莎生日活动开启！</p>
           </div>
           <div class="wsdFgj">
-            <div class="ploLin" v-for="thin in adTml" :key="thin">
+            <div class="ploLin" v-for="thin in adTml" :key="thin.id">
               <span class="ackLop">{{thin.addKlm}}</span>
               <p class="ackKop">{{thin.addPlo}}</p>
             </div>
@@ -350,35 +351,40 @@ export default {
   data () {
     return {
       adTml: [
-        { img: 'https://upload-bbs.mihoyo.com/upload/2022/06/05/6a098c1ff83eda3c6497f9c5c5ec3050.jpeg', addPlo: '【有奖活动】“粽”享美味，参与活动赢周边~', addKlm: '活动' },
-        { img: 'https://upload-bbs.mihoyo.com/upload/2022/06/02/2af5356932858a90ceec81c19feb41d9.jpeg', addPlo: '【已开奖】「流风眷堇庭」2.6版本攻略征集活动获奖名单', addKlm: '资讯' },
-        { img: 'https://upload-bbs.mihoyo.com/upload/2022/06/02/fafe3c12a133295a56ecbfdd4353a4a9.jpeg', addPlo: '丽莎生日快乐｜好久不见，小可爱。今天来找姐姐是为何事？', addKlm: '资讯' },
-        { img: 'https://upload-bbs.mihoyo.com/upload/2022/05/31/b6988bd4f735a4e45638ec686ce1c0c8.jpeg', addPlo: '2.7版本游戏问题集中反馈-6月9日更新', addKlm: '公告' },
-        { img: 'https://upload-bbs.mihoyo.com/upload/2022/06/09/26395ef2683e85e6c04b26d56cd5ee06.png', addPlo: '「荒梦藏虞渊」2.7版本更新说明', addKlm: '公告' }
+        { id: 1, img: 'https://upload-bbs.mihoyo.com/upload/2022/06/05/6a098c1ff83eda3c6497f9c5c5ec3050.jpeg', addPlo: '【有奖活动】“粽”享美味，参与活动赢周边~', addKlm: '活动' },
+        { id: 2, img: 'https://upload-bbs.mihoyo.com/upload/2022/06/02/2af5356932858a90ceec81c19feb41d9.jpeg', addPlo: '【已开奖】「流风眷堇庭」2.6版本攻略征集活动获奖名单', addKlm: '资讯' },
+        { id: 3, img: 'https://upload-bbs.mihoyo.com/upload/2022/06/02/fafe3c12a133295a56ecbfdd4353a4a9.jpeg', addPlo: '丽莎生日快乐｜好久不见，小可爱。今天来找姐姐是为何事？', addKlm: '资讯' },
+        { id: 4, img: 'https://upload-bbs.mihoyo.com/upload/2022/05/31/b6988bd4f735a4e45638ec686ce1c0c8.jpeg', addPlo: '2.7版本游戏问题集中反馈-6月9日更新', addKlm: '公告' },
+        { id: 5, img: 'https://upload-bbs.mihoyo.com/upload/2022/06/09/26395ef2683e85e6c04b26d56cd5ee06.png', addPlo: '「荒梦藏虞渊」2.7版本更新说明', addKlm: '公告' }
       ],
       mihAyoTop: [
-        { img: 'https://upload-bbs.mihoyo.com/pc_ad/pc_ad_ys_game_record2.jpg' },
-        { img: 'https://upload-bbs.mihoyo.com/pc_ad/ys_signin.jpg' },
-        { img: 'https://upload-bbs.mihoyo.com/upload/2022/05/30/ede03f2363d3e11a43f96cf9fb9573a5_2340278032758854255.jpg' }
+        { id: 1, img: 'https://upload-bbs.mihoyo.com/pc_ad/pc_ad_ys_game_record2.jpg' },
+        { id: 2, img: 'https://upload-bbs.mihoyo.com/pc_ad/ys_signin.jpg' },
+        { id: 3, img: 'https://upload-bbs.mihoyo.com/upload/2022/05/30/ede03f2363d3e11a43f96cf9fb9573a5_2340278032758854255.jpg' }
       ],
       npmRup: [
         {
+          id: 1,
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/548cb9dfbcdbc3aee675682effab335f_7195431897910087890.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '夜兰'
         },
         {
+          id: 2,
           img: 'https://upload-bbs.mihoyo.com/upload/2021/01/27/3ff281b8ea27a0f041096877be58c36b.png?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '魈'
         },
         {
+          id: 3,
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/9396dba467b2a4c333fea5fbd307f667_8102889689757292331.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '荒梦藏虞渊'
         },
         {
+          id: 4,
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/74d3b22d5d4b0468066b8315e05eba3f_7138224143758159037.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '久岐忍'
         },
         {
+          id: 5,
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/31/de1f7fa30c2add3808d73ce86e347395_3933077904901367927.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '危途疑踪'
         }
@@ -389,6 +395,14 @@ export default {
 </script>
 
 <style scoped>
+.npr{
+  color: #ccc;
+    font-size: 16px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .nmHkl{
   margin-left: 6px;
     height: 16px;
@@ -907,7 +921,7 @@ button {
   width: 700px;
 }
 .yin{
-  -webkit-box-shadow: 0 5px 10px 0 rgb(0 0 0 / 20%);
+  /* -webkit-box-shadow: 0 5px 10px 0 rgb(0 0 0 / 20%); */
    border-radius: 8px;
    height: 234px;
 }
