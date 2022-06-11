@@ -304,7 +304,7 @@
         </div>
         <div class="anmKlp">
           <div class="mlpKer">
-            <div class="xry" v-for="thin in npmRup" :key="thin">
+            <div class="xry" v-for="thin in npmRup" :key="thin.id">
               <div class="asdKcb">
                 <img :src="thin.img" alt="" width="100%" height="100%">
               </div>
