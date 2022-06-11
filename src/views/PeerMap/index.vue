@@ -1,5 +1,6 @@
 <template>
   <div class="edition a1">
+    <!-- 导航栏 -->
     <div class="forum">
       <div class="layout">
         <div class="forum-heard">
@@ -24,8 +25,11 @@
         </div>
       </div>
     </div>
+    <!-- 中间部分 -->
     <div class="toal">
+      <div class="article">
 
+      </div>
     </div>
     <div class="code">
       <!-- 扫码下载 -->
