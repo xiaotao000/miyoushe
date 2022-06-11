@@ -81,7 +81,7 @@
   .type-st ul {
     display: flex;
     height: 100%;
-    width: 240px;
+    width: 344px;
   }
   .type-st li {
      /* vertical-align: top; */
@@ -121,9 +121,40 @@
   }
   .filter-first {
     width: 100%;
-    height: 120px;
     padding: 12px 30px;
-    /* border-bottom: 1px solid #ebebeb; */
+    border-bottom: 1px solid #ebebeb;
+  }
+  .guide{
+    margin-bottom: 20px;
+    display: flex;
+  }
+  .guide-searh{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 50px;
+  }
+  .guide-searh input{
+    display: inline-block;
+    height: 100%;
+    border: none;
+    width: 200px;
+    border-radius: 4px 0 0 4px;
+  }
+  .guide-submit{
+    width: 80px;
+    font-size: 16px;
+  }
+  .guide-submit button{
+    width: 80px;
+    background-color: #ffe14c;
+    color: #663c00;
+    font-weight: 600;
+    height: 50px;
+    cursor: pointer;
+    transition: .2s background-color;
+    border-radius: 0 4px 4px 0;
+    border: none;
   }
   .sem {
     background-color: #fff;
@@ -149,12 +180,13 @@
     font-weight: 600;
   }
   .first span {
+    margin-right: 10px;
     color: #00c3ff;
     font-size: 14px;
     border-radius: 2px;
     text-align: center;
     line-height: 18px;
-    padding: 0 4px;
+    padding: 0 3px;
     border: 1px solid #00c3ff;
   }
   .first a {
@@ -216,6 +248,15 @@
     border-radius: 6px;
     background-image: url(@/image/pubimg/命令板.jpg);
     background-position: 17%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  .cobo2{
+    width: 120px;
+    height: 100%;
+    border-radius: 6px;
+    background-image: url(@/image/method/鸡蛋.jpg);
+    background-position: 47%;
     background-repeat: no-repeat;
     cursor: pointer;
   }
