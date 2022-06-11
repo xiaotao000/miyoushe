@@ -1,6 +1,11 @@
 <template>
-  <div class="toal">
-    <div class="filter-first">这是官方页面</div>
+  <div class="toal edition">
+    <div class="filter-first">
+      <div class="dcMta">
+        <div class="sy"></div>
+      </div>
+    </div>
+    <div></div>
   </div>
 </template>
 
@@ -10,6 +15,22 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style  scoped>
+.dcMta{
+  width: 1000px;
+    margin: 0 auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.filter-first{
+  position: fixed;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 900;
+    border-bottom: 1px solid #ebebeb;
+}
 </style>
