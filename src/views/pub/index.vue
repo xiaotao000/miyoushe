@@ -1,5 +1,6 @@
 <template>
   <div class="edition a1">
+    <!-- 导航栏 -->
     <div class="forum">
       <div class="layout">
         <div class="forum-heard">
@@ -23,8 +24,10 @@
         </div>
       </div>
     </div>
+    <!-- 中间部分 -->
     <div class="toal">
       <div class="filter-first">
+        <!-- 置顶内容 -->
         <div class="first">
           <span>置顶</span>
           <a>【公告】米游社原神社区版规(11月17日更新)</a>
@@ -43,13 +46,14 @@
         <div class="zore">零命雷神毕业面板</div>
         <span class="thor"
           >零命雷神这样算毕业吗 感觉已经到极限了 再往前提太难了
-          零命和两命的差距真的好大</span
-        >
+          零命和两命的差距真的好大</span>
+          <!-- 发布的图片 -->
         <div class="img3">
           <div class="cobo"></div>
           <div class="eight"></div>
           <div class="fold"></div>
         </div>
+        <!-- 小图标 -->
         <div class="page">
           <div class="second-card">
             <i class="el-icon-view"></i>
