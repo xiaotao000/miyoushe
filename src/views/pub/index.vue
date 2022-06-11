@@ -162,14 +162,14 @@
 
         <div class="list-banner">
           <div class="banner-info">
-            <span>广告</span>
+           <span>公告</span>
             <p>2.7版本游戏问题集中反馈-6月9日更新</p>
           </div>
         </div>
 
         <div class="list-banner">
           <div class="banner-info">
-            <span>广告</span>
+            <span>公告</span>
             <p>「荒梦藏虞渊」2.7版本更新说明</p>
           </div>
         </div>
