@@ -1,5 +1,28 @@
 <template>
   <div class="edition a1">
+    <div class="forum">
+      <div class="layout">
+        <div class="forum-heard">
+          <div class="artice">
+            <div class="type-st">
+              <ul>
+                <li>最新发帖</li>
+                <li class="type-tab">
+                  <span class="type-item">最新回复</span>
+                </li>
+                <li class="type-tab">热门</li>
+              </ul>
+            </div>
+          </div>
+          <div class="defalut">
+            <el-button class="defal-botn">
+              <i class="el-icon-edit"></i>
+              <span>发布帖子</span>
+            </el-button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="toal">
       <div class="filter-first">
         <div class="first">
@@ -27,9 +50,18 @@
           <div class="eight"></div>
           <div class="fold"></div>
         </div>
-        <div class="page"></div>
+        <div class="page">
+          <div class="second-card">
+            <i class="el-icon-view"></i>
+            <span>4万+</span>
+          </div>
+          <div class="second-data">
+            <i class="el-icon-chat-dot-round"></i>
+            <span>3134</span>
+          </div>
+          <div></div>
+        </div>
       </div>
-
       <div class="second">
         <img src="@/image/pubimg/欠债还钱.png" class="img1" />
         <span class="span">徐凤年年底睡觉睡觉</span>
@@ -45,26 +77,45 @@
           <div class="eight"></div>
           <div class="fold"></div>
         </div>
-        <div class="page"></div>
-      </div>
-
-        <div class="second">
-          <img src="@/image/pubimg/欠债还钱.png" class="img1" />
-          <span class="span">徐凤年年底睡觉睡觉</span>
-          <img src="@/image/pubimg/等级8.png" class="img2" />
-          <a class="p">五分钟前</a>
-          <div class="zore">零命雷神毕业面板</div>
-          <span class="thor"
-            >零命雷神这样算毕业吗 感觉已经到极限了 再往前提太难了
-            零命和两命的差距真的好大</span
-          >
-          <div class="img3">
-            <div class="cobo"></div>
-            <div class="eight"></div>
-            <div class="fold"></div>
+        <div class="page">
+          <div class="second-card">
+            <i class="el-icon-view"></i>
+            <span>4万+</span>
           </div>
-          <div class="page"></div>
+          <div class="second-data">
+            <i class="el-icon-chat-dot-round"></i>
+            <span>3134</span>
+          </div>
+          <div></div>
         </div>
+      </div>
+      <div class="second">
+        <img src="@/image/pubimg/欠债还钱.png" class="img1" />
+        <span class="span">徐凤年年底睡觉睡觉</span>
+        <img src="@/image/pubimg/等级8.png" class="img2" />
+        <a class="p">五分钟前</a>
+        <div class="zore">零命雷神毕业面板</div>
+        <span class="thor"
+          >零命雷神这样算毕业吗 感觉已经到极限了 再往前提太难了
+          零命和两命的差距真的好大</span
+        >
+        <div class="img3">
+          <div class="cobo"></div>
+          <div class="eight"></div>
+          <div class="fold"></div>
+        </div>
+         <div class="page">
+          <div class="second-card">
+            <i class="el-icon-view"></i>
+            <span>4万+</span>
+          </div>
+          <div class="second-data">
+            <i class="el-icon-chat-dot-round"></i>
+            <span>3134</span>
+          </div>
+          <div></div>
+        </div>
+      </div>
     </div>
     <div class="code">
       <!-- 扫码下载 -->
@@ -85,7 +136,7 @@
         </div>
         <div class="side-body">
           <div class="body-op">
-          <p class="body-list">米游币抽抽乐-原神专场现已开启！</p>
+            <p class="body-list">米游币抽抽乐-原神专场现已开启！</p>
           </div>
         </div>
         <div class="list-banner">
@@ -95,28 +146,28 @@
           </div>
         </div>
 
-         <div class="list-banner">
+        <div class="list-banner">
           <div class="banner-info">
             <span>资讯</span>
             <p>【已开奖】「流风眷堇庭」2.6版本攻略征集活动获奖名单</p>
           </div>
         </div>
 
-         <div class="list-banner">
+        <div class="list-banner">
           <div class="banner-info">
             <span>资讯</span>
             <p>【已开奖】「流风眷堇庭」2.6版本攻略征集活动获奖名单</p>
           </div>
         </div>
 
-         <div class="list-banner">
+        <div class="list-banner">
           <div class="banner-info">
             <span>广告</span>
             <p>2.7版本游戏问题集中反馈-6月9日更新</p>
           </div>
         </div>
 
-         <div class="list-banner">
+        <div class="list-banner">
           <div class="banner-info">
             <span>广告</span>
             <p>「荒梦藏虞渊」2.7版本更新说明</p>
@@ -132,39 +183,39 @@
         <div class="side-body">
           <div class="body-topic">
             <div class="topic-card">
-              <img src="@/image/pubimg/在心一水.jpg">
+              <img src="@/image/pubimg/在心一水.jpg" />
             </div>
             <div class="card-info">
               <p>每日一水</p>
             </div>
           </div>
-           <div class="body-topic">
+          <div class="body-topic">
             <div class="topic-card">
-              <img src="@/image/pubimg/冒险家·集结.jpeg">
+              <img src="@/image/pubimg/冒险家·集结.jpeg" />
             </div>
             <div class="card-info">
               <p>冒险家·集结</p>
             </div>
           </div>
-           <div class="body-topic">
+          <div class="body-topic">
             <div class="topic-card">
-              <img src="@/image/pubimg/好友招募.jpeg">
+              <img src="@/image/pubimg/好友招募.jpeg" />
             </div>
             <div class="card-info">
               <p>好友招募</p>
             </div>
           </div>
-           <div class="body-topic">
+          <div class="body-topic">
             <div class="topic-card">
-              <img src="@/image/pubimg/游戏战绩.jpg">
+              <img src="@/image/pubimg/游戏战绩.jpg" />
             </div>
             <div class="card-info">
               <p>游戏战绩</p>
             </div>
           </div>
-           <div class="body-topic">
+          <div class="body-topic">
             <div class="topic-card">
-              <img src="@/image/pubimg/祈愿分享.jpg">
+              <img src="@/image/pubimg/祈愿分享.jpg" />
             </div>
             <div class="card-info">
               <p>祈愿分享</p>
@@ -178,8 +229,8 @@
 
 <script>
 export default {
-  name: 'tavern'
-}
+  name: "tavern",
+};
 </script>
 
 <style  lang="scss" scoped>
@@ -189,9 +240,109 @@ export default {
   // background: url(@/image/下载.png) no-repeat 0 62px;
   background-size: 100%;
 }
-.a1{
+.a1 {
   box-sizing: content-box;
-  overflow:hidden;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.forum {
+  position: fixed;
+  top: 62px;
+  left: 0;
+  height: 56px;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ebebeb;
+  z-index: 999;
+}
+.forum-heard {
+  display: flex;
+  height: 56px;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0 30px;
+}
+.layout {
+  width: 1000px;
+  margin: 0 auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: content-box;
+}
+.artice {
+  height: 100%;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+  -webkit-box-align: center;
+}
+.defalut {
+  padding: 0 1px;
+  height: 36px;
+  color: #663c00;
+  background-color: #ffe14c;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.defal-botn {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  font-size: inherit;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-weight: inherit;
+  line-height: inherit;
+}
+.defal-botn i{
+  font-size: 21px;
+    margin-top: 1px;
+}
+.type-st {
+  margin-right: 20px;
+  z-index: 5;
+  height: 100%;
+}
+.type-st ul {
+  display: flex;
+  height: 100%;
+  width: 240px;
+}
+.type-st li {
+  // vertical-align: top;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  display: block;
+}
+.type-tab {
+  margin-left: 40px;
+}
+.type-item {
+  font-weight: 600;
+  color: #00c3ff;
+}
+.type-item::before {
+  bottom: 0;
+  content: " ";
+  position: absolute;
+  width: 64px;
+  left: 309px;
+  border-bottom: 3px solid #00c3ff;
 }
 .toal {
   width: 700px;
@@ -231,7 +382,7 @@ export default {
 }
 .first {
   padding: 19px 0;
-  font-weight: 600px;
+  font-weight: 600;
 }
 .first span {
   color: #00c3ff;
@@ -292,6 +443,7 @@ export default {
   width: 370px;
   height: 120px;
   position: relative;
+  margin-bottom: 10px;
 }
 
 .img3 .cobo {
@@ -328,8 +480,39 @@ export default {
   right: 0;
 }
 .page {
-  height: 24px;
-  margin-top: 5px;
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-shrink: 0;
+    height: 24px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+.second-card{
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 18px;
+}
+.page i{
+  color: #b3b3b3;
+    font-size: 17px;
+}
+.page span{
+  margin-left: 8px;
+    color: #ccc;
+    display: inline-block;
+    width: 50px;
+    font-size: 13px;
+}
+.second-data{
+  margin-left: 10px;
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 18px;
 }
 .qrcode-titil {
   font-size: 16px;
@@ -402,19 +585,19 @@ export default {
   border-radius: 8px;
   border: 1px solid #ebebeb;
 }
-.topic-card img{
+.topic-card img {
   width: 100%;
-    height: 100%;
-    border-radius: 8px;
+  height: 100%;
+  border-radius: 8px;
 }
-.card-info{
+.card-info {
   margin-left: 10px;
 }
-.card-info p{
+.card-info p {
   line-height: 20px;
-    margin: 0;
-    font-weight: normal;
-    font-size: 14px;
+  margin: 0;
+  font-weight: normal;
+  font-size: 14px;
 }
 .list-banner {
   padding-bottom: 10px;
