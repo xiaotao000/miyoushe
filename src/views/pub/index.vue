@@ -229,8 +229,8 @@
 
 <script>
 export default {
-  name: "tavern",
-};
+  name: 'tavern'
+}
 </script>
 
 <style  lang="scss">

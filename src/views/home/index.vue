@@ -48,13 +48,13 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
             </div>
@@ -201,10 +201,10 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
             </div>
@@ -312,6 +312,34 @@
           </div>
         </div>
       </div>
+      <!-- 推荐用户 -->
+      <div class="mihAyoZj">
+        <div class="addCls">
+          <h2 class="admSt">推荐用户</h2>
+          <a href="#" class="nkf">更多</a>
+        </div>
+        <div class="swLso">
+          <div>
+            <div class="igDas">
+              <div>
+                <div class="tgZer">
+                  <img src="https://img-static.mihoyo.com/communityweb/upload/15032157c9308b6caf01ad3df6ee8ea8.png" alt="" class="nmDfg">
+                </div>
+              </div>
+              <div class="sdFgh">
+                <div class="poiUin">
+                  <span>疲惫不堪的嘤酱</span>
+                  <img src="" alt="" class="nmHkl">
+                </div>
+                <p>观测者、写手、游戏领域作者</p>
+              </div>
+              <div class="gzSdf1">
+                  <span>关注</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
 </template>
@@ -361,6 +389,77 @@ export default {
 </script>
 
 <style scoped>
+.nmHkl{
+  margin-left: 6px;
+    height: 16px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.poiUin> span{
+  max-width: 70px;
+  font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.sdFgh>p{
+  color: #999;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.poiUin{
+  display: inline-block;
+    font-size: 0;
+    line-height: 14px;
+    vertical-align: top;
+}
+.sdFgh{
+  display: inline-block;
+    margin-left: 10px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+.nmDfg{
+  width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #ebebeb;
+    vertical-align: top;
+}
+.tgZer{
+  width: 44px;
+    height: 44px;
+}
+.gzSdf1{
+  background-color: #00c3ff;
+    border-radius: 13px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    width: 70px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: .2s background-color;
+}
+.igDas{
+  display: flex;
+  align-items: center;
+}
+.swLso{
+  position: relative;
+  padding: 20px;
+}
 .el-icon-video-play{
   font-size: 32px;
   color: rgb(158, 157, 157);
@@ -822,6 +921,7 @@ button {
 }
 .baNxn{
     overflow: hidden;
+    margin-bottom: 63px;
 }
 ::v-deep .el-carousel__item--card{
   width: 50%;
