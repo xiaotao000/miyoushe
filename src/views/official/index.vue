@@ -64,7 +64,7 @@
         </div>
         <div class="anmKlp">
           <div class="mlpKer">
-            <div class="xry" v-for="thin in npmRup" :key="thin">
+            <div class="xry" v-for="thin in npmRup" :key="thin.id">
               <div class="asdKcb">
                 <img :src="thin.img" alt="" width="100%" height="100%">
               </div>
@@ -86,22 +86,27 @@ export default {
     return {
       npmRup: [
         {
+          id: 1,
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/548cb9dfbcdbc3aee675682effab335f_7195431897910087890.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '夜兰'
         },
         {
+          id: 2,
           img: 'https://upload-bbs.mihoyo.com/upload/2021/01/27/3ff281b8ea27a0f041096877be58c36b.png?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '魈'
         },
         {
+          id: 3,
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/9396dba467b2a4c333fea5fbd307f667_8102889689757292331.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '荒梦藏虞渊'
         },
         {
+          id: 4,
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/74d3b22d5d4b0468066b8315e05eba3f_7138224143758159037.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '久岐忍'
         },
         {
+          id: 5,
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/31/de1f7fa30c2add3808d73ce86e347395_3933077904901367927.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '危途疑踪'
         }
