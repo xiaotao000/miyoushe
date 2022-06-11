@@ -35,7 +35,7 @@
                   <div class="plojn">22小时前</div>
                 </div>
                 <div class="nmPkl1">
-                  <img src="https://upload-bbs.mihoyo.com/upload/2022/06/10/75276550/ac6fa8a5372e960b6c98af455ad18481_6324796861166798936.png?x-oss-process=image/resize,s_300/quality,q_80/auto-orient,0/interlace,1/format,jpg" alt="" class="nmf">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" class="nmf">
                 </div>
               </div>
             </div>

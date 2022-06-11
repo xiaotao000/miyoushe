@@ -48,13 +48,13 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
             </div>
@@ -152,7 +152,7 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
             </div>
@@ -201,10 +201,10 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
             </div>
