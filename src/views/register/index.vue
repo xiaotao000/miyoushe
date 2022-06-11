@@ -9,38 +9,49 @@
             <h2>注册米哈游通行证</h2>
             <p>注册即代表您同意并遵守 <a href="#">《米哈游通行证用户服务协议》</a> <a href="#">《米哈游通行证用户个人信息及隐私保护政策》</a></p>
           </div>
-          <from>
-            <div class="mhy-form-input">
-              <div class="input-container">
-                <input type="text"  placeholder="手机号">
+          <ValidationObserver ref="form">
+            <from @submit.prevent="submitForm">
+              <div class="mhy-form-input">
+                <ValidationProvider ref="phone" name="phone" rules="required|length:11|phone" v-slot="{ errors }">
+                  <div class="input-container">
+                      <input type="text"  placeholder="手机号" v-model="from.phone" onFocus="">
+                  </div>
+                  <!-- 账号错误的提示信息 -->
+                  <p class="error-text">{{errors[0]}}</p>
+                </ValidationProvider>
               </div>
-              <!-- 账号错误的提示信息 -->
-              <p class="error-text" v-if="false"><i></i> 手机号不能为空</p>
-            </div>
-            <div class="mhy-form-input">
-              <div class="input-container">
-                <input type="tel"  placeholder="手机验证码">
-                <div class="input-inner-btn">获取验证码</div>
+              <div class="mhy-form-input">
+                <ValidationProvider name="code" rules="required|length:4|integer" v-slot="{ errors }">
+                  <div class="input-container">
+                    <input type="tel"  placeholder="手机验证码" v-model="from.code">
+                    <div class="input-inner-btn">获取验证码</div>
+                  </div>
+                  <p class="error-text"> {{errors[0]}}</p>
+                </ValidationProvider>
               </div>
-            </div>
-            <div class="mhy-form-input">
-              <div class="input-container">
-                <input type="password"  placeholder="密码为8-15位(不能全是字母或数字)">
+              <div class="mhy-form-input">
+                <ValidationProvider  name="password" rules="required|min:8|max:15|alpha_num"  v-slot="{ errors }">
+                  <div class="input-container">
+                    <input type="password"  placeholder="密码为8-15位(不能全是字母或数字)" v-model="from.password">
+                  </div>
+                  <!-- 账号错误的提示信息 -->
+                  <p class="error-text">{{errors[0]}}</p>
+                </ValidationProvider>
               </div>
-              <!-- 账号错误的提示信息 -->
-              <p class="error-text" v-if="false"><i></i> 密码不能为空</p>
-            </div>
-            <div class="mhy-form-input">
-              <div class="input-container">
-                <input type="password"  placeholder="确认密码">
+              <div class="mhy-form-input">
+                <ValidationProvider name="rp_password" :rules="{ required: true, is: from.password }"  v-slot="{ errors }">
+                  <div class="input-container">
+                    <input type="password"  placeholder="确认密码" v-model="from.OkPassword">
+                  </div>
+                  <!-- 账号错误的提示信息 -->
+                  <p class="error-text">{{errors[0]}}</p>
+                </ValidationProvider>
               </div>
-              <!-- 账号错误的提示信息 -->
-              <p class="error-text" v-if="false"><i></i> 确认密码不能为空</p>
-            </div>
-            <div class="register-btn">
-              <button type="submit">注册</button>
-            </div>
-          </from>
+              <div class="register-btn">
+                <button type="submit" @click="submitForm">注册</button>
+              </div>
+            </from>
+          </ValidationObserver>
           <div class="register-bar">
             <a href="/home">返回登录</a>
           </div>
@@ -92,8 +103,38 @@
 </template>
 
 <script>
+// 导入验证组件
+import { ValidationProvider, ValidationObserver } from 'vee-validate'
+
 export default {
-  name: 'register'
+  name: 'register',
+  components: { ValidationProvider, ValidationObserver },
+  data () {
+    return {
+      // form表单数据
+      from: {
+        phone: '19967934005',
+        password: 'long123456',
+        OkPassword: 'long123456'
+      }
+    }
+  },
+  methods: {
+    async submitForm () {
+      console.log(1111)
+      const success = await this.$refs.form.validate()
+      console.log(success)
+      if (!success) return
+      const { phone, password, code } = this.from
+      try {
+        await this.$store.dispatch('user/register', { phone, password, code })
+        console.log('注册成功')
+        // this.$router.push('/home')
+      } catch (error) {
+        console.log('注册失败')
+      }
+    }
+  }
 }
 </script>
 

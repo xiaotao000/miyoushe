@@ -224,7 +224,6 @@
         </div>
       </div>
     </div>
-
     <div class="yb">
         <!-- 发布帖子 -->
       <div class="mihAyo">
@@ -313,14 +312,24 @@
         </div>
       </div>
     </div>
+    <Perfect :title="'完善信息'" :isLogo="IsDialog" @modifyDia="a1">
+      <div class="mhy-init-account-info__avatar">
+        <div class="mhy-avatar mhy-avatar__custom">
+          <img src="@/image/完善个人.png" alt="">
+        </div>
+      </div>
+    </Perfect>
 </div>
 </template>
 
 <script>
+import Perfect from './components/perfect.vue'
 export default {
   name: 'home',
   data () {
     return {
+      // 弹出层的状态
+      centerDialogVisible: true,
       adTml: [
         { img: 'https://upload-bbs.mihoyo.com/upload/2022/06/05/6a098c1ff83eda3c6497f9c5c5ec3050.jpeg', addPlo: '【有奖活动】“粽”享美味，参与活动赢周边~', addKlm: '活动' },
         { img: 'https://upload-bbs.mihoyo.com/upload/2022/06/02/2af5356932858a90ceec81c19feb41d9.jpeg', addPlo: '【已开奖】「流风眷堇庭」2.6版本攻略征集活动获奖名单', addKlm: '资讯' },
@@ -354,7 +363,14 @@ export default {
           img: 'https://upload-bbs.mihoyo.com/upload/2022/05/31/de1f7fa30c2add3808d73ce86e347395_3933077904901367927.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
           name: '危途疑踪'
         }
-      ]
+      ],
+      IsDialog: true
+    }
+  },
+  components: { Perfect },
+  methods: {
+    a1 () {
+      this.IsDialog = false
     }
   }
 }

@@ -9,6 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 // 初始化CSS
 import 'normalize.css'
 
+// 导入validation验证
+import '@/utils/validation'
+
 // 重置CSS
 import './styles/reset.scss'
 
