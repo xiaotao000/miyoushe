@@ -48,13 +48,163 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
                 <div class="ploAsd">
-                  <img src="" alt="" width="100%" height="100%">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
+                </div>
+              </div>
+            </div>
+            <div class="bhf">
+              <div class="poiAdd">
+                <div class="nmfAdd">
+                  <i class="el-icon-view"></i>
+                  <span>100</span>
+                </div>
+                <div class="blq">
+                  <i class="el-icon-chat-dot-round"></i>
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nameGl">
+            <div class="kmDnm">
+              <div class="mlAsd">
+                <a href="" class="nmgPls">
+                  <div class="yspAsd">
+                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
+                  </div>
+                </a>
+                <div class="yhMna">
+                  <a href="#" class="fbnQin">
+                    <span class="naMer">迷路的史莱姆酱</span>
+                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
+                  </a>
+                </div>
+                <div class="gzSdf">
+                  <span>关注</span>
+                </div>
+                <p class="wdStd">06-09 • 官方</p>
+              </div>
+            </div>
+            <div href="#">
+              <div class="derTer">
+                <div class="ndx">
+                  <span class="zlkJhp">官方</span>
+                </div>
+                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
+              </div>
+              <div class="sdfAdd">
+                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
+              </div>
+              <div class="npiAdd">
+                <div class="ploAsd1">
+                  <i class="el-icon-video-play"></i>
+                </div>
+              </div>
+            </div>
+            <div class="bhf">
+              <div class="poiAdd">
+                <div class="nmfAdd">
+                  <i class="el-icon-view"></i>
+                  <span>100</span>
+                </div>
+                <div class="blq">
+                  <i class="el-icon-chat-dot-round"></i>
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nameGl">
+            <div class="kmDnm">
+              <div class="mlAsd">
+                <a href="" class="nmgPls">
+                  <div class="yspAsd">
+                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
+                  </div>
+                </a>
+                <div class="yhMna">
+                  <a href="#" class="fbnQin">
+                    <span class="naMer">迷路的史莱姆酱</span>
+                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
+                  </a>
+                </div>
+                <div class="gzSdf">
+                  <span>关注</span>
+                </div>
+                <p class="wdStd">06-09 • 官方</p>
+              </div>
+            </div>
+            <div href="#">
+              <div class="derTer">
+                <div class="ndx">
+                  <span class="zlkJhp">官方</span>
+                </div>
+                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
+              </div>
+              <div class="sdfAdd">
+                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
+              </div>
+              <div class="npiAdd">
+                <div class="ploAsd">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
+                </div>
+              </div>
+            </div>
+            <div class="bhf">
+              <div class="poiAdd">
+                <div class="nmfAdd">
+                  <i class="el-icon-view"></i>
+                  <span>100</span>
+                </div>
+                <div class="blq">
+                  <i class="el-icon-chat-dot-round"></i>
+                  <span>100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="nameGl">
+            <div class="kmDnm">
+              <div class="mlAsd">
+                <a href="" class="nmgPls">
+                  <div class="yspAsd">
+                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
+                  </div>
+                </a>
+                <div class="yhMna">
+                  <a href="#" class="fbnQin">
+                    <span class="naMer">迷路的史莱姆酱</span>
+                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
+                  </a>
+                </div>
+                <div class="gzSdf">
+                  <span>关注</span>
+                </div>
+                <p class="wdStd">06-09 • 官方</p>
+              </div>
+            </div>
+            <div href="#">
+              <div class="derTer">
+                <div class="ndx">
+                  <span class="zlkJhp">官方</span>
+                </div>
+                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
+              </div>
+              <div class="sdfAdd">
+                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
+              </div>
+              <div class="npiAdd">
+                <div class="ploAsd">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
+                </div>
+                <div class="ploAsd">
+                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
             </div>
@@ -162,12 +312,35 @@
           </div>
         </div>
       </div>
-=======
-    <div class="edition">
-        这是首页页
->>>>>>> 3c3ffcdfb1ee1dcd6e6bd17c4f617d88d265be0e
+      <!-- 推荐用户 -->
+      <div class="mihAyoZj">
+        <div class="addCls">
+          <h2 class="admSt">推荐用户</h2>
+          <a href="#" class="nkf">更多</a>
+        </div>
+        <div class="swLso">
+          <div>
+            <div class="igDas">
+              <div>
+                <div class="tgZer">
+                  <img src="https://img-static.mihoyo.com/communityweb/upload/15032157c9308b6caf01ad3df6ee8ea8.png" alt="" class="nmDfg">
+                </div>
+              </div>
+              <div class="sdFgh">
+                <div class="poiUin">
+                  <span>疲惫不堪的嘤酱</span>
+                  <img src="" alt="" class="nmHkl">
+                </div>
+                <p>观测者、写手、游戏领域作者</p>
+              </div>
+              <div class="gzSdf1">
+                  <span>关注</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
 </div>
 </template>
 
@@ -216,6 +389,101 @@ export default {
 </script>
 
 <style scoped>
+.nmHkl{
+  margin-left: 6px;
+    height: 16px;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.poiUin> span{
+  max-width: 70px;
+  font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.sdFgh>p{
+  color: #999;
+    font-size: 12px;
+    line-height: 14px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.poiUin{
+  display: inline-block;
+    font-size: 0;
+    line-height: 14px;
+    vertical-align: top;
+}
+.sdFgh{
+  display: inline-block;
+    margin-left: 10px;
+    flex-grow: 1;
+    overflow: hidden;
+}
+.nmDfg{
+  width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #ebebeb;
+    vertical-align: top;
+}
+.tgZer{
+  width: 44px;
+    height: 44px;
+}
+.gzSdf1{
+  background-color: #00c3ff;
+    border-radius: 13px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    width: 70px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: .2s background-color;
+}
+.igDas{
+  display: flex;
+  align-items: center;
+}
+.swLso{
+  position: relative;
+  padding: 20px;
+}
+.el-icon-video-play{
+  font-size: 32px;
+  color: rgb(158, 157, 157);
+}
+.ploAsd1{
+  background-image: url(https://upload-bbs.mihoyo.com/upload/2022/06/02/75276539/8233353…_75849691879277551.jpg?x-oss-process=image/resize,s_400/quality,q_80/auto-orient,0/interlace,1/format,jpg);
+}
+.ploAsd1{
+  position: relative;
+    width: 400px;
+    height: 225px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f6f6f6;
+    flex-direction: column;
+    overflow: hidden;
+}
+.nameGl{
+  border-bottom: 1px solid #ebebeb;
+}
 .blq{
   margin-left: 10px;
   display: flex;
@@ -255,6 +523,7 @@ export default {
   display: flex;
 }
 .ploAsd{
+  margin-right: 5px;
   display: inline-block;
     width: 120px;
     height: 120px;
@@ -651,8 +920,8 @@ button {
     background-color: rgba(0,0,0,.5);
 }
 .baNxn{
-    /* padding-top: 30px; */
-    height: 1600px;
+    overflow: hidden;
+    margin-bottom: 63px;
 }
 ::v-deep .el-carousel__item--card{
   width: 50%;
