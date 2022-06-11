@@ -1,5 +1,6 @@
 <template>
   <div class="edition a1">
+    <!-- 导航栏 -->
     <div class="forum">
       <div class="layout">
         <div class="forum-heard">
@@ -24,8 +25,10 @@
         </div>
       </div>
     </div>
+    <!-- 中间部分 -->
     <div class="toal">
       <div class="filter-first">
+        <!-- 置顶内容 -->
         <div class="first">
           <span>置顶</span>
           <a>【攻略区版规】将会移除求助、讨论、反馈贴等非攻略贴</a>
