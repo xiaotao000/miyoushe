@@ -157,7 +157,6 @@ export default {
 }
 
 .mhy-verify-container .mhy-register{
-  -webkit-box-shadow: 0 20px 20px -10px rgb(0 0 0 / 10%);
   padding: 54px 126px 72px;
   background-color: #ffff;
   color: #4c4c4c;

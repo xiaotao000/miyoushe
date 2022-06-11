@@ -15,6 +15,9 @@ import '@/utils/validation'
 // 重置CSS
 import './styles/reset.scss'
 
+// 全局CSS
+import '@/styles/index.css'
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
