@@ -30,10 +30,18 @@
           <input type="text">
           <i>搜索</i>
         </form>
+        <template>
+          <div class="header__notifycontainer">
+            <a href="#">关注</a>
+          </div>
+          <div class="header__notifycontainer">
+            <a href="#">消息</a>
+          </div>
+        </template>
         <div class="header__avatarcontainer">
           <div class="header__avatarwrp">
             <a href="#" class="header__avatar">
-              <img src="@/image/HeadPortrait.png" alt="">
+              <img :src="imgUrl" alt="">
             </a>
           </div>
         </div>
@@ -43,8 +51,21 @@
 </template>
 
 <script>
+// import { component } from 'vue/types/umd'
+import { mapState } from 'vuex'
 export default {
-  name: 'AppHeader'
+  name: 'AppHeader',
+  data () {
+    return {
+      imgSrc: 'https://img-static.mihoyo.com/communityweb/upload/c9d11674eac7631d2210a1ba20799958.png'
+    }
+  },
+  computed: {
+    ...mapState('user', ['userInfo']),
+    imgUrl () {
+      return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
+    }
+  }
 }
 </script>
 
@@ -155,6 +176,17 @@ export default {
     cursor: pointer;
 }
 
+.header__right .header__notifycontainer{
+  position: relative;
+}
+.header__notifycontainer a{
+  padding: 0 20px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
+  color: #fff;
+}
 // 头像
 .header__right .header__avatarwrp{
   padding: 13px 20px;

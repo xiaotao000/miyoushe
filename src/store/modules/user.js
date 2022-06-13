@@ -1,10 +1,10 @@
-import { reqRegister } from '@/api/user'
-import { SET_TOKEN } from '@/utils/userToken'
+import { reqRegister, getUser } from '@/api/user'
+import { SET_TOKEN, GET_TOKEN } from '@/utils/userToken'
 
 export default ({
   namespaced: true,
   state: {
-    toke: '',
+    toke: GET_TOKEN() || '',
     userInfo: {}
   },
   getters: {
@@ -12,6 +12,9 @@ export default ({
   mutations: {
     SET_TOKEN (state, data) {
       state.token = data
+    },
+    SET_USERINFO (state, info) {
+      state.userInfo = info
     }
   },
   actions: {
@@ -20,6 +23,11 @@ export default ({
       const res = await reqRegister(data)
       commit('SET_TOKEN', res)
       SET_TOKEN(res.token)
+    },
+    // 获取用户信息
+    async getUserInfo ({ commit }) {
+      const res = await getUser()
+      commit('SET_USERINFO', res)
     }
   },
   modules: {

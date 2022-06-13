@@ -5,6 +5,8 @@ import store from './store'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+// 全局组件
+import LOGON from '@/components/Logon'
 
 // 初始化CSS
 import 'normalize.css'
@@ -20,6 +22,7 @@ import '@/styles/index.css'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.component('LOGON', LOGON)
 
 new Vue({
   router,

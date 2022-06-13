@@ -1,14 +1,29 @@
 // 封装请求库
 import Axios from 'axios'
+// import store from '@/store'
+import { GET_TOKEN } from '@/utils/userToken'
 
 // 通过create创建axios实例
 const request = Axios.create({
   // 配置公共请求地址
-  baseURL: 'http://172.17.24.12:3000',
+  baseURL: 'http://172.17.24.16:3000',
   // 请求超时时间
   timeout: 5000
 })
-
+const token = GET_TOKEN()
+request.interceptors.request.use(
+  // 请求成功
+  config => {
+    console.log(token)
+    if (token) {
+      // 添加用户凭证
+      config.headers.Authorization = 'Bearer ' + token
+    }
+    return config
+  },
+  // 请求失败
+  err => Promise.reject(err)
+)
 // 定义响应拦截器
 request.interceptors.response.use(
   // 响应成功

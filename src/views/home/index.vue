@@ -341,12 +341,7 @@
         </div>
       </div>
     </div>
-    <Perfect :title="'完善信息'" :isLogo="IsDialog" @modifyDia="a1">
-      <div class="mhy-init-account-info__avatar">
-        <div class="mhy-avatar mhy-avatar__custom">
-          <img src="@/image/完善个人.png" alt="">
-        </div>
-      </div>
+    <Perfect>
     </Perfect>
 </div>
 </template>
@@ -402,6 +397,9 @@ export default {
     }
   },
   components: { Perfect },
+  mounted () {
+    this.$store.dispatch('user/getUserInfo')
+  },
   methods: {
     a1 () {
       this.IsDialog = false

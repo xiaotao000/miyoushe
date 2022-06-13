@@ -1,8 +1,7 @@
 <template>
-<!-- 注册页 -->
     <div>
-      <LOGON>
-        <ValidationObserver ref="form">
+        <LOGON>
+            <ValidationObserver ref="form">
             <form @submit.prevent="submitForm">
               <div class="mhy-form-input">
                 <ValidationProvider ref="phone" name="phone" rules="required|length:11|phone" v-slot="{ errors }">
@@ -14,16 +13,6 @@
                 </ValidationProvider>
               </div>
               <div class="mhy-form-input">
-                <ValidationProvider name="code" rules="required|length:6|integer" v-slot="{ errors }">
-                  <div class="input-container">
-                    <input type="tel"  placeholder="手机验证码" v-model="from.code">
-                    <div class="input-inner-btn" v-if="isTimer">{{timer + '秒'}}</div>
-                    <div class="input-inner-btn" @click="countDown" v-else>获取验证码</div>
-                  </div>
-                  <p class="error-text"> {{errors[0]}}</p>
-                </ValidationProvider>
-              </div>
-              <div class="mhy-form-input">
                 <ValidationProvider  name="password" rules="required|min:8|max:15|alpha_num"  v-slot="{ errors }">
                   <div class="input-container">
                     <input type="password"  placeholder="密码为8-15位(不能全是字母或数字)" v-model="from.password">
@@ -32,33 +21,24 @@
                   <p class="error-text">{{errors[0]}}</p>
                 </ValidationProvider>
               </div>
-              <div class="mhy-form-input">
-                <ValidationProvider name="rp_password" :rules="{ required: true, is: from.password }"  v-slot="{ errors }">
-                  <div class="input-container">
-                    <input type="password"  placeholder="确认密码" v-model="from.OkPassword">
-                  </div>
-                  <!-- 账号错误的提示信息 -->
-                  <p class="error-text">{{errors[0]}}</p>
-                </ValidationProvider>
-              </div>
               <div class="register-btn">
-                <button type="submit">注册</button>
+                <button type="submit">登录</button>
               </div>
             </form>
           </ValidationObserver>
           <div class="register-bar">
-            <router-link to="logon">返回登录</router-link>
+            <router-link to="register">立即注册</router-link>
           </div>
-      </LOGON>
+        </LOGON>
     </div>
 </template>
 
 <script>
 // 导入验证组件
 import { ValidationProvider, ValidationObserver } from 'vee-validate'
-import { getCode } from '@/api/user'
+
 export default {
-  name: 'register',
+  name: 'logon',
   components: { ValidationProvider, ValidationObserver },
   data () {
     return {
@@ -66,12 +46,8 @@ export default {
       from: {
         phone: '',
         password: '',
-        OkPassword: '',
-        code: ''
-      },
-      timer: 60,
-      isTimer: false,
-      i: ''
+        OkPassword: ''
+      }
     }
   },
   methods: {
@@ -84,42 +60,16 @@ export default {
       try {
         await this.$store.dispatch('user/register', { phone, password, code })
         console.log('注册成功')
-        this.$router.push('/home')
+        // this.$router.push('/home')
       } catch (error) {
         console.log('注册失败')
       }
-    },
-    // 验证码
-    async countDown () {
-      this.isTimer = true
-      const res = await getCode({ phone: this.from.phone })
-      setTimeout(() => {
-        this.from.code = res
-      }, 3000)
-      console.log(this.code)
-      console.log(res)
-      // let time = 3
-      // document.querySelector('h1').innerHTML = this.timer
-      // 开启倒计时 1s执行1次
-      let timer = this.timer
-      // eslint-disable-next-line no-var
-      var timeID = setInterval(() => {
-        timer--
-        // console.log(timer)
-        this.timer = timer
-        if (timer <= 0) {
-          this.timer = 4
-          this.isTimer = false
-          clearInterval(timeID)
-        }
-      }, 1000)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 // form表单
 .mhy-register .mhy-form-input{
   margin-bottom: 18px;
