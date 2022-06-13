@@ -146,8 +146,8 @@
 
 <script>
 export default {
-  name: "PeerMap",
-};
+  name: 'PeerMap'
+}
 </script>
 
 <style lang="sass" scoped>

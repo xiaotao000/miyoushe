@@ -32,9 +32,9 @@
         </form>
         <div class="header__avatarcontainer">
           <div class="header__avatarwrp">
-            <a href="#" class="header__avatar">
+            <router-link href="#" class="header__avatar" to="personal">
               <img src="@/image/HeadPortrait.png" alt="">
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
