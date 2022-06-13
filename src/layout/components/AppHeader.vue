@@ -40,15 +40,9 @@
         </template>
         <div class="header__avatarcontainer">
           <div class="header__avatarwrp">
-<<<<<<< HEAD
-            <a href="#" class="header__avatar">
-              <img :src="imgUrl" alt="">
-            </a>
-=======
             <router-link href="#" class="header__avatar" to="personal">
-              <img src="@/image/HeadPortrait.png" alt="">
+              <img :src="imgUrl" alt="">
             </router-link>
->>>>>>> 654e70c4f86cc296727aecf583330d6c649c3fdd
           </div>
         </div>
       </div>

@@ -394,6 +394,7 @@ export default {
   components: { Perfect },
   mounted () {
     this.$store.dispatch('user/getUserInfo')
+    this.getRotation()
   },
   methods: {
     a1 () {
@@ -403,9 +404,6 @@ export default {
       const res = await reqAdtdm()
       this.adTml = res
     }
-  },
-  mounted() {
-    this.getRotation()
   }
 }
 </script>
