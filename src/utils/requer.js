@@ -4,7 +4,7 @@ import Axios from 'axios'
 // 通过create创建axios实例
 const request = Axios.create({
   // 配置公共请求地址
-  baseURL: 'http://172.17.24.12:3000',
+  baseURL: 'http://172.17.24.16:3000',
   // 请求超时时间
   timeout: 5000
 })
@@ -13,10 +13,10 @@ const request = Axios.create({
 request.interceptors.response.use(
   // 响应成功
   async res => {
-    console.log(res)
+    // console.log(res)
     // 取出响应结果
     const data = res.data
-    console.log(data)
+    // console.log(data)
     // 判断响应码
     if (data.status !== 0) {
       alert(data.message || '响应错误')

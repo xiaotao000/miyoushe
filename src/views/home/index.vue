@@ -7,7 +7,7 @@
           <el-carousel :interval="4000" type="card" height="258px" arrow="always">
             <el-carousel-item v-for="item in adTml" :key="item.id" >
               <div class="yin">
-                 <img :src="item.img" alt="" width="100%" height="234px" class="medium">
+                 <img :src="item.imgUrl" alt="" width="100%" height="234px" class="medium">
               </div>
             </el-carousel-item>
           </el-carousel>
@@ -353,19 +353,14 @@
 
 <script>
 import Perfect from './components/perfect.vue'
+import { reqAdtdm } from '@/api/home.js'
 export default {
   name: 'home',
   data () {
     return {
       // 弹出层的状态
       centerDialogVisible: true,
-      adTml: [
-        { id: 1, img: 'https://upload-bbs.mihoyo.com/upload/2022/06/05/6a098c1ff83eda3c6497f9c5c5ec3050.jpeg', addPlo: '【有奖活动】“粽”享美味，参与活动赢周边~', addKlm: '活动' },
-        { id: 2, img: 'https://upload-bbs.mihoyo.com/upload/2022/06/02/2af5356932858a90ceec81c19feb41d9.jpeg', addPlo: '【已开奖】「流风眷堇庭」2.6版本攻略征集活动获奖名单', addKlm: '资讯' },
-        { id: 3, img: 'https://upload-bbs.mihoyo.com/upload/2022/06/02/fafe3c12a133295a56ecbfdd4353a4a9.jpeg', addPlo: '丽莎生日快乐｜好久不见，小可爱。今天来找姐姐是为何事？', addKlm: '资讯' },
-        { id: 4, img: 'https://upload-bbs.mihoyo.com/upload/2022/05/31/b6988bd4f735a4e45638ec686ce1c0c8.jpeg', addPlo: '2.7版本游戏问题集中反馈-6月9日更新', addKlm: '公告' },
-        { id: 5, img: 'https://upload-bbs.mihoyo.com/upload/2022/06/09/26395ef2683e85e6c04b26d56cd5ee06.png', addPlo: '「荒梦藏虞渊」2.7版本更新说明', addKlm: '公告' }
-      ],
+      adTml: [],
       mihAyoTop: [
         { id: 1, img: 'https://upload-bbs.mihoyo.com/pc_ad/pc_ad_ys_game_record2.jpg' },
         { id: 2, img: 'https://upload-bbs.mihoyo.com/pc_ad/ys_signin.jpg' },
@@ -405,7 +400,14 @@ export default {
   methods: {
     a1 () {
       this.IsDialog = false
+    },
+    async getRotation () {
+      const res = await reqAdtdm()
+      this.adTml = res
     }
+  },
+  mounted() {
+    this.getRotation()
   }
 }
 </script>
