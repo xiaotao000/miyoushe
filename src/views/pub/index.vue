@@ -120,6 +120,7 @@
           <div></div>
         </div>
       </div>
+       <dir class="npr">点击加载更多</dir>
     </div>
     <div class="code">
       <!-- 扫码下载 -->
@@ -233,7 +234,7 @@
 
 <script>
 export default {
-  name: 'tavern'
+  name: 'pub',
 }
 </script>
 
