@@ -134,11 +134,100 @@
   background-color: #fff;
   float: left;
 }
-
-.filter-first {
+.toale{
+  width: 700px;
+  border-radius: 4px;
+  float: left;
+}
+.filter-first{
   width: 100%;
   padding: 12px 30px;
   border-bottom: 1px solid #ebebeb;
+}
+.filter-firs {
+  width: 100%;
+  padding: 4px 0px;
+  border-bottom: 1px solid #ebebeb;
+}
+.article{
+  display: inline-block;
+  width: 220px;
+  height: 247px;
+  margin: 0 20px 20px 0;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 0 4px 0 rgb(0 0 0 / 5%);
+}
+.article-user{
+  margin-right: 0;
+}
+.article-crad{
+  width: 220px;
+    height: 166px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f6f6f6;
+}
+.sacle{
+  width: 100%;
+  height: 100%;
+}
+.sacle-img1{
+  background: url(@/image/peerMap/荧四格.jpg);
+  background-position: 50% -216.1px;
+  background-size: cover;
+}
+.sacle-img2{
+  background: url(@/image/peerMap/风吹过的街道.jpg);
+  background-position: 50% -35px;
+  background-size: cover;
+}
+.sacle-img3{
+  background: url(@/image/peerMap/高考现状.jpg);
+  background-size: cover;
+  background-position: 50% -228px;
+}
+.sacle::after{
+  content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30px;
+    width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.05));
+}
+.article-heard{
+  font-size: 14px;
+    padding: 12px 15px;
+    line-height: 18px;
+    width: 190px;
+    height: 18px;
+}
+.article-type{
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+.article-heard sapn{
+  overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333;
+}
+.article-footer{
+  line-height: 24px;
+  display: flex;
+    padding: 0 15px 15px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+.article-acount{
+  display: flex;
+  -webkit-box-flex: 1;
+    flex: 1;
+    align-items: center;
 }
 
 /* 置顶内容 */
@@ -166,7 +255,6 @@
 /* 发布的消息 */
 .second {
   width: 640px;
-  height: 251px;
   border-bottom: 1px solid #ebebeb;
   padding: 24px 30px;
 }
@@ -297,9 +385,13 @@
   align-items: center;
   line-height: 18px;
 }
-
-/* 同人图布局 */
-
+.npr{
+  color: #ccc;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 /* 侧边部分 */
 .code {
@@ -485,6 +577,99 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* 同人图布局 */
+.body-rankimg{
+  display: flex;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+.body-rankimg span{
+  position: absolute;
+    bottom: 20px;
+    right: 0;
+    z-index: 5;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1;
+}
+.rankimg-rank1{
+  color: #f85b54;
+}
+.rankimg-rank2{
+  color: #fa0;
+}
+.rankimg-rank3{
+  color: #d29c83;
+  margin-right: 20px;
+}
+.rankimg-card{
+  width: 80px;
+    height: 106px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    background-size: contain;
+    border: 1px solid #ebebeb;
+}
+.rankimg-card1{
+  background: url(@/image/peerMap/荧四格.jpg);
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.rankimg-card2{
+  background: url(@/image/peerMap/回家.jpg);
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.rankimg-card3{
+  background: url(@/image/peerMap/高考现状.jpg);
+  background-size: cover;
+  background-position: 50%;    
+  background-repeat: no-repeat;
+  margin-left: 20px;
+
+}
+.rankimg-user{
+  display: flex;
+    margin-top: 10px;
+    color: #666;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.rankimg-xs{
+  margin-right: 8px;
+  width: 23px;
+    height: 23px;
+}
+.rankimg-xs .img4{
+  width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #ebebeb;
+    vertical-align: top;
+}
+.use-img{
+  position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    margin-left: calc(-64.25% + 1px);
+    margin-top: calc(-64.25% + 1px);
+    pointer-events: none;
+    z-index: 2;
+}
+.user-a{
+  overflow: hidden;
+  text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #666;
 }
 
 /* 热门话题内容 */

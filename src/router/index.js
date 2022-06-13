@@ -27,7 +27,17 @@ const routes = [
       // 硬核
       { path: '/hardcore', component: () => import('@/views/hardcore') },
       // 个人中心
-      { path: '/personal', component: () => import('@/views/personal') }
+      {
+        path: '/personal',
+        component: () => import('@/views/personal'),
+        redirect: '/ginhan',
+        children: [
+          // 我的发帖
+          { path: '/ginhan', component: () => import('@/views/personal/persook/ginhan') },
+          // 我的评论
+          { path: '/bnsen', component: () => import('@/views/personal/persook/bnsen') }
+        ]
+      }
     ]
   },
   {

@@ -8,6 +8,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 // 全局组件
 import LOGON from '@/components/Logon'
 
+import '@/css/iconfont.css'
+
 // 初始化CSS
 import 'normalize.css'
 

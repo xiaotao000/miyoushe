@@ -28,10 +28,10 @@ request.interceptors.request.use(
 request.interceptors.response.use(
   // 响应成功
   async res => {
-    console.log(res)
+    // console.log(res)
     // 取出响应结果
     const data = res.data
-    console.log(data)
+    // console.log(data)
     // 判断响应码
     if (data.status !== 0) {
       alert(data.message || '响应错误')
