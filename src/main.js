@@ -6,6 +6,8 @@ import store from './store'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import '@/css/iconfont.css'
+
 // 初始化CSS
 import 'normalize.css'
 

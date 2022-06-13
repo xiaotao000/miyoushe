@@ -51,13 +51,91 @@
       <div class="lftZp ggd">
         <div class="ntmJq">
           <div class="grZx">个人中心</div>
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
         </div>
+          <ul>
+            <li>
+              <router-link to="ginhan" class="ghFnb cls">
+              <i class="cls mhy-icon iconfont icon-wodefatie "></i>
+              <span>我的发帖</span>
+              </router-link>
+            </li>
+            <li>
+              <router-link to="bnsen" class="ghFnb">
+              <i class="mhy-icon iconfont icon-huifu"></i>
+              <span>我的评论</span>
+              </router-link>
+            </li>
+            <li class="gua">
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-heji"></i>
+              <span>我的合集</span>
+              </div>
+            </li>
+            <li>
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-wodeshoucang"></i>
+              <span>我的收藏</span>
+              </div>
+            </li>
+            <li class="gua">
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-wodefensi"></i>
+              <span>我的粉丝</span>
+              </div>
+            </li>
+            <li>
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-wodeguanzhu"></i>
+              <span>我的关注</span>
+              </div>
+            </li>
+            <li>
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-dengji"></i>
+              <span>我的等级</span>
+              </div>
+            </li>
+            <li>
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-mi-icon"></i>
+              <span>我的米游币</span>
+              </div>
+            </li>
+            <li>
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-gift"></i>
+              <span>我的奖品</span>
+              </div>
+            </li>
+            <li>
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-renzheng"></i>
+              <span>认证中心</span>
+              </div>
+            </li>
+            <li>
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-yinsishezhi"></i>
+              <span>隐私设置</span>
+              </div>
+            </li>
+            <li class="gua">
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-zhanghaoguanli"></i>
+              <span>编辑资料</span>
+              </div>
+            </li>
+            <li>
+              <div class="ghFnb">
+              <i class="mhy-icon iconfont icon-tuichudenglu"></i>
+              <span>退出登录</span>
+              </div>
+            </li>
+          </ul>
       </div>
-      <div class="rktYp ggd"></div>
+      <div class="rktYp ggd">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
@@ -69,6 +147,32 @@ export default {
 </script>
 
 <style  scoped>
+a:hover{
+  text-decoration: none;
+}
+.gua{
+    border-bottom: 1px solid #f0f0f0;
+}
+.ghFnb{
+  padding: 0 20px;
+    line-height: 50px;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.mhy-icon{
+  width: 18px;
+    font-size: 18px;
+    vertical-align: top;
+    display: inline-block;
+    color: #d9d9d9;
+    margin-right: 15px;
+}
+.cls{
+  color: #00c3ff;
+}
 .ntmJq>ul{
   padding: 0 30px 10px;
 }

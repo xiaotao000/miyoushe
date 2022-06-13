@@ -21,7 +21,7 @@
           <router-link class="header__navitem" to="/official">官方</router-link>
           <router-link to="/peermap" class="header__navitem">同人图</router-link>
           <router-link to="/cos" class="header__navitem">cos</router-link>
-          <a href="#" class="header__navitem">硬核</a>
+          <router-link to="/hardcore" class="header__navitem">硬核</router-link>
         </div>
       </div>
       <!-- 右边搜索框 -->
