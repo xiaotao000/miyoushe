@@ -10,11 +10,11 @@ const request = Axios.create({
   // 请求超时时间
   timeout: 5000
 })
-const token = GET_TOKEN()
+
 request.interceptors.request.use(
   // 请求成功
   config => {
-    console.log(token)
+    const token = GET_TOKEN()
     if (token) {
       // 添加用户凭证
       config.headers.Authorization = 'Bearer ' + token

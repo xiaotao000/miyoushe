@@ -1,11 +1,20 @@
 <template>
   <div>
     <div class="nmh">
-      <div class="nm">我的评论</div>
+      <div class="nm">
+        <ul>
+          <li class="zxc">
+            <span>帖子</span>
+          </li>
+          <li class="yhn">
+            <span>合集</span>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="wgFy">
       <img class="npmIng" src="https://bbs.mihoyo.com/_nuxt/img/noData.a3d7135.png" alt="" width="200px">
-      <p>暂时没有回复哟</p>
+      <p>暂时没有收藏哟</p>
     </div>
   </div>
 </template>
@@ -17,6 +26,36 @@ export default {
 </script>
 
 <style scoped>
+.yhn>span{
+  color: #333;
+}
+.zxc>span{
+  color: #00c3ff;
+}
+.yhn{
+  margin-left: 40px;
+  vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+}
+.zxc{
+  border-bottom: 3px solid #00c3ff;
+  font-weight: 600;
+  vertical-align: top;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+}
+.nm>ul{
+  display: flex;
+}
 .wgFy>p{
   margin-top: 20px;
     color: #999;

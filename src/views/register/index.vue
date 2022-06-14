@@ -85,6 +85,7 @@ export default {
         await this.$store.dispatch('user/register', { phone, password, code })
         console.log('注册成功')
         this.$router.push('/home')
+        this.$store.dispatch('user/modifyState', true)
       } catch (error) {
         console.log('注册失败')
       }

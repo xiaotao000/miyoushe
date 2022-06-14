@@ -4,14 +4,14 @@
       <div class="wgFus">
         <!-- 头像 -->
         <div class="hpxWdy">
-          <img src="/img/HeadPortrait.df95e9fa.png" alt="" class="adFgh">
+          <img :src="imgSrc" alt="" class="adFgh">
         </div>
         <!-- 用户信息 -->
         <div class="nmDcv">
           <!-- 用户名 -->
           <div class="swMtr">
             <div class="bhvFbn">
-              <span> 用户名 </span>
+              <span> {{userInfo.nickname}} </span>
               <img src="https://img-static.mihoyo.com/level/level3.png" alt="">
             </div>
             <div  class="nmKlo">
@@ -22,14 +22,14 @@
           </div>
           <!-- 通行证 -->
           <div class="ainDr">
-            <span>通行证ID:264041617</span>
+            <span>通行证ID:{{userInfo.id}}</span>
           </div>
           <!-- 留言板 -->
           <div class="lyAdd">
             <span>
               <i class="el-icon-s-order"></i>
             </span>
-            <p>我要摆烂！</p>
+            <p>{{userInfo.autograph}}</p>
           </div>
           <!-- 粉丝，关注，点赞 -->
           <div class="wyDai">
@@ -72,22 +72,22 @@
               </div>
             </li>
             <li>
-              <div class="ghFnb">
+              <router-link to="collection" class="ghFnb">
               <i class="mhy-icon iconfont icon-wodeshoucang"></i>
               <span>我的收藏</span>
-              </div>
+              </router-link>
             </li>
             <li class="gua">
-              <div class="ghFnb">
+              <router-link to="igent" class="ghFnb">
               <i class="mhy-icon iconfont icon-wodefensi"></i>
               <span>我的粉丝</span>
-              </div>
+              </router-link>
             </li>
             <li>
-              <div class="ghFnb">
+              <router-link to="figns"  class="ghFnb">
               <i class="mhy-icon iconfont icon-wodeguanzhu"></i>
               <span>我的关注</span>
-              </div>
+              </router-link>
             </li>
             <li>
               <div class="ghFnb">
@@ -114,19 +114,19 @@
               </div>
             </li>
             <li>
-              <div class="ghFnb">
+              <router-link to="/setup"  class="ghFnb">
               <i class="mhy-icon iconfont icon-yinsishezhi"></i>
               <span>隐私设置</span>
-              </div>
+              </router-link>
             </li>
             <li class="gua">
-              <div class="ghFnb">
+              <router-link to="/pjns" class="ghFnb">
               <i class="mhy-icon iconfont icon-zhanghaoguanli"></i>
               <span>编辑资料</span>
-              </div>
+              </router-link>
             </li>
             <li>
-              <div class="ghFnb">
+              <div  class="ghFnb">
               <i class="mhy-icon iconfont icon-tuichudenglu"></i>
               <span>退出登录</span>
               </div>
@@ -141,8 +141,20 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'personal'
+  name: 'personal',
+  data () {
+    return {
+      imgSrc: 'https://img-static.mihoyo.com/communityweb/upload/c9d11674eac7631d2210a1ba20799958.png'
+    }
+  },
+  computed: {
+    ...mapState('user', ['userInfo']),
+    imgUrl () {
+      return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
+    }
+  }
 }
 </script>
 
