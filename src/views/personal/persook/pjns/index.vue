@@ -52,6 +52,9 @@
           <el-input type="textarea"  placeholder="请输入内容"  v-model="text1" maxlength="84"  show-word-limit></el-input>
         </div>
       </div>
+      <div class="nmpi">
+        <el-button type="primary" plain>保存</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -82,6 +85,14 @@ export default {
 </script>
 
 <style scoped>
+::v-deep .el-button--primary{
+  background: #ffffff;
+  width: 113px;
+}
+.nmpi{
+  text-align: center;
+  margin-top: 30px;
+}
 ::v-deep .el-textarea__inner{
     height: 84px;
 }
