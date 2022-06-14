@@ -21,15 +21,15 @@
     <div class="fuDan">
       <div class="df">
         <div class="anWs">
-        <i class="mhy-icon "></i>
+        <i class="mhy-icon iconfont icon-liuyanshu"></i>
         <span>1453</span>
       </div>
       <div class="anWs as">
-        <i class="mhy-icon "></i>
+        <i class="mhy-icon iconfont icon-liuyanshu"></i>
         <span>2342</span>
       </div>
       <div class="anWs as">
-        <i class="mhy-icon "></i>
+        <i class="mhy-icon iconfont icon-liuyanshu"></i>
         <span>3244</span>
       </div>
       </div>
