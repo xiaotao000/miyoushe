@@ -232,11 +232,11 @@
         <div class="miy">
           <div class="ftz">
             <div class="fbTp">
-              <button class="nlm">
+              <router-link tag="button" to="/article" class="nlm">
                 <i class="el-icon-edit"></i>
                 <span>发布帖子</span>
                 <i class="el-icon-arrow-right"></i>
-              </button>
+              </router-link>
             </div>
             <p class="top1">讨论 分析、攻略、同人</p>
           </div>

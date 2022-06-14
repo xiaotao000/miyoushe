@@ -324,7 +324,7 @@
   height: 100%;
   border-radius: 6px;
   background-image: url(@/image/pubimg/八重神子1.jpg);
-  background-position: 50%;
+  background-position: 50% -35px;
   background-repeat: no-repeat;
   cursor: pointer;
   position: absolute;
@@ -337,7 +337,7 @@
   height: 100%;
   border-radius: 6px;
   background-image: url(@/image/pubimg/八重神子2.jpg);
-  background-position: 50%;
+  background-position: 88%;
   background-repeat: no-repeat;
   cursor: pointer;
   position: absolute;
@@ -476,7 +476,7 @@
   width: 120px;
   height: 100%;
   border-radius: 6px;
-  background-image: url(@/image/method/鸡蛋.jpg);
+  background-image: url(@/image/method/考据.jpg);
   background-position: 47%;
   background-repeat: no-repeat;
   cursor: pointer;

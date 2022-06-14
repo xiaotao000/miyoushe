@@ -26,8 +26,12 @@ const routes = [
       { path: '/cos', component: () => import('@/views/cos') },
       // 硬核
       { path: '/hardcore', component: () => import('@/views/hardcore') },
+<<<<<<< HEAD
+      { path: '/article', component: () => import('@/views/article') },
+=======
       // 详情
       { path: '/details', component: () => import('@/views/details') },
+>>>>>>> db0ebe582413fa0e0818fc8e8270b4d3859a42f8
       // 个人中心
       {
         path: '/personal',
