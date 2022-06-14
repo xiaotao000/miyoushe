@@ -49,7 +49,6 @@ export default {
     padding: 0 15px;
     background-color: #f7f8fc;
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
     margin-top: 15px;
 }
