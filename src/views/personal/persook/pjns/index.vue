@@ -34,25 +34,27 @@
         <div class="srKxa">
           <div class="nte">性别</div>
           <div>
-            <div class="lft">
-              <i class="mhy-radio__icon"></i>男
-            </div>
-            <div class="lft">
-              <i class="mhy-radio__icon"></i>女
-            </div>
-            <div class="lft">
-              <i class="mhy-radio__icon mhy-radio--active"></i>保密
-            </div>
+            <template>
+              <div class="lft">
+                <el-radio class="mhy-radio__icon" v-model="formInput.gender" label="男">男</el-radio>
+              </div>
+              <div class="lft">
+                <el-radio class="mhy-radio__icon" v-model="formInput.gender" label="女">女</el-radio>
+              </div>
+              <div class="lft">
+                <el-radio class="mhy-radio__icon" v-model="formInput.gender" label="保密">保密</el-radio>
+              </div>
+            </template>
           </div>
         </div>
         <div class="srKxa">
           <div class="nte">个性签名</div>
           <div style="margin: 20px 0;"></div>
-          <el-input type="textarea"  :placeholder="userInfo.autoagraph"  v-model="text1" maxlength="84"  show-word-limit></el-input>
+          <el-input type="textarea"  :placeholder="userInfo.autograph"  v-model="formInput.autograph" maxlength="84"  show-word-limit></el-input>
         </div>
       </div>
       <div class="nmpi">
-        <el-button type="primary" plain>保存</el-button>
+        <el-button type="primary" plain @click="setData">保存</el-button>
       </div>
     </div>
   </div>
@@ -61,14 +63,15 @@
 <script>
 import { mapState } from 'vuex'
 import { GET_TOKEN } from '@/utils/userToken'
+import { setData } from '@/api/user'
 const token = GET_TOKEN()
 export default {
   data () {
     return {
-      text: '',
-      text1: '',
       IsDialog: true,
-      formInput: {},
+      formInput: {
+        gender: '保密'
+      },
       imgSrc: 'https://img-static.mihoyo.com/communityweb/upload/c9d11674eac7631d2210a1ba20799958.png',
       myHeaders: { authorization: 'Bearer ' + token }
     }
@@ -77,10 +80,31 @@ export default {
     ...mapState('user', ['userInfo']),
     imgUrl () {
       return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
+    },
+    Ckname () {
+      return this.formInput.nickname ? this.formInput.nickname : this.userInfo.nickname
+    },
+    Ckautograph () {
+      return this.formInput.autograph ? this.formInput.autograph : this.userInfo.autograph
+    },
+    Ckgender () {
+      return this.formInput.gender ? this.formInput.gender : this.userInfo.gender
     }
   },
   mounted () {
     console.log(this.myHeaders)
+    this.formInput = this.userInfo
+  },
+  methods: {
+    async setData () {
+      try {
+        await setData({ nickname: this.Ckname, autograph: this.Ckautograph, gender: this.Ckgender })
+        this.$message.success('修改成功')
+        this.$store.dispatch('user/getUserInfo')
+      } catch (error) {
+        this.$message.error('修改成功')
+      }
+    }
   }
 }
 </script>
@@ -106,7 +130,7 @@ export default {
     display: inline-block;
     height: 14px;
     width: 14px;
-    border: 1px solid #b2b2b2;
+    /* border: 1px solid #b2b2b2; */
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background-color: #fff;

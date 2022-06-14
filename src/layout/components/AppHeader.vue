@@ -106,6 +106,7 @@ export default {
     }
   },
   methods: {
+    // 退出登录
     logout () {
       this.$store.dispatch('user/logout')
       this.$router.push('/home')

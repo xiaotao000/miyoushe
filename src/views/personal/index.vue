@@ -4,7 +4,7 @@
       <div class="wgFus">
         <!-- 头像 -->
         <div class="hpxWdy">
-          <img :src="imgSrc" alt="" class="adFgh">
+          <img :src="imgUrl" alt="" class="adFgh">
         </div>
         <!-- 用户信息 -->
         <div class="nmDcv">
