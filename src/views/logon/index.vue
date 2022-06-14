@@ -44,25 +44,23 @@ export default {
     return {
       // form表单数据
       from: {
-        phone: '',
-        password: '',
-        OkPassword: ''
+        phone: '19967934006',
+        password: 'long123456'
       }
     }
   },
   methods: {
     async submitForm () {
-      console.log(1111)
       const success = await this.$refs.form.validate()
       console.log(success)
       if (!success) return
-      const { phone, password, code } = this.from
+      const { phone, password } = this.from
       try {
-        await this.$store.dispatch('user/register', { phone, password, code })
-        console.log('注册成功')
-        // this.$router.push('/home')
+        await this.$store.dispatch('user/logon', { phone, password })
+        console.log('登录成功')
+        this.$router.push('/home')
       } catch (error) {
-        console.log('注册失败')
+        console.log('登录失败')
       }
     }
   }

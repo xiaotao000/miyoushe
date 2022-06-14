@@ -36,7 +36,7 @@
                 <p class="wdStd">06-09 • 官方</p>
               </div>
             </div>
-            <div href="#">
+            <router-link to="details" href="#">
               <div class="derTer">
                 <div class="ndx">
                   <span class="zlkJhp">官方</span>
@@ -57,7 +57,7 @@
                   <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
-            </div>
+            </router-link>
             <div class="bhf">
               <div class="poiAdd">
                 <div class="nmfAdd">
@@ -91,7 +91,7 @@
                 <p class="wdStd">06-09 • 官方</p>
               </div>
             </div>
-            <div href="#">
+            <router-link to="details" href="#">
               <div class="derTer">
                 <div class="ndx">
                   <span class="zlkJhp">官方</span>
@@ -106,7 +106,7 @@
                   <i class="el-icon-video-play"></i>
                 </div>
               </div>
-            </div>
+            </router-link>
             <div class="bhf">
               <div class="poiAdd">
                 <div class="nmfAdd">
@@ -140,7 +140,7 @@
                 <p class="wdStd">06-09 • 官方</p>
               </div>
             </div>
-            <div href="#">
+            <router-link to="details" href="#">
               <div class="derTer">
                 <div class="ndx">
                   <span class="zlkJhp">官方</span>
@@ -155,7 +155,7 @@
                   <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
-            </div>
+            </router-link>
             <div class="bhf">
               <div class="poiAdd">
                 <div class="nmfAdd">
@@ -189,7 +189,7 @@
                 <p class="wdStd">06-09 • 官方</p>
               </div>
             </div>
-            <div href="#">
+            <router-link to="details" href="#">
               <div class="derTer">
                 <div class="ndx">
                   <span class="zlkJhp">官方</span>
@@ -207,7 +207,7 @@
                   <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
                 </div>
               </div>
-            </div>
+            </router-link>
             <div class="bhf">
               <div class="poiAdd">
                 <div class="nmfAdd">
@@ -393,8 +393,8 @@ export default {
   },
   components: { Perfect },
   mounted () {
-    this.$store.dispatch('user/getUserInfo')
     this.getRotation()
+    // this.$store.dispatch('user/getUserInfo')
   },
   methods: {
     a1 () {
@@ -409,6 +409,9 @@ export default {
 </script>
 
 <style scoped>
+a:hover{
+  text-decoration: none;
+}
 .npr{
   color: #ccc;
     font-size: 16px;

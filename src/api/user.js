@@ -8,3 +8,9 @@ export const getCode = data => request({ method: 'post', url: '/api/sendCode', d
 export const getImage = data => request({ method: 'post', url: '/my/update/avatar', data })
 // 获取用户信息
 export const getUser = () => request({ method: 'get', url: '/my/userinfo' })
+
+// 修改昵称
+export const getUsername = data => request({ method: 'post', url: '/my/user/nickname', data })
+
+// 登录
+export const Logon = data => request({ method: 'post', url: '/api/login', data })
