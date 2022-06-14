@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="nmh">
-      <div class="nm">我的评论</div>
+      <div class="nm">我的粉丝</div>
     </div>
     <div class="wgFy">
       <img class="npmIng" src="https://bbs.mihoyo.com/_nuxt/img/noData.a3d7135.png" alt="" width="200px">
-      <p>暂时没有回复哟</p>
+      <p>你还没有哟~</p>
     </div>
   </div>
 </template>

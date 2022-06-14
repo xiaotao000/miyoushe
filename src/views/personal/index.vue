@@ -72,22 +72,22 @@
               </div>
             </li>
             <li>
-              <div class="ghFnb">
+              <router-link to="collection" class="ghFnb">
               <i class="mhy-icon iconfont icon-wodeshoucang"></i>
               <span>我的收藏</span>
-              </div>
+              </router-link>
             </li>
             <li class="gua">
-              <div class="ghFnb">
+              <router-link to="igent" class="ghFnb">
               <i class="mhy-icon iconfont icon-wodefensi"></i>
               <span>我的粉丝</span>
-              </div>
+              </router-link>
             </li>
             <li>
-              <div class="ghFnb">
+              <router-link to="figns"  class="ghFnb">
               <i class="mhy-icon iconfont icon-wodeguanzhu"></i>
               <span>我的关注</span>
-              </div>
+              </router-link>
             </li>
             <li>
               <div class="ghFnb">
@@ -114,19 +114,19 @@
               </div>
             </li>
             <li>
-              <div class="ghFnb">
+              <router-link to="setup"  class="ghFnb">
               <i class="mhy-icon iconfont icon-yinsishezhi"></i>
               <span>隐私设置</span>
-              </div>
+              </router-link>
             </li>
             <li class="gua">
-              <div class="ghFnb">
+              <router-link to="pjns" class="ghFnb">
               <i class="mhy-icon iconfont icon-zhanghaoguanli"></i>
               <span>编辑资料</span>
-              </div>
+              </router-link>
             </li>
             <li>
-              <div class="ghFnb">
+              <div  class="ghFnb">
               <i class="mhy-icon iconfont icon-tuichudenglu"></i>
               <span>退出登录</span>
               </div>

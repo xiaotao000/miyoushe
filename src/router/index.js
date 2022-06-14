@@ -35,7 +35,17 @@ const routes = [
           // 我的发帖
           { path: '/ginhan', component: () => import('@/views/personal/persook/ginhan') },
           // 我的评论
-          { path: '/bnsen', component: () => import('@/views/personal/persook/bnsen') }
+          { path: '/bnsen', component: () => import('@/views/personal/persook/bnsen') },
+          // 我的收藏
+          { path: '/collection', component: () => import('@/views/personal/persook/collection') },
+          // 我的粉丝
+          { path: '/igent', component: () => import('@/views/personal/persook/igent') },
+          // 我的关注
+          { path: '/figns', component: () => import('@/views/personal/persook/figns') },
+          // 隐私设置
+          { path: '/setup', component: () => import('@/views/personal/persook/setup') },
+          // 编辑资料
+          { path: '/pjns', component: () => import('@/views/personal/persook/pjns') }
         ]
       }
     ]
