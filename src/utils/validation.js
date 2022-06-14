@@ -15,7 +15,8 @@ localize({
       code: '验证码',
       password: '密码',
       rp_password: '确认密码',
-      agree: '协议'
+      agree: '协议',
+      name: '昵称'
     },
     messages: {
       is: '{_field_}不一致'

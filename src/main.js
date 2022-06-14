@@ -22,6 +22,8 @@ import './styles/reset.scss'
 // 全局CSS
 import '@/styles/index.css'
 
+import './permission'
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.component('LOGON', LOGON)

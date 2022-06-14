@@ -10,22 +10,21 @@
            class="avatar-uploader"
            action="http://172.17.24.16:3000/my/update/avatar"
            :show-file-list="false"
-          :on-success="handlePictureCardPreview"
            :headers="myHeaders"
            name="avatar"
            >
           <div class="mhy-avatar">
              <!-- 头像 -->
-            <img  :src="imageUrl" alt="">
+            <img  :src="imgUrl" alt="">
           </div>
         </el-upload>
-        <p>修改天线</p>
+        <p>修改头像</p>
       </div>
       <!-- 姓名 -->
       <div class="name">
         <div class="srKxa">
           <div class="nte">片名</div>
-          <el-input type="text"  placeholder="请输入内容"  v-model="text" maxlength="8" show-word-limit></el-input>
+          <el-input type="text"  :placeholder="userInfo.nickname"  v-model="formInput.nickname" maxlength="8" show-word-limit></el-input>
         </div>
         <div class="srKxaTao">
           <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAvBJREFUOE+1VEtPU1EQnjk9914efUAUKhq3usCAtBQqiKJsCBrjih9gYkjcuHJlIo0rI4lrTXysdMHeEI1peRUoFAkQnqWAilBaCihgaeGeMZeIseX2svIsz/nmmzPzzXwIOicYDErxZLJQUrnLJEGlICghIitD2BICVkFgAFUcjsUW15ubm1OZFPjvBRGhzx88B6g2MMRqADLrJT24I9gBoCFB/GP3p/chj8cjDrFppD2BQLm6Dy0AVAQILCvhnwciIASMgoRv6quqhtJItR/2Dg6WqSo8BCBTJpkiKzKXJJ5IJJJCqOrRZKgyND2pcztHEJEOfurtHTrPUNwHJHtmAOcSd5SV1uXIsnU1Gg/NzIcn9SogoA0SvO36ZdcMaqL8TO7fZQDX9ErOzzfnVZaVNmpEO78SseDoWI8uKQERgBdTidf4we8vVpC3ZRNFUXJkt6P8pka0tb0d+Tw+0Ze917it0v4j9HYHbjBOd7IBERlecbtuAwBubP74NjY1/VcQvRgh6C129QdaiajMSOm6atctxhhfi2+EJ2ZnR42wRDCJvr7Ac9RGyODUupyNnPO8lWhsZjY8P2GEFQRx9PoH3jEExQhY5bjYkKsotqXlyHj4y5eQ8fxiEjv7Bl4AwEkjYMWF0ktWi7lkbvHr4PeVlSXj8mkdvb0DjxmDUiOgzWK12otOnF5cWp5PpZJHdj0tlnD6WPW1AIvFarbk59rW4hvR1F5qz7Cnmvo+3+AplMVTQMjPBnY7KhokiedGorFwaGFxyshkkGMrtre3y8VnzrYQ4FVESDMYLVib01qXo5ExJsfi6wtTobmxbBuFQF0y0stjd18jKLQVFFotZtvqWjyyu5vYPXb3NYDH42H1TU1O2KcHei5lPEKgLb1Ajs86OzoCmq+mldvdH3SotHcPCAv0WpFJrvkpIG2iib2qr67uP3z//85/mMnn8+UIWbYjMSciVhCAnSGaicQOAosKEsMmiY1IqhqpqalJZFbwG5VxaDfsqZLPAAAAAElFTkSuQmCC" alt="">
@@ -49,7 +48,7 @@
         <div class="srKxa">
           <div class="nte">个性签名</div>
           <div style="margin: 20px 0;"></div>
-          <el-input type="textarea"  placeholder="请输入内容"  v-model="text1" maxlength="84"  show-word-limit></el-input>
+          <el-input type="textarea"  :placeholder="userInfo.autoagraph"  v-model="text1" maxlength="84"  show-word-limit></el-input>
         </div>
       </div>
     </div>
@@ -57,6 +56,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { GET_TOKEN } from '@/utils/userToken'
 const token = GET_TOKEN()
 export default {
@@ -66,13 +66,14 @@ export default {
       text1: '',
       IsDialog: true,
       formInput: {},
-      imageUrl: 'https://img-static.mihoyo.com/communityweb/upload/c9d11674eac7631d2210a1ba20799958.png',
+      imgSrc: 'https://img-static.mihoyo.com/communityweb/upload/c9d11674eac7631d2210a1ba20799958.png',
       myHeaders: { authorization: 'Bearer ' + token }
     }
   },
-  methods: {
-    handlePictureCardPreview (response, file, fileList) {
-      this.imageUrl = URL.createObjectURL(file.raw)
+  computed: {
+    ...mapState('user', ['userInfo']),
+    imgUrl () {
+      return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
     }
   },
   mounted () {

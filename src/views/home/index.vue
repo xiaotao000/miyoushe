@@ -393,8 +393,8 @@ export default {
   },
   components: { Perfect },
   mounted () {
-    this.$store.dispatch('user/getUserInfo')
     this.getRotation()
+    // this.$store.dispatch('user/getUserInfo')
   },
   methods: {
     a1 () {
