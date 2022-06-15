@@ -242,11 +242,11 @@
           </div>
           <div class="ftz">
             <div class="fbTp">
-              <button class="nlm">
+              <router-link tag="button" to="/picture" class="nlm">
                 <i class="el-icon-picture-outline"></i>
                 <span>发布图片</span>
                 <i class="el-icon-arrow-right"></i>
-              </button>
+              </router-link>
             </div>
             <p class="top1"> 绘画、COS、手工、表情包</p>
           </div>

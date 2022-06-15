@@ -26,7 +26,10 @@ const routes = [
       { path: '/cos', component: () => import('@/views/cos') },
       // 硬核
       { path: '/hardcore', component: () => import('@/views/hardcore') },
+      // 发布文章
       { path: '/article', component: () => import('@/views/article') },
+      // 发布图片
+      { path: '/picture', component: () => import('@/views/picture') },
       // 详情
       { path: '/details', component: () => import('@/views/details') },
       // 个人中心
