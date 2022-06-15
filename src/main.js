@@ -7,6 +7,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // 全局组件
 import LOGON from '@/components/Logon'
+import Totop from '@/views/home/components/Totop'
 
 import '@/css/iconfont.css'
 
@@ -22,9 +23,12 @@ import './styles/reset.scss'
 // 全局CSS
 import '@/styles/index.css'
 
+import './permission'
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.component('LOGON', LOGON)
+Vue.component('Totop', Totop)
 
 new Vue({
   router,

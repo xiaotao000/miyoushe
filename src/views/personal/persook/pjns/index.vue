@@ -10,76 +10,113 @@
            class="avatar-uploader"
            action="http://172.17.24.16:3000/my/update/avatar"
            :show-file-list="false"
-          :on-success="handlePictureCardPreview"
            :headers="myHeaders"
            name="avatar"
            >
           <div class="mhy-avatar">
              <!-- 头像 -->
-            <img  :src="imageUrl" alt="">
+            <img  :src="imgUrl" alt="">
           </div>
         </el-upload>
-        <p>修改天线</p>
+        <p>修改头像</p>
       </div>
-      <!-- 姓名 -->
-      <div class="name">
-        <div class="srKxa">
-          <div class="nte">片名</div>
-          <el-input type="text"  placeholder="请输入内容"  v-model="text" maxlength="8" show-word-limit></el-input>
-        </div>
-        <div class="srKxaTao">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAvBJREFUOE+1VEtPU1EQnjk9914efUAUKhq3usCAtBQqiKJsCBrjih9gYkjcuHJlIo0rI4lrTXysdMHeEI1peRUoFAkQnqWAilBaCihgaeGeMZeIseX2svIsz/nmmzPzzXwIOicYDErxZLJQUrnLJEGlICghIitD2BICVkFgAFUcjsUW15ubm1OZFPjvBRGhzx88B6g2MMRqADLrJT24I9gBoCFB/GP3p/chj8cjDrFppD2BQLm6Dy0AVAQILCvhnwciIASMgoRv6quqhtJItR/2Dg6WqSo8BCBTJpkiKzKXJJ5IJJJCqOrRZKgyND2pcztHEJEOfurtHTrPUNwHJHtmAOcSd5SV1uXIsnU1Gg/NzIcn9SogoA0SvO36ZdcMaqL8TO7fZQDX9ErOzzfnVZaVNmpEO78SseDoWI8uKQERgBdTidf4we8vVpC3ZRNFUXJkt6P8pka0tb0d+Tw+0Ze917it0v4j9HYHbjBOd7IBERlecbtuAwBubP74NjY1/VcQvRgh6C129QdaiajMSOm6atctxhhfi2+EJ2ZnR42wRDCJvr7Ac9RGyODUupyNnPO8lWhsZjY8P2GEFQRx9PoH3jEExQhY5bjYkKsotqXlyHj4y5eQ8fxiEjv7Bl4AwEkjYMWF0ktWi7lkbvHr4PeVlSXj8mkdvb0DjxmDUiOgzWK12otOnF5cWp5PpZJHdj0tlnD6WPW1AIvFarbk59rW4hvR1F5qz7Cnmvo+3+AplMVTQMjPBnY7KhokiedGorFwaGFxyshkkGMrtre3y8VnzrYQ4FVESDMYLVib01qXo5ExJsfi6wtTobmxbBuFQF0y0stjd18jKLQVFFotZtvqWjyyu5vYPXb3NYDH42H1TU1O2KcHei5lPEKgLb1Ajs86OzoCmq+mldvdH3SotHcPCAv0WpFJrvkpIG2iib2qr67uP3z//85/mMnn8+UIWbYjMSciVhCAnSGaicQOAosKEsMmiY1IqhqpqalJZFbwG5VxaDfsqZLPAAAAAElFTkSuQmCC" alt="">
-          <span>需要消耗--修改米游币，--修改--次</span>
-          <span class="plo">《查看修改规则》</span>
-        </div>
-        <div class="srKxa">
-          <div class="nte">性别</div>
-          <div>
-            <div class="lft">
-              <i class="mhy-radio__icon"></i>男
+      <ValidationObserver ref="form">
+        <form @submit.prevent="submitForm">
+            <!-- 姓名 -->
+          <div class="name">
+            <ValidationProvider  name="name" rules="required|min:3|max:20" v-slot="{ errors }">
+              <div class="srKxa">
+                  <div class="nte">片名</div>
+                  <el-input type="text"  placeholder="请输入昵称"  v-model="formInput.nickname" maxlength="8" show-word-limit></el-input>
+                  <span class="error_text">{{errors[0]}}</span>
+              </div>
+            </ValidationProvider>
+            <div class="srKxaTao">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAvBJREFUOE+1VEtPU1EQnjk9914efUAUKhq3usCAtBQqiKJsCBrjih9gYkjcuHJlIo0rI4lrTXysdMHeEI1peRUoFAkQnqWAilBaCihgaeGeMZeIseX2svIsz/nmmzPzzXwIOicYDErxZLJQUrnLJEGlICghIitD2BICVkFgAFUcjsUW15ubm1OZFPjvBRGhzx88B6g2MMRqADLrJT24I9gBoCFB/GP3p/chj8cjDrFppD2BQLm6Dy0AVAQILCvhnwciIASMgoRv6quqhtJItR/2Dg6WqSo8BCBTJpkiKzKXJJ5IJJJCqOrRZKgyND2pcztHEJEOfurtHTrPUNwHJHtmAOcSd5SV1uXIsnU1Gg/NzIcn9SogoA0SvO36ZdcMaqL8TO7fZQDX9ErOzzfnVZaVNmpEO78SseDoWI8uKQERgBdTidf4we8vVpC3ZRNFUXJkt6P8pka0tb0d+Tw+0Ze917it0v4j9HYHbjBOd7IBERlecbtuAwBubP74NjY1/VcQvRgh6C129QdaiajMSOm6atctxhhfi2+EJ2ZnR42wRDCJvr7Ac9RGyODUupyNnPO8lWhsZjY8P2GEFQRx9PoH3jEExQhY5bjYkKsotqXlyHj4y5eQ8fxiEjv7Bl4AwEkjYMWF0ktWi7lkbvHr4PeVlSXj8mkdvb0DjxmDUiOgzWK12otOnF5cWp5PpZJHdj0tlnD6WPW1AIvFarbk59rW4hvR1F5qz7Cnmvo+3+AplMVTQMjPBnY7KhokiedGorFwaGFxyshkkGMrtre3y8VnzrYQ4FVESDMYLVib01qXo5ExJsfi6wtTobmxbBuFQF0y0stjd18jKLQVFFotZtvqWjyyu5vYPXb3NYDH42H1TU1O2KcHei5lPEKgLb1Ajs86OzoCmq+mldvdH3SotHcPCAv0WpFJrvkpIG2iib2qr67uP3z//85/mMnn8+UIWbYjMSciVhCAnSGaicQOAosKEsMmiY1IqhqpqalJZFbwG5VxaDfsqZLPAAAAAElFTkSuQmCC" alt="">
+              <span>需要消耗--修改米游币，--修改--次</span>
+              <span class="plo">《查看修改规则》</span>
             </div>
-            <div class="lft">
-              <i class="mhy-radio__icon"></i>女
+            <div class="srKxa">
+              <div class="nte">性别</div>
+              <div>
+                <template>
+                  <div class="lft">
+                    <el-radio class="mhy-radio__icon" v-model="formInput.gender" label="男">男</el-radio>
+                  </div>
+                  <div class="lft">
+                    <el-radio class="mhy-radio__icon" v-model="formInput.gender" label="女">女</el-radio>
+                  </div>
+                  <div class="lft">
+                    <el-radio class="mhy-radio__icon" v-model="formInput.gender" label="保密">保密</el-radio>
+                  </div>
+                </template>
+              </div>
             </div>
-            <div class="lft">
-              <i class="mhy-radio__icon mhy-radio--active"></i>保密
+            <div class="srKxa">
+              <div class="nte">个性签名</div>
+              <div style="margin: 20px 0;"></div>
+              <el-input type="textarea"  placeholder="请输入更新签名"  v-model="formInput.autograph" maxlength="84"  show-word-limit></el-input>
             </div>
           </div>
-        </div>
-        <div class="srKxa">
-          <div class="nte">个性签名</div>
-          <div style="margin: 20px 0;"></div>
-          <el-input type="textarea"  placeholder="请输入内容"  v-model="text1" maxlength="84"  show-word-limit></el-input>
-        </div>
-      </div>
-      <div class="nmpi">
-        <el-button type="primary" plain>保存</el-button>
-      </div>
+          <div class="nmpi">
+            <el-button type="textarea" @click="submitForm">保存</el-button>
+            </div>
+        </form>
+      </ValidationObserver>
     </div>
   </div>
 </template>
 
 <script>
+import { ValidationProvider, ValidationObserver } from 'vee-validate'
+import { mapState } from 'vuex'
 import { GET_TOKEN } from '@/utils/userToken'
+import { setData } from '@/api/user'
 const token = GET_TOKEN()
 export default {
   data () {
     return {
-      text: '',
-      text1: '',
       IsDialog: true,
-      formInput: {},
-      imageUrl: 'https://img-static.mihoyo.com/communityweb/upload/c9d11674eac7631d2210a1ba20799958.png',
+      formInput: {
+        gender: '保密'
+      },
+      imgSrc: 'https://img-static.mihoyo.com/communityweb/upload/c9d11674eac7631d2210a1ba20799958.png',
       myHeaders: { authorization: 'Bearer ' + token }
     }
   },
-  methods: {
-    handlePictureCardPreview (response, file, fileList) {
-      this.imageUrl = URL.createObjectURL(file.raw)
+  components: { ValidationProvider, ValidationObserver },
+  computed: {
+    ...mapState('user', ['userInfo']),
+    imgUrl () {
+      return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
+    },
+    Ckname () {
+      return this.formInput.nickname ? this.formInput.nickname : this.userInfo.nickname
+    },
+    Ckautograph () {
+      return this.formInput.autograph ? this.formInput.autograph : this.userInfo.autograph
+    },
+    Ckgender () {
+      return this.formInput.gender ? this.formInput.gender : this.userInfo.gender
     }
   },
   mounted () {
+    this.formInput = { ...this.userInfo }
     console.log(this.myHeaders)
+  },
+  methods: {
+    async submitForm () {
+      const success = await this.$refs.form.validate()
+      console.log(success)
+      if (!success) return
+      try {
+        await setData({ nickname: this.Ckname, autograph: this.Ckautograph, gender: this.Ckgender })
+        this.$message.success('修改成功')
+        this.$store.dispatch('user/getUserInfo')
+      } catch (error) {
+        this.$message.error('修改成功')
+      }
+    }
   }
 }
 </script>
@@ -105,7 +142,7 @@ export default {
     display: inline-block;
     height: 14px;
     width: 14px;
-    border: 1px solid #b2b2b2;
+    /* border: 1px solid #b2b2b2; */
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     background-color: #fff;
@@ -143,7 +180,14 @@ export default {
 }
 .srKxa{
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
+  position: relative;
+}
+.srKxa span{
+  position: absolute;
+  top: 35px;
+  color: red;
+  left: 90px;
 }
 .name{
   line-height: 44px;

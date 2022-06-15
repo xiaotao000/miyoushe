@@ -232,21 +232,21 @@
         <div class="miy">
           <div class="ftz">
             <div class="fbTp">
-              <button class="nlm">
+              <router-link tag="button" to="/article" class="nlm">
                 <i class="el-icon-edit"></i>
                 <span>发布帖子</span>
                 <i class="el-icon-arrow-right"></i>
-              </button>
+              </router-link>
             </div>
             <p class="top1">讨论 分析、攻略、同人</p>
           </div>
           <div class="ftz">
             <div class="fbTp">
-              <button class="nlm">
+              <router-link tag="button" to="/picture" class="nlm">
                 <i class="el-icon-picture-outline"></i>
                 <span>发布图片</span>
                 <i class="el-icon-arrow-right"></i>
-              </button>
+              </router-link>
             </div>
             <p class="top1"> 绘画、COS、手工、表情包</p>
           </div>
@@ -343,6 +343,8 @@
     </div>
     <Perfect>
     </Perfect>
+    <!-- 返回顶部 -->
+    <Totop></Totop>
 </div>
 </template>
 
@@ -393,8 +395,8 @@ export default {
   },
   components: { Perfect },
   mounted () {
-    this.$store.dispatch('user/getUserInfo')
     this.getRotation()
+    // this.$store.dispatch('user/getUserInfo')
   },
   methods: {
     a1 () {
@@ -408,7 +410,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 a:hover{
   text-decoration: none;
 }
@@ -951,8 +953,9 @@ button {
     background-color: rgba(0,0,0,.5);
 }
 .baNxn{
-    overflow: hidden;
-    margin-bottom: 63px;
+  overflow: hidden;
+  margin-bottom: 63px;
+  background: url(https://bbs.mihoyo.com/_nuxt/img/background.cd0a312.png) no-repeat 0 62px;
 }
 ::v-deep .el-carousel__item--card{
   width: 50%;

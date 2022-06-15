@@ -33,6 +33,7 @@ small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正�
 ul, ol { list-style: none; }
 
 /* 重置文本格式元素 */
+  
 a { text-decoration: none; color: #666;}
 
 
@@ -80,4 +81,12 @@ a:link:hover{
     width: 1000px;
     margin: 0 auto;
     padding: 0 100px;
+}
+
+a {
+    text-decoration: none;
+  }
+   
+.router-link-active {
+    text-decoration: none;
 }
