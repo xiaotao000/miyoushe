@@ -343,6 +343,8 @@
     </div>
     <Perfect>
     </Perfect>
+    <!-- 返回顶部 -->
+    <Totop></Totop>
 </div>
 </template>
 
@@ -408,7 +410,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 a:hover{
   text-decoration: none;
 }
@@ -951,8 +953,9 @@ button {
     background-color: rgba(0,0,0,.5);
 }
 .baNxn{
-    overflow: hidden;
-    margin-bottom: 63px;
+  overflow: hidden;
+  margin-bottom: 63px;
+  background: url(https://bbs.mihoyo.com/_nuxt/img/background.cd0a312.png) no-repeat 0 62px;
 }
 ::v-deep .el-carousel__item--card{
   width: 50%;

@@ -32,10 +32,10 @@
         </form>
         <template v-if="userInfo.nickname">
           <div class="header__notifycontainer">
-            <a href="#">关注</a>
+            <a>关注</a>
           </div>
           <div class="header__notifycontainer">
-            <a href="#">消息</a>
+            <a>消息</a>
           </div>
         </template>
         <div class="header__avatarcontainer">
@@ -334,13 +334,20 @@ export default {
 .header__nav{
   padding-top: 10px;
 }
-.header__nav a,span{
+.header__nav span{
   display: block;
   line-height: 44px;
   padding: 0 20px;
   color: #333;
   font-size: 14px;
   font-weight: 400;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+.router-link-active {
   text-decoration: none;
 }
 </style>

@@ -126,7 +126,7 @@
               </router-link>
             </li>
             <li>
-              <div  class="ghFnb">
+              <div  class="ghFnb" @click="logout">
               <i class="mhy-icon iconfont icon-tuichudenglu"></i>
               <span>退出登录</span>
               </div>
@@ -153,6 +153,12 @@ export default {
     ...mapState('user', ['userInfo']),
     imgUrl () {
       return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
+    }
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('user/logout')
+      this.$router.push('/home')
     }
   }
 }
