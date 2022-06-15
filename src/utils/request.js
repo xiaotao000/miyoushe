@@ -44,11 +44,12 @@ request.interceptors.response.use(
 )
 
 // 导入创建的axios实例
-export default ({ method, url, data }) => {
+export default ({ method, url, data, ...options }) => {
   return request({
     method,
     url,
     // 如果方法为get则使用 params传值 否则使用data传值
-    [method.toLowerCase() === 'get' ? 'params' : 'data']: data
+    [method.toLowerCase() === 'get' ? 'params' : 'data']: data,
+    ...options
   })
 }

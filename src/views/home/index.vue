@@ -348,7 +348,7 @@
 
 <script>
 import Perfect from './components/perfect.vue'
-import { reqAdtdm } from '@/api/home.js'
+import { reqRotation } from '@/api/home.js'
 export default {
   name: 'home',
   data () {
@@ -394,14 +394,13 @@ export default {
   components: { Perfect },
   mounted () {
     this.getRotation()
-    // this.$store.dispatch('user/getUserInfo')
   },
   methods: {
     a1 () {
       this.IsDialog = false
     },
     async getRotation () {
-      const res = await reqAdtdm()
+      const res = await reqRotation()
       this.adTml = res
     }
   }

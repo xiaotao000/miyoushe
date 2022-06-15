@@ -5,11 +5,11 @@
         <h1>发布帖子</h1>
       </div>
       <div class="mhy-new-article__editor">
-        <el-form ref="ruleForm" :label-position="'left'" :model="formData" label-width="100px" class="demo-ruleForm">
-          <el-form-item label="标题：">
+        <el-form @submit.native.prevent="submitArticle" action="none" ref="ruleForm" :rules="rules" :label-position="'left'" :model="formData" label-width="100px" class="demo-ruleForm">
+          <el-form-item label="标题：" prop="title">
             <el-input style="width: 750px; " v-model="formData.title" type="text" placeholder="标题（必填）" maxlength="30" show-word-limit />
           </el-form-item>
-          <el-form-item label="内容：">
+          <el-form-item label="内容：" prop="introduce">
             <el-input type="textarea" :autosize="{ minRows: 2, maxRows: 4}" placeholder="请输入内容" v-model="formData.introduce" />
           </el-form-item>
           <el-form-item label="封面图">
@@ -28,16 +28,16 @@
               <img width="100%" :src="dialogImageUrl" alt="">
             </el-dialog>
           </el-form-item>
-          <el-form-item label="发布版块：">
+          <el-form-item label="发布版块："  prop="category">
               <el-radio v-model="formData.category" label="酒馆">酒馆</el-radio>
               <el-radio v-model="formData.category" label="攻略">攻略</el-radio>
               <el-radio v-model="formData.category" label="硬核">硬核</el-radio>
           </el-form-item>
-          <el-form-item label="话题：">
+          <el-form-item label="话题：" prop="section">
               <el-input v-model="formData.section" placeholder="请输入话题"></el-input>
           </el-form-item>
           <el-form-item style="text-align: center;">
-              <button class="submit" @click="submitArticle">发布</button>
+              <button type="submit" class="submit-button">发布</button>
           </el-form-item>
         </el-form>
       </div>
@@ -46,14 +46,31 @@
 </template>
 
 <script>
+import { reqAddArticle } from '@/api/article'
 export default {
   name: 'AddArticle',
   data () {
     return {
-      formData: {},
+      formData: {
+        cover: []
+      },
       dialogImageUrl: '',
       dialogVisible: false,
-      imgUrlList: []
+      imgUrlList: [],
+      rules: {
+        title: [
+          { required: true, message: '请输入标题', trigger: 'blur' }
+        ],
+        introduce: [
+          { required: true, message: '请输入内容', trigger: 'blur' }
+        ],
+        category: [
+          { required: true, message: '请选择版块', trigger: 'blur' }
+        ],
+        section: [
+          { required: true, message: '请输入话题', trigger: 'blur' }
+        ]
+      }
     }
   },
   methods: {
@@ -81,10 +98,35 @@ export default {
     },
     // 已上传文件
     fileList (file, fileList) {
-      this.imgUrlList = fileList
+      this.formData.cover = fileList
     },
-    submitArticle () {
-      console.log(this.formData)
+    async submitArticle () {
+      try {
+        await this.$refs.ruleForm.validate()
+        const formData = this.getFormData(this.formData)
+        this.formData.cover.forEach(item => {
+          formData.append('cover', item.raw)
+        })
+
+        await reqAddArticle(formData)
+        this.$message.success('发布成功！！！')
+      } catch (error) {
+        console.log('添加失败！！', error)
+      }
+    },
+    getFormData (object) {
+      const formData = new FormData()
+      Object.keys(object).forEach(key => {
+        const value = object[key]
+        if (Array.isArray(value)) {
+          // value.forEach((subValue, i) =>
+          //   formData.append(key + `[${i}]`, subValue)
+          // )
+        } else {
+          formData.append(key, object[key])
+        }
+      })
+      return formData
     }
   }
 }
@@ -112,7 +154,7 @@ export default {
   .mhy-new-article__editor {
     width: auto;
     padding: 50px 80px 40px;
-      .submit {
+      .submit-button {
         width: 190px;
         height: 42px;
         margin: 0 auto;
