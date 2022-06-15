@@ -14,3 +14,6 @@ export const getUsername = data => request({ method: 'post', url: '/my/user/nick
 
 // 登录
 export const Logon = data => request({ method: 'post', url: '/api/login', data })
+
+// 修改用户信息
+export const setData = data => request({ method: 'post', url: '/my/userinfo', data })
