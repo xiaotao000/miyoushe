@@ -1,4 +1,4 @@
-import request from '@/utils/requer'
+import request from '@/utils/request'
 
 // 用户注册
 export const reqRegister = (data) => request({ method: 'post', url: '/api/reguser', data })
