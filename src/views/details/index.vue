@@ -669,7 +669,7 @@ export default {
 }
 .fuDan{
   position: fixed;
-    top: 123px;
+    top: 91px;
     left: 50%;
     width: 90px;
     background-color: #fff;
