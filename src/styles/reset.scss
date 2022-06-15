@@ -82,3 +82,11 @@ a:link:hover{
     margin: 0 auto;
     padding: 0 100px;
 }
+
+a {
+    text-decoration: none;
+  }
+   
+.router-link-active {
+    text-decoration: none;
+}

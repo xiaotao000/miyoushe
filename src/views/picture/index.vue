@@ -2,38 +2,17 @@
   <div class="edition">
     <div class="mhy-container">
       <div class="mhy-new-article__header">
-        <h1>发布帖子</h1>
+        <h1>发布图片</h1>
       </div>
       <div class="mhy-new-article__editor">
-        <el-form
-          @submit.native.prevent="submitArticle"
-          action="none"
-          ref="ruleForm"
-          :rules="rules"
-          :label-position="'left'"
-          :model="formData"
-          label-width="100px"
-          class="demo-ruleForm"
-        >
+        <el-form @submit.native.prevent="submitArticle" action="none" ref="ruleForm" :rules="rules" :label-position="'left'" :model="formData" label-width="100px" class="demo-ruleForm">
           <el-form-item label="标题：" prop="title">
-            <el-input
-              style="width: 750px"
-              v-model="formData.title"
-              type="text"
-              placeholder="标题（必填）"
-              maxlength="30"
-              show-word-limit
-            />
+              <el-input style="width: 750px; " v-model="formData.title" type="text" placeholder="标题（必填）" maxlength="30" show-word-limit />
           </el-form-item>
-          <el-form-item label="内容：" prop="introduce">
-            <el-input
-              type="textarea"
-              :autosize="{ minRows: 2, maxRows: 4 }"
-              placeholder="请输入内容"
-              v-model="formData.introduce"
-            />
+          <el-form-item label="图片介绍：" prop="introduce">
+              <el-input style="width: 750px;" class="introduce" v-model="formData.introduce" resize="none" :rows="10" type="textarea" placeholder="请输入图片介绍" maxlength="500" show-word-limit />
           </el-form-item>
-          <el-form-item label="封面图">
+          <el-form-item label="上传图片：">
             <el-upload
               action="1"
               list-type="picture-card"
@@ -42,36 +21,31 @@
               :before-upload="beforeUpload"
               :on-remove="handleRemove"
               :on-change="fileList"
-            >
+              >
               <i class="el-icon-plus"></i>
             </el-upload>
-            <el-dialog :visible.sync="dialogVisible">
-              <img width="100%" :src="dialogImageUrl" alt="" />
-            </el-dialog>
           </el-form-item>
-          <el-form-item label="发布版块：" prop="category">
-            <el-radio v-model="formData.category" label="酒馆">酒馆</el-radio>
-            <el-radio v-model="formData.category" label="攻略">攻略</el-radio>
-            <el-radio v-model="formData.category" label="硬核">硬核</el-radio>
+          <el-form-item label="发布版块："  prop="category">
+              <el-radio v-model="formData.category" label="同人图">同人图</el-radio>
+              <el-radio v-model="formData.category" label="COS">COS</el-radio>
           </el-form-item>
           <el-form-item label="话题：" prop="section">
-            <el-input
-              v-model="formData.section"
-              placeholder="请输入话题"
-            ></el-input>
+              <el-input v-model="formData.section" placeholder="请输入话题" maxlength="30" show-word-limit></el-input>
           </el-form-item>
-          <el-form-item style="text-align: center">
-            <button type="submit" class="submit-button">发布</button>
+          <el-form-item style="text-align: center;">
+              <button type="submit" class="submit-button">发布</button>
           </el-form-item>
         </el-form>
       </div>
     </div>
   </div>
 </template>
+
 <script>
-import { reqAddArticle } from '@/api/article'
+import { reqAddPicture } from '@/api/article'
+
 export default {
-  name: 'AddArticle',
+  name: 'AddPicture',
   data () {
     return {
       formData: {
@@ -81,10 +55,18 @@ export default {
       dialogVisible: false,
       imgUrlList: [],
       rules: {
-        title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
-        introduce: [{ required: true, message: '请输入内容', trigger: 'blur' }],
-        category: [{ required: true, message: '请选择版块', trigger: 'blur' }],
-        section: [{ required: true, message: '请输入话题', trigger: 'blur' }]
+        title: [
+          { required: true, message: '请输入标题', trigger: 'blur' }
+        ],
+        introduce: [
+          { required: true, message: '请输入内容', trigger: 'blur' }
+        ],
+        category: [
+          { required: true, message: '请选择版块', trigger: 'blur' }
+        ],
+        section: [
+          { required: true, message: '请输入话题', trigger: 'blur' }
+        ]
       }
     }
   },
@@ -113,18 +95,17 @@ export default {
     },
     // 已上传文件
     fileList (file, fileList) {
-      this.imgUrlList = fileList
       this.formData.cover = fileList
     },
     async submitArticle () {
       try {
         await this.$refs.ruleForm.validate()
         const formData = this.getFormData(this.formData)
-        this.formData.cover.forEach((item) => {
+        this.formData.cover.forEach(item => {
           formData.append('cover', item.raw)
         })
 
-        await reqAddArticle(formData)
+        await reqAddPicture(formData)
         this.$message.success('发布成功！！！')
       } catch (error) {
         console.log('添加失败！！', error)
@@ -132,7 +113,7 @@ export default {
     },
     getFormData (object) {
       const formData = new FormData()
-      Object.keys(object).forEach((key) => {
+      Object.keys(object).forEach(key => {
         const value = object[key]
         if (Array.isArray(value)) {
           // value.forEach((subValue, i) =>
@@ -149,6 +130,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .mhy-container {
   margin-top: 30px;
   margin-bottom: 60px;
@@ -170,6 +152,14 @@ export default {
   .mhy-new-article__editor {
     width: auto;
     padding: 50px 80px 40px;
+    ::v-deep .demo-ruleForm {
+      .introduce .el-input__inner {
+        height: 300px;
+      }
+      .introduce .el-input__count {
+        margin-top: 180px;
+      }
+    }
       .submit-button {
         width: 190px;
         height: 42px;
@@ -180,7 +170,8 @@ export default {
         outline: 0;
         background-color: #00c3ff;
         color: #fff;
-        border-radius: 4px;    }
+        border-radius: 4px;
+      }
   }
 }
 </style>

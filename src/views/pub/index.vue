@@ -229,12 +229,13 @@
         </div>
       </div>
     </div>
+    <Totop></Totop>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'pub',
+  name: 'pub'
 }
 </script>
 
