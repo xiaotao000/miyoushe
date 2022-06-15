@@ -26,14 +26,12 @@ const routes = [
       { path: '/cos', component: () => import('@/views/cos') },
       // 硬核
       { path: '/hardcore', component: () => import('@/views/hardcore') },
-<<<<<<< HEAD
+
       { path: '/article', component: () => import('@/views/article') },
-=======
       // 发布文章
       { path: '/article', component: () => import('@/views/article') },
       // 发布图片
       { path: '/picture', component: () => import('@/views/picture') },
->>>>>>> 58b7384083b7e9bb1e0c34b9d1964162f8d4de44
       // 详情
       { path: '/details', component: () => import('@/views/details') },
       // 个人中心
