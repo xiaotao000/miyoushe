@@ -336,8 +336,8 @@ export default {
 .header__nav a,span{
   display: block;
   line-height: 44px;
-  padding: 0 20px;
-  color: #333;
+  padding: 11px 20px;
+  // color: #333;
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
