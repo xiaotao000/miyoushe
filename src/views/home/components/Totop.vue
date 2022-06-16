@@ -54,6 +54,7 @@ export default {
   bottom: 200px;
   left: 50%;
   margin-left: 520px;
+  cursor: pointer;
 }
 .mhy-rocket img{
   width: 102px;

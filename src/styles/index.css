@@ -78,17 +78,16 @@
   margin-left: 40px;
 }
 
-.type-item {
+.active {
   font-weight: 600;
   color: #00c3ff;
 }
 
-.type-item::before {
+.active::before {
   bottom: 0;
   content: " ";
   position: absolute;
   width: 64px;
-  left: 309px;
   border-bottom: 3px solid #00c3ff;
 }
 

@@ -4,7 +4,7 @@
       <!-- 轮播图 -->
       <div class="adTdm">
         <template>
-          <el-carousel :interval="4000" type="card" height="258px" arrow="always">
+          <el-carousel trigger="click" :interval="4000" type="card" height="258px" arrow="always">
             <el-carousel-item v-for="item in adTml" :key="item.id" >
               <div class="yin">
                  <img :src="item.imgUrl" alt="" width="100%" height="234px" class="medium">

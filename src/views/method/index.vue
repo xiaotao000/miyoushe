@@ -7,9 +7,9 @@
           <div class="artice">
             <div class="type-st">
               <ul>
-                <li>最新发帖</li>
+                <li class="active">最新发帖</li>
                 <li class="type-tab">
-                  <span class="type-item">最新回复</span>
+                  <span>最新回复</span>
                 </li>
                 <li class="type-tab">热门</li>
                 <li class="type-tab">攻略分类</li>
