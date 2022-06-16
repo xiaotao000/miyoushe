@@ -6,9 +6,9 @@
           <div class="artice">
             <div class="type-st">
               <ul>
-                <li>活动</li>
+                <li class="active">活动</li>
                 <li class="type-tab">
-                  <span class="type-item">公告</span>
+                  <span>公告</span>
                 </li>
                 <li class="type-tab">资讯</li>
               </ul>
@@ -390,17 +390,16 @@ export default {
   .type-tab {
     margin-left: 40px;
   }
-  .type-item {
+  .active {
     font-weight: 600;
-    color: #00c3ff;
+    color: #00c3ff !important;
   }
-  .type-item::before {
-    bottom: 0;
-    content: " ";
-    position: absolute;
-    width: 64px;
-    left: 264px;
-    border-bottom: 3px solid #00c3ff;
-  }
+  .active::before {
+  bottom: 0;
+  content: " ";
+  position: absolute;
+  width: 32px;
+  border-bottom: 3px solid #00c3ff;
+}
 
 </style>

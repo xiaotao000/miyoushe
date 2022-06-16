@@ -4,7 +4,7 @@
       <!-- 轮播图 -->
       <div class="adTdm">
         <template>
-          <el-carousel :interval="4000" type="card" height="258px" arrow="always">
+          <el-carousel trigger="click" :interval="4000" type="card" height="258px" arrow="always">
             <el-carousel-item v-for="item in adTml" :key="item.id" >
               <div class="yin">
                  <img :src="item.imgUrl" alt="" width="100%" height="234px" class="medium">
@@ -83,7 +83,7 @@
           <div class="ftz">
             <div class="fbTp">
               <router-link tag="button" to="/article" class="nlm">
-                <i class="el-icon-edit"></i>
+                <i class="iconfont icon-fabutiezi"></i>
                 <span>发布帖子</span>
                 <i class="el-icon-arrow-right"></i>
               </router-link>
@@ -671,7 +671,7 @@ align-items: center;
     font-size: 20px;
     font-weight: 600;
 }
-.el-icon-edit{
+.iconfont .icon-fabutiezi{
   width: 35px;
     height: 22px;
     font-size: 19px;
