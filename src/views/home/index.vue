@@ -71,158 +71,8 @@
               </div>
             </div>
           </div>
-          <div class="nameGl">
-            <div class="kmDnm">
-              <div class="mlAsd">
-                <a href="" class="nmgPls">
-                  <div class="yspAsd">
-                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
-                  </div>
-                </a>
-                <div class="yhMna">
-                  <a href="#" class="fbnQin">
-                    <span class="naMer">迷路的史莱姆酱</span>
-                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
-                  </a>
-                </div>
-                <div class="gzSdf">
-                  <span>关注</span>
-                </div>
-                <p class="wdStd">06-09 • 官方</p>
-              </div>
-            </div>
-            <router-link to="details" href="#">
-              <div class="derTer">
-                <div class="ndx">
-                  <span class="zlkJhp">官方</span>
-                </div>
-                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
-              </div>
-              <div class="sdfAdd">
-                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
-              </div>
-              <div class="npiAdd">
-                <div class="ploAsd1">
-                  <i class="el-icon-video-play"></i>
-                </div>
-              </div>
-            </router-link>
-            <div class="bhf">
-              <div class="poiAdd">
-                <div class="nmfAdd">
-                  <i class="el-icon-view"></i>
-                  <span>100</span>
-                </div>
-                <div class="blq">
-                  <i class="el-icon-chat-dot-round"></i>
-                  <span>100</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="nameGl">
-            <div class="kmDnm">
-              <div class="mlAsd">
-                <a href="" class="nmgPls">
-                  <div class="yspAsd">
-                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
-                  </div>
-                </a>
-                <div class="yhMna">
-                  <a href="#" class="fbnQin">
-                    <span class="naMer">迷路的史莱姆酱</span>
-                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
-                  </a>
-                </div>
-                <div class="gzSdf">
-                  <span>关注</span>
-                </div>
-                <p class="wdStd">06-09 • 官方</p>
-              </div>
-            </div>
-            <router-link to="details" href="#">
-              <div class="derTer">
-                <div class="ndx">
-                  <span class="zlkJhp">官方</span>
-                </div>
-                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
-              </div>
-              <div class="sdfAdd">
-                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
-              </div>
-              <div class="npiAdd">
-                <div class="ploAsd">
-                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
-                </div>
-              </div>
-            </router-link>
-            <div class="bhf">
-              <div class="poiAdd">
-                <div class="nmfAdd">
-                  <i class="el-icon-view"></i>
-                  <span>100</span>
-                </div>
-                <div class="blq">
-                  <i class="el-icon-chat-dot-round"></i>
-                  <span>100</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="nameGl">
-            <div class="kmDnm">
-              <div class="mlAsd">
-                <a href="" class="nmgPls">
-                  <div class="yspAsd">
-                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
-                  </div>
-                </a>
-                <div class="yhMna">
-                  <a href="#" class="fbnQin">
-                    <span class="naMer">迷路的史莱姆酱</span>
-                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
-                  </a>
-                </div>
-                <div class="gzSdf">
-                  <span>关注</span>
-                </div>
-                <p class="wdStd">06-09 • 官方</p>
-              </div>
-            </div>
-            <router-link to="details" href="#">
-              <div class="derTer">
-                <div class="ndx">
-                  <span class="zlkJhp">官方</span>
-                </div>
-                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
-              </div>
-              <div class="sdfAdd">
-                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
-              </div>
-              <div class="npiAdd">
-                <div class="ploAsd">
-                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
-                </div>
-                <div class="ploAsd">
-                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
-                </div>
-              </div>
-            </router-link>
-            <div class="bhf">
-              <div class="poiAdd">
-                <div class="nmfAdd">
-                  <i class="el-icon-view"></i>
-                  <span>100</span>
-                </div>
-                <div class="blq">
-                  <i class="el-icon-chat-dot-round"></i>
-                  <span>100</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-        <dir class="npr">点击加载更多</dir>
+        <!-- <dir class="npr">点击加载更多</dir> -->
       </div>
     </div>
     <div class="yb">
@@ -242,11 +92,11 @@
           </div>
           <div class="ftz">
             <div class="fbTp">
-              <router-link tag="button" to="/picture" class="nlm">
+              <button class="nlm">
                 <i class="el-icon-picture-outline"></i>
                 <span>发布图片</span>
                 <i class="el-icon-arrow-right"></i>
-              </router-link>
+              </button>
             </div>
             <p class="top1"> 绘画、COS、手工、表情包</p>
           </div>
@@ -358,43 +208,14 @@ export default {
       // 弹出层的状态
       centerDialogVisible: true,
       adTml: [],
-      mihAyoTop: [
-        { id: 1, img: 'https://upload-bbs.mihoyo.com/pc_ad/pc_ad_ys_game_record2.jpg' },
-        { id: 2, img: 'https://upload-bbs.mihoyo.com/pc_ad/ys_signin.jpg' },
-        { id: 3, img: 'https://upload-bbs.mihoyo.com/upload/2022/05/30/ede03f2363d3e11a43f96cf9fb9573a5_2340278032758854255.jpg' }
-      ],
-      npmRup: [
-        {
-          id: 1,
-          img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/548cb9dfbcdbc3aee675682effab335f_7195431897910087890.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
-          name: '夜兰'
-        },
-        {
-          id: 2,
-          img: 'https://upload-bbs.mihoyo.com/upload/2021/01/27/3ff281b8ea27a0f041096877be58c36b.png?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
-          name: '魈'
-        },
-        {
-          id: 3,
-          img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/9396dba467b2a4c333fea5fbd307f667_8102889689757292331.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
-          name: '荒梦藏虞渊'
-        },
-        {
-          id: 4,
-          img: 'https://upload-bbs.mihoyo.com/upload/2022/05/20/74d3b22d5d4b0468066b8315e05eba3f_7138224143758159037.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
-          name: '久岐忍'
-        },
-        {
-          id: 5,
-          img: 'https://upload-bbs.mihoyo.com/upload/2022/05/31/de1f7fa30c2add3808d73ce86e347395_3933077904901367927.jpg?x-oss-process=image/resize,s_150/quality,q_80/auto-orient,0/interlace,1/format,jpg',
-          name: '危途疑踪'
-        }
-      ],
-      IsDialog: true
+      IsDialog: true,
+      // 文章列表数据
+      category: ''
     }
   },
   components: { Perfect },
   mounted () {
+    this.category = this.$route.query.category
     this.getRotation()
     // this.$store.dispatch('user/getUserInfo')
   },

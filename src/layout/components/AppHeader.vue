@@ -15,13 +15,34 @@
       <!-- 导航栏 -->
       <div class="header__navwrap">
         <div class="header__navbar">
-          <router-link href="#" class="header__navitem header__navitemactive" to="/home">首页</router-link>
-          <router-link class="header__navitem" to="/pub">酒馆</router-link>
-          <router-link href="#" class="header__navitem" to="/method">攻略</router-link>
-          <router-link class="header__navitem" to="/official">官方</router-link>
-          <router-link to="/peermap" class="header__navitem">同人图</router-link>
-          <router-link to="/cos" class="header__navitem">cos</router-link>
-          <router-link to="/hardcore" class="header__navitem">硬核</router-link>
+            <router-link class="header__navitem"
+            :to="{path: '/home', query: {category: ''}}"
+            >
+              首页
+            </router-link>
+            <router-link class="header__navitem"
+            :to="{path: '/pub', query: {category: '酒馆'} }">
+              酒馆
+            </router-link>
+            <router-link class="header__navitem"
+            :to="{path: '/method', query: {category: '攻略'} }">
+              攻略
+            </router-link>
+            <router-link
+            :to=" {path: '/peermap',  query: {category: '同人图'} }"
+            class="header__navitem">
+              同人图
+            </router-link>
+            <router-link
+            :to=" {path: '/cos', query: {category: 'cos'} }"
+            class="header__navitem">
+              cos
+            </router-link>
+            <router-link
+            :to=" {path: '/hardcore', query: {category: '硬核'} }"
+            class="header__navitem">
+              硬核
+            </router-link>
         </div>
       </div>
       <!-- 右边搜索框 -->
@@ -105,6 +126,9 @@ export default {
       return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
     }
   },
+  watch: {
+    $route: 'switchTab'
+  },
   methods: {
     // 退出登录
     logout () {
@@ -115,10 +139,14 @@ export default {
       if (this.userInfo.nickname) {
         this.Auser = true
       }
+    },
+    switchTab () {
+      this.$store.dispatch('home/getArticle', this.$route.query.category)
     }
   },
   mounted () {
-    console.log(this.$store.state.userInfo)
+    // this.a1 = this.$route.query.category
+    this.$store.dispatch('home/getArticle', this.$route.query.category)
   }
 }
 </script>
@@ -186,6 +214,7 @@ export default {
     font-size: 14px;
   }
   .header__navitem:hover {
+    text-decoration: none;
     background-color: rgba(255,255,255,.18);
   }
   // 点击样式
@@ -348,6 +377,12 @@ a {
   text-decoration: none;
 }
 .router-link-active {
-  text-decoration: none;
+  background-color:rgba(255, 255, 255, 0.18)
 }
+
+.b3{
+  padding: 44px 0;
+  line-height: 0px;
+}
+
 </style>

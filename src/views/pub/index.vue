@@ -235,7 +235,9 @@
 
 <script>
 export default {
-  name: 'pub'
+  name: 'pub',
+  mounted () {
+  }
 }
 </script>
 
