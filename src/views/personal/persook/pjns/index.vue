@@ -88,7 +88,7 @@ export default {
   computed: {
     ...mapState('user', ['userInfo']),
     imgUrl () {
-      return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
+      return this.userInfo.avatar ? 'http://172.17.24.14:3000' + this.userInfo.avatar : this.imgSrc
     },
     Ckname () {
       return this.formInput.nickname ? this.formInput.nickname : this.userInfo.nickname

@@ -16,7 +16,9 @@
             </div>
             <div  class="nmKlo">
               <div class="nmDfg">
+                <router-link to="/pjns">
                 <button class="sddFht">编辑</button>
+                </router-link>
               </div>
             </div>
           </div>
@@ -152,7 +154,7 @@ export default {
   computed: {
     ...mapState('user', ['userInfo']),
     imgUrl () {
-      return this.userInfo.avatar ? 'http://172.17.24.16:3000' + this.userInfo.avatar : this.imgSrc
+      return this.userInfo.avatar ? 'http://172.17.24.14:3000' + this.userInfo.avatar : this.imgSrc
     }
   },
   methods: {
@@ -187,9 +189,6 @@ a:hover{
     display: inline-block;
     color: #d9d9d9;
     margin-right: 15px;
-}
-.cls{
-  color: #00c3ff;
 }
 .ntmJq>ul{
   padding: 0 30px 10px;
@@ -328,7 +327,11 @@ a:hover{
     border-radius: 4px;
 }
 .wdt{
-  margin-top: -30px;
+  margin-top: 30px;
   margin-bottom: 63px;
 }
+.router-link-active {
+  color: #00c3ff;
+}
+
 </style>
