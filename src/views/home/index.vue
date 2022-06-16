@@ -671,7 +671,7 @@ align-items: center;
     font-size: 20px;
     font-weight: 600;
 }
-.iconfont .icon-fabutiezi{
+.iconfont{
   width: 35px;
     height: 22px;
     font-size: 19px;
