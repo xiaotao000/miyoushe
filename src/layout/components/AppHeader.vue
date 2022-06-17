@@ -131,9 +131,11 @@ export default {
   },
   methods: {
     // 退出登录
-    logout () {
-      this.$store.dispatch('user/logout')
-      this.$router.push('/home')
+    async logout () {
+      if (window.confirm('你确定要退出吗？')) {
+        await this.$store.dispatch('user/logout')
+        this.$router.push('/home')
+      }
     },
     IsAuser () {
       if (this.userInfo.nickname) {

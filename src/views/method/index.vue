@@ -16,12 +16,12 @@
               </ul>
             </div>
           </div>
-          <div class="defalut">
-            <el-button class="defal-botn">
-              <i class="el-icon-edit"></i>
+          <router-link tag="button" to="/article" class="defalut">
+            <button class="defal-botn">
+              <i class="iconfont icon-fabutiezi"></i>
               <span>发布帖子</span>
-            </el-button>
-          </div>
+            </button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -67,7 +67,10 @@
             <i class="el-icon-chat-dot-round"></i>
             <span>3134</span>
           </div>
-          <div></div>
+          <div class="second-data">
+            <i class="iconfont iconfont icon-dianzan"></i>
+            <span>1265</span>
+          </div>
         </div>
       </div>
       <div class="second">
@@ -94,7 +97,10 @@
             <i class="el-icon-chat-dot-round"></i>
             <span>3134</span>
           </div>
-          <div></div>
+          <div class="second-data">
+            <i class="iconfont iconfont icon-dianzan"></i>
+            <span>126</span>
+          </div>
         </div>
       </div>
       <div class="second">
@@ -121,7 +127,10 @@
             <i class="el-icon-chat-dot-round"></i>
             <span>3134</span>
           </div>
-          <div></div>
+          <div class="second-data">
+            <i class="iconfont iconfont icon-dianzan"></i>
+            <span>1202</span>
+          </div>
         </div>
       </div>
        <dir class="npr">点击加载更多</dir>

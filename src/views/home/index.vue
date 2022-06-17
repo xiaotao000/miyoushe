@@ -66,6 +66,10 @@
                   <i class="el-icon-chat-dot-round"></i>
                   <span>100</span>
                 </div>
+                 <div class="second-data">
+            <i class="iconfont iconfont icon-dianzan"></i>
+            <span>126</span>
+          </div>
               </div>
             </div>
           </div>
@@ -852,5 +856,8 @@ button {
 .adTdm{
   width: 700px;
 }
-
+.second-data i{
+  color: #b3b3b3;
+  font-size: 17px;
+}
 </style>

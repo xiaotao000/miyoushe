@@ -15,12 +15,12 @@
               </ul>
             </div>
           </div>
-          <div class="defalut">
-            <el-button class="defal-botn">
-              <i class="el-icon-edit"></i>
+          <router-link tag="button" to="/article" class="defalut">
+            <button class="defal-botn">
+              <i class="iconfont icon-fabutiezi"></i>
               <span>发布帖子</span>
-            </el-button>
-          </div>
+            </button>
+          </router-link>
         </div>
       </div>
     </div>

@@ -15,12 +15,12 @@
               </ul>
             </div>
           </div>
-          <div class="defalut">
-            <el-button class="defal-botn">
-              <i class="el-icon-edit"></i>
+          <router-link tag="button" to="/article" class="defalut">
+            <button class="defal-botn">
+              <i class="iconfont icon-fabutiezi"></i>
               <span>发布帖子</span>
-            </el-button>
-          </div>
+            </button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -46,8 +46,9 @@
         <div class="zore">零命雷神毕业面板</div>
         <span class="thor"
           >零命雷神这样算毕业吗 感觉已经到极限了 再往前提太难了
-          零命和两命的差距真的好大</span>
-          <!-- 发布的图片 -->
+          零命和两命的差距真的好大</span
+        >
+        <!-- 发布的图片 -->
         <div class="img3">
           <div class="cobo"></div>
           <div class="eight"></div>
@@ -63,7 +64,10 @@
             <i class="el-icon-chat-dot-round"></i>
             <span>3134</span>
           </div>
-          <div></div>
+          <div class="second-data">
+            <i class="iconfont iconfont icon-dianzan"></i>
+            <span>126</span>
+          </div>
         </div>
       </div>
       <div class="second">
@@ -90,7 +94,10 @@
             <i class="el-icon-chat-dot-round"></i>
             <span>3134</span>
           </div>
-          <div></div>
+          <div class="second-data">
+            <i class="iconfont iconfont icon-dianzan"></i>
+            <span>126</span>
+          </div>
         </div>
       </div>
       <div class="second">
@@ -108,7 +115,7 @@
           <div class="eight"></div>
           <div class="fold"></div>
         </div>
-         <div class="page">
+        <div class="page">
           <div class="second-card">
             <i class="el-icon-view"></i>
             <span>4万+</span>
@@ -117,10 +124,13 @@
             <i class="el-icon-chat-dot-round"></i>
             <span>3134</span>
           </div>
-          <div></div>
+          <div class="second-data">
+            <i class="iconfont iconfont icon-dianzan"></i>
+            <span>1216</span>
+          </div>
         </div>
       </div>
-       <dir class="npr">点击加载更多</dir>
+      <dir class="npr">点击加载更多</dir>
     </div>
     <div class="code">
       <!-- 扫码下载 -->
@@ -167,7 +177,7 @@
 
         <div class="list-banner">
           <div class="banner-info">
-           <span>公告</span>
+            <span>公告</span>
             <p>2.7版本游戏问题集中反馈-6月9日更新</p>
           </div>
         </div>
@@ -235,12 +245,10 @@
 
 <script>
 export default {
-  name: 'pub',
-  mounted () {
-  }
-}
+  name: "pub",
+  mounted() {},
+};
 </script>
 
 <style  lang="scss" scoped>
-
 </style>
