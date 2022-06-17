@@ -8,9 +8,10 @@
       <div class="taoTuo">
          <el-upload
            class="avatar-uploader"
-           action="http://172.17.24.16:3000/my/update/avatar"
+           action="http://172.17.24.14:3000/my/update/avatar"
            :show-file-list="false"
            :headers="myHeaders"
+           :on-success="scrubData"
            name="avatar"
            >
           <div class="mhy-avatar">
@@ -116,6 +117,9 @@ export default {
       } catch (error) {
         this.$message.error('修改成功')
       }
+    },
+    scrubData () {
+      this.$store.dispatch('user/getUserInfo')
     }
   }
 }

@@ -44,8 +44,6 @@ export default {
     return {
       // form表单数据
       from: {
-        phone: '19967934006',
-        password: 'long123456'
       }
     }
   },
@@ -58,9 +56,12 @@ export default {
       try {
         await this.$store.dispatch('user/logon', { phone, password })
         console.log('登录成功')
-        this.$router.push('/home')
+        // const res = this.$route.query.category
+        this.$router.push({ path: '/home', query: { category: '' } })
+        // this.$router.push({ path: `/home/${''}` })
       } catch (error) {
         console.log('登录失败')
+        this.from = {}
       }
     }
   }

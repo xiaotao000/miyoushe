@@ -25,14 +25,17 @@
               show-word-limit
             />
           </el-form-item>
-          <el-form-item label="内容：" prop="introduce">
-            <el-input
+          <!-- <el-form-item label="内容：" prop="introduce"> -->
+            <!-- <el-input
               type="textarea"
               :autosize="{ minRows: 2, maxRows: 4 }"
               placeholder="请输入内容"
               v-model="formData.introduce"
-            />
-          </el-form-item>
+            /> -->
+            <el-form-item label="内容">
+              <el-tiptap lang="zh" v-model="formData.introduce" :extensions="extensions" height="350" placeholder="请输入文章内容"></el-tiptap>
+            </el-form-item>
+          <!-- </el-form-item> -->
           <el-form-item label="封面图">
             <el-upload
               action="1"
@@ -69,10 +72,25 @@
   </div>
 </template>
 <script>
-import { reqAddArticle } from '@/api/article'
+import { reqAddArticle, uploadImage } from '@/api/article'
+import { ElementTiptap, Doc, Text, Paragraph, Heading, Bold, Underline, Italic, Image, Strike, ListItem, BulletList, OrderedList, TodoItem, TodoList, HorizontalRule, Fullscreen, Preview, CodeBlock, TextColor } from 'element-tiptap'
+import 'element-tiptap/lib/index.css'
+
 export default {
   name: 'AddArticle',
+  components: {
+    elTiptap: ElementTiptap
+  },
   data () {
+    const validatorContent = (rule, value, callback) => {
+      if (value === '<p></p>') {
+        // 验证失败
+        callback(new Error('请输入文章内容'))
+      } else {
+        // 验证通过
+        callback()
+      }
+    }
     return {
       formData: {
         cover: []
@@ -80,9 +98,49 @@ export default {
       dialogImageUrl: '',
       dialogVisible: false,
       imgUrlList: [],
+      extensions: [
+        new Doc(),
+        new Text(),
+        new Paragraph(),
+        new Heading({ level: 3 }),
+        new Bold({ bubble: true }), // 在气泡菜单中渲染菜单按钮
+        new Image({
+          // 默认会把图片生成 base64 字符串和内容存储在一起，如果需要自定义图片上传
+          uploadRequest (file) {
+            // 如果接口要求 Content-Type 是 multipart/form-data，则请求体必须使用 FormData
+            const fd = new FormData()
+            fd.append('imgUrl', file)
+            // 第1个 return 是返回 Promise 对象
+            // 为什么？因为 axios 本身就是返回 Promise 对象
+            console.log(fd)
+            return uploadImage(fd).then(res => {
+              // console.log(res)
+              // 这个 return 是返回最后的结果
+              console.log(res)
+              return 'http://172.17.24.14:3000' + res
+            })
+          } // 图片的上传方法，返回一个 Promise<url>
+        }),
+        new Underline(), // 下划线
+        new Italic(), // 斜体
+        new Strike(), // 删除线
+        new HorizontalRule(), // 华丽的分割线
+        new ListItem(),
+        new BulletList(), // 无序列表
+        new OrderedList(), // 有序列表
+        new TodoItem(),
+        new TodoList(),
+        new Fullscreen(),
+        new Preview(),
+        new CodeBlock(),
+        new TextColor()
+      ],
       rules: {
         title: [{ required: true, message: '请输入标题', trigger: 'blur' }],
-        introduce: [{ required: true, message: '请输入内容', trigger: 'blur' }],
+        content: [
+          { required: true, message: '请输入文章内容' },
+          { validator: validatorContent }
+        ],
         category: [{ required: true, message: '请选择版块', trigger: 'blur' }],
         section: [{ required: true, message: '请输入话题', trigger: 'blur' }]
       }
