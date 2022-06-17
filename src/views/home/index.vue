@@ -16,7 +16,7 @@
       <!-- 内容 -->
       <div class="nmKjp">
         <div class="nmKjpVl">
-          <div class="nameGl" v-for="thin in miHuYoAdd" :key="thin.id">
+          <div class="nameGl" v-for="thin in articleList" :key="thin.id">
             <div class="kmDnm">
               <div class="mlAsd">
                 <a href="" class="nmgPls">
@@ -202,7 +202,7 @@
 
 <script>
 import Perfect from './components/perfect.vue'
-import { reqAdtdm, articleList, miHuYoList, miHuYoApp } from '@/api/home.js'
+import { reqAdtdm, miHuYoList, miHuYoApp } from '@/api/home.js'
 import { mapState } from 'vuex'
 export default {
   name: 'home',
@@ -220,8 +220,10 @@ export default {
     }
   },
   components: {
-    Perfect,
-    ...mapState('/home', ['articleList'])
+    Perfect
+  },
+  computed: {
+    ...mapState('home', ['articleList'])
   },
   mounted () {
     this.category = this.$route.query.category
@@ -229,8 +231,6 @@ export default {
     this.miHuYoaDd()
     this.miHuYoLi()
     this.miHuYoAppList()
-    console.log(this.articleList)
-    // this.$store.dispatch('user/getUserInfo')
   },
   methods: {
     a1 () {
@@ -239,10 +239,6 @@ export default {
     async getRotation () {
       const res = await reqAdtdm()
       this.adTml = res
-    },
-    async miHuYoaDd () {
-      const res = await articleList()
-      this.miHuYoAdd = res
     },
     async miHuYoLi () {
       const res = await miHuYoList()
