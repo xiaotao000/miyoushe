@@ -1,5 +1,5 @@
 import request from '@/utils/request'
-
+import mockRequest from '@/utils/mockRequest'
 // 轮播图
 export const reqAdtdm = (data) => request({ method: 'get', url: '/api/home/rotation', data })
 
@@ -11,3 +11,6 @@ export const miHuYoList = (data) => request({ method: 'get', url: 'api/home/subj
 
 // 获取推荐作者
 export const miHuYoApp = (data) => request({ method: 'get', url: 'api/home/author', data })
+
+// 战绩
+export const getRecord = (data) => mockRequest({ method: 'get', url: '/record', data })

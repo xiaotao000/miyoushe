@@ -122,9 +122,9 @@
       <div class="mihAyoZj">
         <div class="block">
           <el-carousel trigger="click" height="150px" indicator-position="none" arrow="never">
-            <!-- <el-carousel-item v-for="item in mihAyoTop" :key="item.id">
-                <img :src="item.img" alt="" width="100%" height="100%">
-            </el-carousel-item> -->
+            <el-carousel-item v-for="item in recordList" :key="item.id">
+                <img :src="item.imgUrl" alt="" width="100%" height="100%">
+            </el-carousel-item>
           </el-carousel>
         </div>
       </div>
@@ -202,7 +202,7 @@
 
 <script>
 import Perfect from './components/perfect.vue'
-import { reqAdtdm, miHuYoList, miHuYoApp } from '@/api/home.js'
+import { reqAdtdm, miHuYoList, miHuYoApp, getRecord } from '@/api/home.js'
 import { mapState } from 'vuex'
 export default {
   name: 'home',
@@ -210,10 +210,10 @@ export default {
     return {
       // 弹出层的状态
       centerDialogVisible: true,
-      adTml: [],
-      miHuYoAdd: [],
-      ponAddSt: [],
-      appList: [],
+      adTml: [], // 官方资讯
+      ponAddSt: [], // 推荐话题
+      appList: [], // 推荐用户
+      recordList: [], // 战绩
       IsDialog: true,
       // 文章列表数据
       category: ''
@@ -230,6 +230,7 @@ export default {
     this.getRotation()
     this.miHuYoLi()
     this.miHuYoAppList()
+    this.getRecord()
   },
   methods: {
     a1 () {
@@ -246,6 +247,10 @@ export default {
     async miHuYoAppList () {
       const res = await miHuYoApp()
       this.appList = res
+    },
+    async getRecord () {
+      const res = await getRecord()
+      this.recordList = res.data.data
     }
   }
 }
