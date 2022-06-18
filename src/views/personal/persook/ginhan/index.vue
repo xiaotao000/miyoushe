@@ -32,11 +32,11 @@
           </div>
           <div class="second-data">
             <i class="el-icon-chat-dot-round"></i>
-            <span>3134</span>
+            <span>{{item.comment}}</span>
           </div>
           <div class="second-data">
             <i class="iconfont iconfont icon-dianzan"></i>
-            <span>126</span>
+            <span>{{item.count}}</span>
           </div>
         </div>
         </div>

@@ -258,6 +258,9 @@
   width: 640px;
   border-bottom: 1px solid #ebebeb;
   padding: 24px 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .img1 {
@@ -299,6 +302,7 @@
   margin-top: 8px;
   color: #999;
   font-size: 14px;
+ 
 }
 
 /* 发布的图片 */
