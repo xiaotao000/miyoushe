@@ -30,7 +30,7 @@
        <div class="article"  v-for="thin in articleList" :key="thin.id">
         <div class="article-crad">
           <div class="sacle sacle-img1">
-            <img :src="`${'http://172.17.24.14:3000' + thin.cover}`" alt="">
+            <img :src="`${'http://mys.flycran.xyz' + thin.cover}`" alt="">
           </div>
         </div>
          <div class="article-heard">
@@ -41,7 +41,7 @@
           <div class="article-footer">
               <div class="article-acount">
                 <div class="rankimg-xs">
-                <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" class="img4">
+                <img :src="`${'http://mys.flycran.xyz' + thin.avatar}`" class="img4">
                 </div>
                 <span class="user-a">{{thin.author}}</span>
               </div>

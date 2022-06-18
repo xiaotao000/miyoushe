@@ -43,7 +43,7 @@
               <div class="mlAsd">
                 <a href="" class="nmgPls">
                   <div class="yspAsd">
-                   <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" alt="" class="nmgHop">
+                   <img :src="`${'http://mys.flycran.xyz' + thin.avatar}`" alt="" class="nmgHop">
                   </div>
                 </a>
                 <div class="yhMna">
@@ -69,7 +69,7 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
-                  <img :src="`${'http://172.17.24.14:3000' + app}`" alt="" width="100%" height="100%">
+                  <img :src="`${'http://mys.flycran.xyz' + app}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </router-link>
@@ -82,7 +82,7 @@
               <div class="poiAdd">
                 <div class="nmfAdd">
                   <i class="el-icon-view"></i>
-                  <span>100</span>
+                  <span>{{thin.browse}}</span>
                 </div>
                 <div class="blq">
                   <i class="el-icon-chat-dot-round"></i>
