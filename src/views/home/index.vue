@@ -16,49 +16,47 @@
       <!-- 内容 -->
       <div class="nmKjp">
         <div class="nmKjpVl">
-          <div class="nameGl">
+          <div class="nameGl" v-for="thin in articleList" :key="thin.id">
             <div class="kmDnm">
               <div class="mlAsd">
                 <a href="" class="nmgPls">
                   <div class="yspAsd">
-                   <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="" class="nmgHop">
+                   <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" alt="" class="nmgHop">
                   </div>
                 </a>
                 <div class="yhMna">
                   <a href="#" class="fbnQin">
-                    <span class="naMer">迷路的史莱姆酱</span>
+                    <span class="naMer">{{thin.author}}</span>
                     <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
                   </a>
                 </div>
                 <div class="gzSdf">
                   <span>关注</span>
                 </div>
-                <p class="wdStd">06-09 • 官方</p>
+                <p class="wdStd">{{thin.time.slice(0,10)}}• {{thin.category}}</p>
               </div>
             </div>
             <router-link to="details" href="#">
               <div class="derTer">
                 <div class="ndx">
-                  <span class="zlkJhp">官方</span>
+                  <span class="zlkJhp">{{thin.category}}</span>
                 </div>
-                <h3 class="zjKin-h3">【转发抽奖】丽莎生日活动开启！</h3>
+                <h3 class="zjKin-h3">{{thin.title}}</h3>
               </div>
-              <div class="sdfAdd">
-                转发抽奖  姆，旅行者们好呀~咕咕说，它今天看到旅行者小心翼翼地捧着一个盒子进了骑士团的大楼，过了一会儿，图书馆的窗户里就飘出了一阵特别好闻的茶香！好耶，是下午茶会，酱酱也好想参加呀(〃´-ω･
+              <div class="sdfAdd" v-html="thin.introduce">
               </div>
               <div class="npiAdd">
-                <div class="ploAsd">
-                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
-                </div>
-                <div class="ploAsd">
-                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
-                </div>
-                <div class="ploAsd">
-                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" width="100%" height="100%">
+                <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
+                  <img :src="`${'http://172.17.24.14:3000' + app}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </router-link>
             <div class="bhf">
+              <div class="poiAdd1">
+                 <div class="ainHmi">
+                  <span>{{thin.section}}</span>
+                </div>
+              </div>
               <div class="poiAdd">
                 <div class="nmfAdd">
                   <i class="el-icon-view"></i>
@@ -124,9 +122,9 @@
       <div class="mihAyoZj">
         <div class="block">
           <el-carousel trigger="click" height="150px" indicator-position="none" arrow="never">
-            <el-carousel-item v-for="item in mihAyoTop" :key="item.id">
+            <!-- <el-carousel-item v-for="item in mihAyoTop" :key="item.id">
                 <img :src="item.img" alt="" width="100%" height="100%">
-            </el-carousel-item>
+            </el-carousel-item> -->
           </el-carousel>
         </div>
       </div>
@@ -157,11 +155,11 @@
         </div>
         <div class="anmKlp">
           <div class="mlpKer">
-            <div class="xry" v-for="thin in npmRup" :key="thin.id">
+            <div class="xry" v-for="thin in ponAddSt" :key="thin.id">
               <div class="asdKcb">
-                <img :src="thin.img" alt="" width="100%" height="100%">
+                <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" alt="" width="100%" height="100%">
               </div>
-              <p class="xnaMe">{{thin.name}}</p>
+              <p class="xnaMe">{{thin.section}}</p>
             </div>
           </div>
         </div>
@@ -173,19 +171,19 @@
           <a href="#" class="nkf">更多</a>
         </div>
         <div class="swLso">
-          <div>
+          <div v-for="thin in appList" :key="thin.id">
             <div class="igDas">
               <div>
                 <div class="tgZer">
-                  <img src="https://img-static.mihoyo.com/communityweb/upload/15032157c9308b6caf01ad3df6ee8ea8.png" alt="" class="nmDfg">
+                  <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" alt="" class="nmDfg">
                 </div>
               </div>
               <div class="sdFgh">
                 <div class="poiUin">
-                  <span>疲惫不堪的嘤酱</span>
-                  <img src="" alt="" class="nmHkl">
+                  <span>{{thin.nickname}}</span>
+                  <img src="https://img-static.mihoyo.com/level/level8.png" alt="" class="nmHkl">
                 </div>
-                <p>观测者、写手、游戏领域作者</p>
+                <p>{{thin.autograph}}</p>
               </div>
               <div class="gzSdf1">
                   <span>关注</span>
@@ -204,7 +202,8 @@
 
 <script>
 import Perfect from './components/perfect.vue'
-import { reqAdtdm } from '@/api/home.js'
+import { reqAdtdm, miHuYoList, miHuYoApp } from '@/api/home.js'
+import { mapState } from 'vuex'
 export default {
   name: 'home',
   data () {
@@ -212,16 +211,26 @@ export default {
       // 弹出层的状态
       centerDialogVisible: true,
       adTml: [],
+      miHuYoAdd: [],
+      ponAddSt: [],
+      appList: [],
       IsDialog: true,
       // 文章列表数据
       category: ''
     }
   },
-  components: { Perfect },
+  components: {
+    Perfect
+  },
+  computed: {
+    ...mapState('home', ['articleList'])
+  },
   mounted () {
     this.category = this.$route.query.category
     this.getRotation()
-    // this.$store.dispatch('user/getUserInfo')
+    this.miHuYoaDd()
+    this.miHuYoLi()
+    this.miHuYoAppList()
   },
   methods: {
     a1 () {
@@ -230,12 +239,47 @@ export default {
     async getRotation () {
       const res = await reqAdtdm()
       this.adTml = res
+    },
+    async miHuYoLi () {
+      const res = await miHuYoList()
+      this.ponAddSt = res
+    },
+    async miHuYoAppList () {
+      const res = await miHuYoApp()
+      this.appList = res
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.swLso>div{
+  margin-bottom: 16px;
+}
+.ainHmi{
+  height: 24px;
+    line-height: 24px;
+    align-items: center;
+    color: #666;
+    border-radius: 12px;
+    margin-right: 10px;
+    background-color: #f5f5f5;
+  display: inline-flex;
+    color: inherit;
+    align-items: center;
+    padding: 0 12px;
+    user-select: none;
+}
+.bhf{
+  display: flex;
+  margin-top: 7px;
+}
+.poiAdd1{
+  display: flex;
+  flex-wrap: wrap;
+    height: 29px;
+    overflow: hidden;
+}
 a:hover{
   text-decoration: none;
 }
@@ -379,6 +423,11 @@ a:hover{
 .bnf{
   margin-top: 7px;
   display: flex;
+}
+.ploAsd>img{
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
 }
 .ploAsd{
   margin-right: 5px;
