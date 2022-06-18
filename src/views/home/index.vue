@@ -60,7 +60,7 @@
               <div class="poiAdd">
                 <div class="nmfAdd">
                   <i class="el-icon-view"></i>
-                  <span>100</span>
+                  <span>{{thin.browse}}</span>
                 </div>
                 <div class="blq">
                   <i class="el-icon-chat-dot-round"></i>
