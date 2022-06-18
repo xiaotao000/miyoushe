@@ -184,6 +184,7 @@ export default {
 
         await reqAddArticle(formData)
         this.$message.success('发布成功！！！')
+        this.$router.push('/home')
       } catch (error) {
         console.log('添加失败！！', error)
       }
