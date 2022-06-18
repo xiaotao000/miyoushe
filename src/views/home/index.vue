@@ -228,7 +228,6 @@ export default {
   mounted () {
     this.category = this.$route.query.category
     this.getRotation()
-    this.miHuYoaDd()
     this.miHuYoLi()
     this.miHuYoAppList()
   },

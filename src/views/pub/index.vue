@@ -38,98 +38,63 @@
         </div>
       </div>
       <!-- 发布的消息 -->
-      <div class="second">
-        <img src="@/image/pubimg/欠债还钱.png" class="img1" />
-        <span class="span">徐凤年年底睡觉睡觉</span>
-        <img src="@/image/pubimg/等级8.png" class="img2" />
-        <a class="p">五分钟前</a>
-        <div class="zore">零命雷神毕业面板</div>
-        <span class="thor"
-          >零命雷神这样算毕业吗 感觉已经到极限了 再往前提太难了
-          零命和两命的差距真的好大</span
-        >
-        <!-- 发布的图片 -->
-        <div class="img3">
-          <div class="cobo"></div>
-          <div class="eight"></div>
-          <div class="fold"></div>
-        </div>
-        <!-- 小图标 -->
-        <div class="page">
-          <div class="second-card">
-            <i class="el-icon-view"></i>
-            <span>4万+</span>
+     <div class="nameGl" v-for="thin in articleList" :key="thin.id">
+            <div class="kmDnm">
+              <div class="mlAsd">
+                <a href="" class="nmgPls">
+                  <div class="yspAsd">
+                   <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" alt="" class="nmgHop">
+                  </div>
+                </a>
+                <div class="yhMna">
+                  <a href="#" class="fbnQin">
+                    <span class="naMer">{{thin.author}}</span>
+                    <img src="https://img-static.mihoyo.com/level/level16.png" alt="" class="imgKun">
+                  </a>
+                </div>
+                <div class="gzSdf">
+                  <span>关注</span>
+                </div>
+                <p class="wdStd">{{thin.time.slice(0,10)}}• {{thin.category}}</p>
+              </div>
+            </div>
+            <router-link to="details" href="#">
+              <div class="derTer">
+                <div class="ndx">
+                  <span class="zlkJhp">{{thin.category}}</span>
+                </div>
+                <h3 class="zjKin-h3">{{thin.title}}</h3>
+              </div>
+              <div class="sdfAdd" v-html="thin.introduce">
+              </div>
+              <div class="npiAdd">
+                <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
+                  <img :src="`${'http://172.17.24.14:3000' + app}`" alt="" width="100%" height="100%">
+                </div>
+              </div>
+            </router-link>
+            <div class="bhf">
+              <div class="poiAdd1">
+                 <div class="ainHmi">
+                  <span>{{thin.section}}</span>
+                </div>
+              </div>
+              <div class="poiAdd">
+                <div class="nmfAdd">
+                  <i class="el-icon-view"></i>
+                  <span>100</span>
+                </div>
+                <div class="blq">
+                  <i class="el-icon-chat-dot-round"></i>
+                  <span>100</span>
+                </div>
+                 <div class="second-data">
+                  <i class="iconfont iconfont icon-dianzan"></i>
+                  <span>126</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="second-data">
-            <i class="el-icon-chat-dot-round"></i>
-            <span>3134</span>
-          </div>
-          <div class="second-data">
-            <i class="iconfont iconfont icon-dianzan"></i>
-            <span>126</span>
-          </div>
-        </div>
-      </div>
-      <div class="second">
-        <img src="@/image/pubimg/欠债还钱.png" class="img1" />
-        <span class="span">徐凤年年底睡觉睡觉</span>
-        <img src="@/image/pubimg/等级8.png" class="img2" />
-        <a class="p">五分钟前</a>
-        <div class="zore">零命雷神毕业面板</div>
-        <span class="thor"
-          >零命雷神这样算毕业吗 感觉已经到极限了 再往前提太难了
-          零命和两命的差距真的好大</span
-        >
-        <div class="img3">
-          <div class="cobo"></div>
-          <div class="eight"></div>
-          <div class="fold"></div>
-        </div>
-        <div class="page">
-          <div class="second-card">
-            <i class="el-icon-view"></i>
-            <span>4万+</span>
-          </div>
-          <div class="second-data">
-            <i class="el-icon-chat-dot-round"></i>
-            <span>3134</span>
-          </div>
-          <div class="second-data">
-            <i class="iconfont iconfont icon-dianzan"></i>
-            <span>126</span>
-          </div>
-        </div>
-      </div>
-      <div class="second">
-        <img src="@/image/pubimg/欠债还钱.png" class="img1" />
-        <span class="span">徐凤年年底睡觉睡觉</span>
-        <img src="@/image/pubimg/等级8.png" class="img2" />
-        <a class="p">五分钟前</a>
-        <div class="zore">零命雷神毕业面板</div>
-        <span class="thor"
-          >零命雷神这样算毕业吗 感觉已经到极限了 再往前提太难了
-          零命和两命的差距真的好大</span
-        >
-        <div class="img3">
-          <div class="cobo"></div>
-          <div class="eight"></div>
-          <div class="fold"></div>
-        </div>
-        <div class="page">
-          <div class="second-card">
-            <i class="el-icon-view"></i>
-            <span>4万+</span>
-          </div>
-          <div class="second-data">
-            <i class="el-icon-chat-dot-round"></i>
-            <span>3134</span>
-          </div>
-          <div class="second-data">
-            <i class="iconfont iconfont icon-dianzan"></i>
-            <span>1216</span>
-          </div>
-        </div>
-      </div>
       <dir class="npr">点击加载更多</dir>
     </div>
     <div class="code">
@@ -244,11 +209,178 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: "pub",
-  mounted() {},
-};
+  name: 'pub',
+  computed: {
+    ...mapState('home', ['articleList'])
+  }
+}
 </script>
 
 <style  lang="scss" scoped>
+.derTer{
+  display: flex;
+  align-items: center;
+    position: relative;
+    padding-right: 100px;
+}
+.npiAdd{
+  margin-top: 10px;
+    overflow: hidden;
+    display: inline-flex;
+    vertical-align: top;
+    position: relative;
+}
+.bhf{
+  display: flex;
+  margin-top: 7px;
+}
+.poiAdd1{
+  display: flex;
+  flex-wrap: wrap;
+    height: 29px;
+    overflow: hidden;
+}
+.nmfAdd{
+  display: flex;
+  align-items: center;
+  line-height: 18px;
+}
+.poiAdd>div >span{
+  margin-left: 8px;
+    color: #ccc;
+    display: inline-block;
+    width: 50px;
+}
+.poiAdd{
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+    height: 24px;
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+.ainHmi{
+  height: 24px;
+    line-height: 24px;
+    align-items: center;
+    color: #666;
+    border-radius: 12px;
+    margin-right: 10px;
+    background-color: #f5f5f5;
+  display: inline-flex;
+    color: inherit;
+    align-items: center;
+    padding: 0 12px;
+    user-select: none;
+}
+.ploAsd>img{
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+.ploAsd{
+  margin-right: 5px;
+  display: inline-block;
+    width: 120px;
+    height: 120px;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+}
+.sdfAdd{
+  line-height: 18px;
+  margin-top: 8px;
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.zjKin-h3{
+  font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #333;
+}
+.zlkJhp{
+  background-color: #00c3ff;
+    color: #fff;
+    height: 18px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 18px;
+    font-weight: 600;
+    padding: 0 4px;
+    margin-right: 6px;
+}
+.ndx{
+  display: flex;
+}
+.wdStd{
+  color: #ccc;
+    margin-left: 10px;
+    font-size: 12px;
+}
+.gzSdf{
+  position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #00c3ff;
+    border-radius: 13px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    width: 70px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: .2s background-color;
+}
+.imgKun{
+  height: 12px;
+  margin-left: 6px;
+  font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.nmgHop{
+  width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #ebebeb;
+    vertical-align: top;
+}
+.yspAsd{
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+.nmgPls{
+display: inline-flex;
+align-items: center;
+}
+.mlAsd{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.nameGl{
+  border-bottom: 1px solid #ebebeb;
+  padding: 24px 30px;
+}
+.kmDnm{
+  display: flex;
+  align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
 </style>
