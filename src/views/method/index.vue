@@ -48,7 +48,7 @@
               <div class="mlAsd">
                 <a href="" class="nmgPls">
                   <div class="yspAsd">
-                   <img :src="`${'http://mui65p.natappfree.cc' + thin.avatar}`" alt="" class="nmgHop">
+                   <img :src="`${'http://mys.flycran.xyz' + thin.avatar}`" alt="" class="nmgHop">
                   </div>
                 </a>
                 <div class="yhMna">

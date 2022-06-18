@@ -123,7 +123,7 @@ export default {
   computed: {
     ...mapState('user', ['userInfo']),
     imgUrl () {
-      return this.userInfo.avatar ? 'http://mui65p.natappfree.cc' + this.userInfo.avatar : this.imgSrc
+      return this.userInfo.avatar ? 'http://mys.flycran.xyz' + this.userInfo.avatar : this.imgSrc
     }
   },
   watch: {
