@@ -117,7 +117,7 @@ export default {
               // console.log(res)
               // 这个 return 是返回最后的结果
               console.log(res)
-              return 'http://mys.flycran.xyz' + res
+              return 'http://u7w9jz.natappfree.cc' + res
             })
           } // 图片的上传方法，返回一个 Promise<url>
         }),

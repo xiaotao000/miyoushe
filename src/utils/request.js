@@ -6,7 +6,7 @@ import { GET_TOKEN } from '@/utils/userToken'
 // 通过create创建axios实例
 const request = Axios.create({
   // 配置公共请求地址
-  baseURL: 'http://mys.flycran.xyz',
+  baseURL: 'http://u7w9jz.natappfree.cc',
   // 请求超时时间
   timeout: 5000
 })
