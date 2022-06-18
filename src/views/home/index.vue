@@ -21,7 +21,7 @@
               <div class="mlAsd">
                 <a href="" class="nmgPls">
                   <div class="yspAsd">
-                   <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" alt="" class="nmgHop">
+                   <img :src="`${'http://mys.flycran.xyz' + thin.avatar}`" alt="" class="nmgHop">
                   </div>
                 </a>
                 <div class="yhMna">
@@ -47,7 +47,7 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
-                  <img :src="`${'http://172.17.24.14:3000' + app}`" alt="" width="100%" height="100%">
+                  <img :src="`${'http://mys.flycran.xyz' + app}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </router-link>
@@ -157,7 +157,7 @@
           <div class="mlpKer">
             <div class="xry" v-for="thin in ponAddSt" :key="thin.id">
               <div class="asdKcb">
-                <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" alt="" width="100%" height="100%">
+                <img :src="`${'http://mys.flycran.xyz' + thin.avatar}`" alt="" width="100%" height="100%">
               </div>
               <p class="xnaMe">{{thin.section}}</p>
             </div>
@@ -175,7 +175,7 @@
             <div class="igDas">
               <div>
                 <div class="tgZer">
-                  <img :src="`${'http://172.17.24.14:3000' + thin.avatar}`" alt="" class="nmDfg">
+                  <img :src="`${'http://mys.flycran.xyz' + thin.avatar}`" alt="" class="nmDfg">
                 </div>
               </div>
               <div class="sdFgh">

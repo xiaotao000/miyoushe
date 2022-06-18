@@ -123,7 +123,7 @@ export default {
   computed: {
     ...mapState('user', ['userInfo']),
     imgUrl () {
-      return this.userInfo.avatar ? 'http://172.17.24.14:3000' + this.userInfo.avatar : this.imgSrc
+      return this.userInfo.avatar ? 'http://mys.flycran.xyz' + this.userInfo.avatar : this.imgSrc
     }
   },
   watch: {

@@ -8,7 +8,7 @@
       <div class="taoTuo">
          <el-upload
            class="avatar-uploader"
-           action="http://172.17.24.14:3000/my/update/avatar"
+           action="http://mys.flycran.xyz/my/update/avatar"
            :show-file-list="false"
            :headers="myHeaders"
            :on-success="scrubData"
@@ -89,7 +89,7 @@ export default {
   computed: {
     ...mapState('user', ['userInfo']),
     imgUrl () {
-      return this.userInfo.avatar ? 'http://172.17.24.14:3000' + this.userInfo.avatar : this.imgSrc
+      return this.userInfo.avatar ? 'http://mys.flycran.xyz' + this.userInfo.avatar : this.imgSrc
     },
     Ckname () {
       return this.formInput.nickname ? this.formInput.nickname : this.userInfo.nickname

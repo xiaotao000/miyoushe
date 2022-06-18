@@ -12,7 +12,7 @@
                     <div class="mhy-init-account-info__avatar">
                       <el-upload
                         class="avatar-uploader"
-                        action="http://172.17.24.16:3000/my/update/avatar"
+                        action="http://mys.flycran.xyz/my/update/avatar"
                         :show-file-list="false"
                         :on-success="handlePictureCardPreview"
                         :headers="myHeaders"
