@@ -27,57 +27,23 @@
     <!-- 中间部分 -->
     <div class="toale">
      <div class="filter-firs">
-       <div class="article">
+       <div class="article"  v-for="thin in articleList" :key="thin.id">
         <div class="article-crad">
-          <div class="sacle sacle-img1"></div>
+          <div class="sacle sacle-img1">
+            <img :src="`${'http://mys.flycran.xyz' + thin.cover}`" alt="">
+          </div>
         </div>
          <div class="article-heard">
             <div class="article-type">
-              <span>【荧四格】301</span>
+              <span>{{thin.title}}</span>
             </div>
           </div>
           <div class="article-footer">
               <div class="article-acount">
                 <div class="rankimg-xs">
-                <img src="@/image/peerMap/老司机.png" class="img4">
+                <img :src="`${'http://mys.flycran.xyz' + thin.avatar}`" class="img4">
                 </div>
-                <span class="user-a">雷肾老司机</span>
-              </div>
-            </div>
-      </div>
-       <div class="article">
-        <div class="article-crad">
-          <div class="sacle sacle-img2"></div>
-        </div>
-         <div class="article-heard">
-            <div class="article-type">
-              <span>【同人绘画】风吹过的街道</span>
-            </div>
-          </div>
-          <div class="article-footer">
-              <div class="article-acount">
-                <div class="rankimg-xs">
-                <img src="@/image/peerMap/青坞.png" class="img4">
-                </div>
-                <span class="user-a">青坞</span>
-              </div>
-            </div>
-      </div>
-       <div class="article article-user">
-        <div class="article-crad">
-          <div class="sacle sacle-img3"></div>
-        </div>
-         <div class="article-heard">
-            <div class="article-type">
-              <span>《2022高考数学现状》</span>
-            </div>
-          </div>
-          <div class="article-footer">
-              <div class="article-acount">
-                <div class="rankimg-xs">
-                <img src="@/image/peerMap/凌乱卷子.png" class="img4">
-                </div>
-                <span class="user-a">凌乱卷子</span>
+                <span class="user-a">{{thin.author}}</span>
               </div>
             </div>
       </div>
@@ -199,10 +165,23 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'PeerMap'
+  name: 'PeerMap',
+  computed: {
+    ...mapState('home', ['articleList'])
+  }
 }
 </script>
 
-<style lang="sass" scoped>
+<style scoped>
+.article-type{
+  overflow: hidden;
+  white-space: nowrap;
+}
+.toale {
+    width: 720px;
+    border-radius: 4px;
+    float: left;
+}
 </style>

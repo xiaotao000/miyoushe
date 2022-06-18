@@ -174,8 +174,8 @@
   width: 100%;
   height: 100%;
 }
-.sacle-img1{
-  background: url(@/image/peerMap/荧四格.jpg);
+.sacle-img1>img{
+  width: 100%;
   background-position: 50% -216.1px;
   background-size: cover;
 }
