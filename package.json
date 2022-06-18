@@ -12,6 +12,7 @@
     "core-js": "^3.8.3",
     "element-tiptap": "^1.27.1",
     "element-ui": "2.13.2",
+    "mockjs": "^1.1.0",
     "normalize.css": "^8.0.1",
     "vee-validate": "^3.4.14",
     "vue": "^2.6.14",

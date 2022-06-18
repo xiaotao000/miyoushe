@@ -25,6 +25,9 @@ import '@/styles/index.css'
 
 import './permission'
 
+// mock 数据
+import '@/mock'
+
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.component('LOGON', LOGON)
