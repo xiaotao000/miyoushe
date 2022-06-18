@@ -8,7 +8,7 @@
       <div class="taoTuo">
          <el-upload
            class="avatar-uploader"
-           action="http://u7w9jz.natappfree.cc/my/update/avatar"
+           action="http://mui65p.natappfree.cc/my/update/avatar"
            :show-file-list="false"
            :headers="myHeaders"
            :on-success="scrubData"
@@ -89,7 +89,7 @@ export default {
   computed: {
     ...mapState('user', ['userInfo']),
     imgUrl () {
-      return this.userInfo.avatar ? 'http://u7w9jz.natappfree.cc' + this.userInfo.avatar : this.imgSrc
+      return this.userInfo.avatar ? 'http://mui65p.natappfree.cc' + this.userInfo.avatar : this.imgSrc
     },
     Ckname () {
       return this.formInput.nickname ? this.formInput.nickname : this.userInfo.nickname
