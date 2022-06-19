@@ -43,7 +43,8 @@
                 </div>
                 <h3 class="zjKin-h3">{{thin.title}}</h3>
               </div>
-              <div class="sdfAdd" v-html="thin.introduce">
+
+              <div class="sdfAdd" v-html="Array.from(thin.introduce).slice(3, 10).join('')">
               </div>
               <div class="npiAdd">
                 <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
