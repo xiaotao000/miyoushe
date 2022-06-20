@@ -27,7 +27,7 @@
     <!-- 中间部分 -->
     <div class="toale">
      <div class="filter-firs">
-       <div class="article"  v-for="thin in articleList" :key="thin.id">
+       <router-link class="article"  v-for="thin in articleList" :key="thin.id" :to="{ name: 'details', query: { id: thin.id } }">
         <div class="article-crad">
           <div class="sacle sacle-img1">
             <img :src="`${'http://192.168.43.104:3000' + thin.cover.slice(0,1)}`" alt="">
@@ -46,7 +46,7 @@
                 <span class="user-a">{{thin.author}}</span>
               </div>
             </div>
-      </div>
+      </router-link>
      </div>
     </div>
     <div class="code">

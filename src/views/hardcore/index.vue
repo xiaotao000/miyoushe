@@ -54,7 +54,7 @@
                 <p class="wdStd">{{thin.time.slice(0,10)}}• {{thin.category}}</p>
               </div>
             </div>
-            <router-link to="details" href="#">
+            <router-link :to="{ name: 'details', query: { id: thin.id } }" href="#">
               <div class="derTer">
                 <div class="ndx">
                   <span class="zlkJhp">{{thin.category}}</span>
