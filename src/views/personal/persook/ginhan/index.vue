@@ -86,6 +86,14 @@ export default {
   display: flex;
   justify-content: space-between;
 }
+.second {
+  width: 640px;
+  border-bottom: 1px solid #ebebeb;
+  padding: 24px 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .img3 {
   display: flex;
   img {
