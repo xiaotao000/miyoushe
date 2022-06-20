@@ -30,7 +30,7 @@
        <div class="article"  v-for="thin in articleList" :key="thin.id">
         <div class="article-crad">
           <div class="sacle sacle-img1">
-            <img :src="`${'http://192.168.43.104:3000' + thin.cover}`" alt="">
+            <img :src="`${'http://192.168.43.104:3000' + thin.cover.slice(0,1)}`" alt="">
           </div>
         </div>
          <div class="article-heard">
