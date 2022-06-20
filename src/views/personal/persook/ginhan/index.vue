@@ -9,7 +9,7 @@
       <span class="thor" v-html="item.introduce"></span>
       <!-- 发布的图片 -->
       <div class="img3">
-        <img v-for="img, i in item.cover" :key="i" :src="`${'http://mys.flycran.xyz' + img}`" alt="" />
+        <img v-for="img, i in item.cover" :key="i" :src="`${'http://192.168.43.104:3000' + img}`" alt="" />
       </div>
       <div class="topi">
         <!-- 标签 -->
