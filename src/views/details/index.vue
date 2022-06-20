@@ -2,16 +2,16 @@
   <div class="edition sanGn">
     <div class=" admInj">
       <!-- 详情，内容 -->
-      <div class="wnStd">
+      <div class="wnStd" v-for="item in getDetailsList" :key="item.id">
         <!-- 标题 -->
         <div>
           <div class="inj">
-            <h1>网页交流平台「豪鼓祭演」限时开启，参与活动可获得游戏内奖励！</h1>
+            <h1>{{item.title}}</h1>
           </div>
           <div class="mhy-article-page-info">
             <div class="mh-xmj">
               <span>来自版块：</span>
-              <a href="#" class="mhy-gf">官方</a>
+              <a href="#" class="mhy-gf">{{item.category}}</a>
             </div>
             <div class="mhy-addNme">
               <div>
@@ -34,20 +34,20 @@
           </div>
           <!-- 发布时间 -->
           <div class="mys-fps">
-            <span>文章发表：06-13</span>
+            <span>文章发表：{{item.time}}</span>
           </div>
         </div>
         <!-- 内容 -->
         <div class="nkh">
           <div class="miHyo-nri">
             <div>
-              <div class="miHou-add">
-                <div>
+              <div class="miHou-add" v-html="item.introduce">
+                <!-- <div>
                   <img src="https://upload-bbs.mihoyo.com/upload/2022/06/13/76387920/841b0164402b224af8cfe040d073dc28_5484698436073678329.png?x-oss-process=image//resize,s_600/quality,q_80/auto-orient,0/interlace,1/format,png" alt="">
-                </div>
+                </div> -->
               </div>
-              <p><span>旅行者们好呀~！有没有收到来自荒泷派的神秘邀请函呢，活动「荒泷极上盛世豪鼓大祭典」现已在游戏内开启！</span></p>
-              <p><span>一起来网页交流平台「豪鼓祭演」内自定义编辑和分享属于你的曲谱信息，查看其他旅行者制作的曲谱，以及上传你的演奏挑战，与其他旅行者一起讨论互动吧。参与网页活动还可获得游戏内奖励！</span></p>
+              <!-- <p><span>旅行者们好呀~！有没有收到来自荒泷派的神秘邀请函呢，活动「荒泷极上盛世豪鼓大祭典」现已在游戏内开启！</span></p>
+              <p><span>一起来网页交流平台「豪鼓祭演」内自定义编辑和分享属于你的曲谱信息，查看其他旅行者制作的曲谱，以及上传你的演奏挑战，与其他旅行者一起讨论互动吧。参与网页活动还可获得游戏内奖励！</span></p> -->
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
               <!-- 类型 -->
               <div class="ainHts">
                 <div class="ainHmi">
-                  <span>盛世豪鼓大祭典</span>
+                  <span>{{item.section}}</span>
                 </div>
               </div>
             </div>
@@ -113,19 +113,20 @@
         </div>
       </div>
     </div>
-    <div class="wsTao">
+    <!-- 发布用户 -->
+    <div class="wsTao" v-for="item in getDetailsList" :key="item.id">
       <div class="hin-mas">
         <a href="#">
           <div class="nmh-sdf">
-            <img src="https://img-static.mihoyo.com/avatar/avatar10020.png" alt="">
+            <img :src="`http://192.168.43.104:3000${item.avatar}`" alt="">
           </div>
         </a>
         <div class="hgfAdd">
           <div class="nbfHes">
-            <span>迷路的史莱姆酱</span>
+            <span>{{item.author}}</span>
             <img src="https://img-static.mihoyo.com/level/level16.png" alt="">
           </div>
-          <p>官方史莱姆代言人</p>
+          <p>{{item.autograph}}</p>
           <div class="njm-miHaoYo">
             <span>关注</span>
           </div>
@@ -243,16 +244,29 @@
 </template>
 
 <script>
+import { getDetailsList } from '@/api/home'
 export default {
   data () {
     return {
       textarea: '',
+      id: null,
+      getDetailsList: [],
       mihAyoTop: [
         { id: 1, img: 'https://upload-bbs.mihoyo.com/pc_ad/pc_ad_ys_game_record2.jpg' },
         { id: 2, img: 'https://upload-bbs.mihoyo.com/pc_ad/ys_signin.jpg' },
         { id: 3, img: 'https://upload-bbs.mihoyo.com/upload/2022/05/30/ede03f2363d3e11a43f96cf9fb9573a5_2340278032758854255.jpg' }
       ]
     }
+  },
+  methods: {
+    async getDetails () {
+      const res = await getDetailsList({ id: this.id })
+      this.getDetailsList = res
+    }
+  },
+  mounted () {
+    this.id = this.$route.query.id
+    this.getDetails()
   }
 }
 </script>
