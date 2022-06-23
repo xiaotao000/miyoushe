@@ -25,26 +25,19 @@
               show-word-limit
             />
           </el-form-item>
-          <!-- <el-form-item label="内容：" prop="introduce"> -->
-            <!-- <el-input
-              type="textarea"
-              :autosize="{ minRows: 2, maxRows: 4 }"
-              placeholder="请输入内容"
-              v-model="formData.introduce"
-            /> -->
             <el-form-item label="内容">
               <el-tiptap lang="zh" v-model="formData.introduce" :extensions="extensions" height="350" placeholder="请输入文章内容"></el-tiptap>
             </el-form-item>
-          <!-- </el-form-item> -->
           <el-form-item label="封面图">
             <el-upload
-              action="1"
+              action="http://192.168.43.104:3000/api/cover"
+              name="cover"
               list-type="picture-card"
               :on-preview="handlePictureCardPreview"
-              :auto-upload="false"
               :before-upload="beforeUpload"
               :on-remove="handleRemove"
-              :on-change="fileList"
+              :file-list="imgUrlList"
+              :on-success="successUpload"
             >
               <i class="el-icon-plus"></i>
             </el-upload>
@@ -52,6 +45,7 @@
               <img width="100%" :src="dialogImageUrl" alt="" />
             </el-dialog>
           </el-form-item>
+
           <el-form-item label="发布版块：" prop="category">
             <el-radio v-model="formData.category" label="酒馆">酒馆</el-radio>
             <el-radio v-model="formData.category" label="攻略">攻略</el-radio>
@@ -72,7 +66,9 @@
   </div>
 </template>
 <script>
-import { reqAddArticle, uploadImage } from '@/api/article'
+import { reqAddArticle, reqUpdateArticle, uploadImage } from '@/api/article'
+import { getDetailsList } from '@/api/home'
+// import upload from './upload.vue'
 import { ElementTiptap, Doc, Text, Paragraph, Heading, Bold, Underline, Italic, Image, Strike, ListItem, BulletList, OrderedList, TodoItem, TodoList, HorizontalRule, Fullscreen, Preview, CodeBlock, TextColor } from 'element-tiptap'
 import 'element-tiptap/lib/index.css'
 
@@ -95,6 +91,7 @@ export default {
       formData: {
         cover: []
       },
+      fileList: [],
       dialogImageUrl: '',
       dialogVisible: false,
       imgUrlList: [],
@@ -112,11 +109,9 @@ export default {
             fd.append('imgUrl', file)
             // 第1个 return 是返回 Promise 对象
             // 为什么？因为 axios 本身就是返回 Promise 对象
-            console.log(fd)
             return uploadImage(fd).then(res => {
               // console.log(res)
               // 这个 return 是返回最后的结果
-              console.log(res)
               return 'http://192.168.43.104:3000' + res
             })
           } // 图片的上传方法，返回一个 Promise<url>
@@ -146,7 +141,27 @@ export default {
       }
     }
   },
+  mounted () {
+    this.getArticle()
+  },
   methods: {
+    successUpload (res, file, fileList) {
+      this.fileList = fileList
+    },
+    async getArticle () {
+      if (!this.$route.query.id) return
+      const res = await getDetailsList({ id: this.$route.query.id })
+      const arr = res.map(item => ({ id: item.id, title: item.title, introduce: item.introduce, cover: item.cover, category: item.category, section: item.section }))
+      this.formData = arr[0]
+      console.log(arr[0].cover)
+      arr[0].cover.forEach(item => {
+        if (item.imgUrl.indexOf('http://192.168.43.104:3000')) {
+          this.imgUrlList.push({ url: 'http://192.168.43.104:3000' + item.imgUrl })
+        } else {
+          this.imgUrlList.push({ url: item.imgUrl })
+        }
+      })
+    },
     // 删除图片
     handleRemove (file, fileList) {
       this.imgUrlList = fileList
@@ -158,7 +173,6 @@ export default {
     },
     // 校验规则
     beforeUpload (file) {
-      console.log(file)
       const { type, size } = file
       if (type !== 'image/jpeg' && type !== 'image/png') {
         this.$message.error('文件必须为JPEG | PNG')
@@ -169,44 +183,35 @@ export default {
         return false
       }
     },
-    // 已上传文件
-    fileList (file, fileList) {
-      this.imgUrlList = fileList
-      this.formData.cover = fileList
-    },
     async submitArticle () {
       try {
         await this.$refs.ruleForm.validate()
-        const formData = this.getFormData(this.formData)
-        this.formData.cover.forEach((item) => {
-          formData.append('cover', item.raw)
-        })
-
-        await reqAddArticle(formData)
+        this.formData.cover = this.fileList.map(item => ({ imageName: item.name, imgUrl: (item.response && item.response.data[0].imgUrl) || item.url }))
+        this.formData.id ? await reqUpdateArticle(this.formData) : await reqAddArticle(this.formData)
         this.$message.success('发布成功！！！')
         this.$router.push('/home')
+        Object.assign(this.$data, this.$options.data())
       } catch (error) {
         console.log('添加失败！！', error)
       }
-    },
-    getFormData (object) {
-      const formData = new FormData()
-      Object.keys(object).forEach((key) => {
-        const value = object[key]
-        if (Array.isArray(value)) {
-          // value.forEach((subValue, i) =>
-          //   formData.append(key + `[${i}]`, subValue)
-          // )
-        } else {
-          formData.append(key, object[key])
-        }
-      })
-      return formData
     }
+    // getFormData (object) {
+    //   const formData = new FormData()
+    //   Object.keys(object).forEach((key) => {
+    //     const value = object[key]
+    //     if (Array.isArray(value)) {
+    //       // value.forEach((subValue, i) =>
+    //       //   formData.append(key + `[${i}]`, subValue)
+    //       // )
+    //     } else {
+    //       formData.append(key, object[key])
+    //     }
+    //   })
+    //   return formData
+    // }
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .mhy-container {
   margin-top: 30px;
