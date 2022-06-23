@@ -54,6 +54,7 @@ export default {
   data () {
     return {
       formData: {
+        category: '',
         cover: []
       },
       fileList: [],
@@ -77,6 +78,7 @@ export default {
     }
   },
   mounted () {
+    this.formData.category = this.$route.query.category
     this.getArticle()
   },
   methods: {

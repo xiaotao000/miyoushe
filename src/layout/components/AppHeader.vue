@@ -56,7 +56,7 @@
       <!-- 右边搜索框 -->
       <div class="header__right">
         <form class="header__search" v-if="isShow">
-          <input type="text" @change="search" v-model="searchData" />
+          <input type="text" @blur="search" @keyup.enter="search" v-model="searchData" />
           <i class="mhy-icon iconfont icon-sousuo"></i>
         </form>
         <template v-if="userInfo.nickname">
@@ -161,6 +161,12 @@ export default {
     },
     switchTab () {
       this.$store.dispatch('home/getArticle', this.$route.query.category)
+      if (this.$route.path === '/search') {
+        this.isShow = false
+      } else {
+        this.searchData = ''
+        this.isShow = true
+      }
     },
     search () {
       this.$router.push({

@@ -15,7 +15,7 @@
               </ul>
             </div>
           </div>
-          <router-link tag="button" to="/article" class="defalut">
+          <router-link tag="button" :to="{ path: '/article', query: { category: '硬核'} }" class="defalut">
             <button class="defal-botn">
               <i class="iconfont icon-fabutiezi"></i>
               <span>发布帖子</span>

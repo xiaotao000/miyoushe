@@ -21,7 +21,8 @@ const routes = [
       { path: '/cos', component: () => import('@/views/cos') },
       // 硬核
       { path: '/hardcore', component: () => import('@/views/hardcore') },
-      { path: '/article', component: () => import('@/views/article') },
+      // 搜索
+      { path: '/search', component: () => import('@/views/search') },
       // 发布文章
       { path: '/article', component: () => import('@/views/article') },
       // 发布图片
