@@ -17,3 +17,6 @@ export const getRecord = (data) => mockRequest({ method: 'get', url: '/record', 
 
 // 获取文章详情
 export const getDetailsList = (data) => request({ method: 'get', url: '/api/home/articledDetails', data })
+
+// 搜索
+export const getSearch = (data) => request({ method: 'get', url: '/api/home/search', data })

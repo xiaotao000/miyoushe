@@ -33,6 +33,8 @@ const routes = [
       { path: '/picture', component: () => import('@/views/picture') },
       // 详情
       { path: '/details', component: () => import('@/views/details'), name: 'details' },
+      // 搜索
+      { path: '/search', component: () => import('@/views/search') },
       // 个人中心
       {
         path: '/personal',

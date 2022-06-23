@@ -47,8 +47,8 @@
       </div>
       <!-- 右边搜索框 -->
       <div class="header__right">
-        <form class="header__search">
-          <input type="text">
+        <form class="header__search" v-if="isShow">
+          <input type="text" @change="search" v-model="searchData">
           <i>搜索</i>
         </form>
         <template v-if="userInfo.nickname">
@@ -117,7 +117,9 @@ export default {
   data () {
     return {
       imgSrc: 'https://img-static.mihoyo.com/communityweb/upload/c9d11674eac7631d2210a1ba20799958.png',
-      Auser: false
+      Auser: false,
+      searchData: '',
+      isShow: true
     }
   },
   computed: {
@@ -144,9 +146,17 @@ export default {
     },
     switchTab () {
       this.$store.dispatch('home/getArticle', this.$route.query.category)
+    },
+    search () {
+      this.$router.push({ path: '/search', query: { search: this.searchData } })
     }
   },
   mounted () {
+    if (this.$route.query.search) {
+      this.isShow = false
+    } else {
+      this.isShow = true
+    }
     // this.a1 = this.$route.query.category
     this.$store.dispatch('home/getArticle', this.$route.query.category)
   }
@@ -240,7 +250,7 @@ export default {
     margin-top: 16px;
     line-height: 30px;
     background-color: rgba(255,255,255,.22);
-    padding: 0 35px 0 15px;
+    padding: 0 73px 0 15px;
     border-radius: 15px;
     position: relative;
     margin-right: 15px;
