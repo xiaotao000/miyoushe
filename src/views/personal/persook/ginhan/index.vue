@@ -9,8 +9,8 @@
       <router-link :to="{name: 'details', query: { id: item.id, show: true, category: item.category } }" tag="span" class="thor" v-html="Array.from(item.introduce.replace(/<p><img .*?><\/p>/g, '')).slice(0, 90).join('')"></router-link>
       <!-- 发布的图片 -->
       <router-link :to="{name: 'details', query: { id: item.id, show: true, category: item.category} }" tag="div" class="img3">
-        <!-- img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}` -->
-        <img v-for="img, i in item.cover" :key="i" :src="'http://192.168.43.104:3000' + img" alt="" />
+        <!--  -->
+        <img v-for="img, i in item.cover" :key="i" :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="" />
       </router-link>
       <div class="topi">
         <!-- 标签 -->

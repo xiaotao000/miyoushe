@@ -47,8 +47,8 @@
               <div class="sdfAdd" v-html="Array.from(thin.introduce.replace(/<p><img .*?><\/p>/g, '')).slice(0, 90).join('')">
               </div>
               <div class="npiAdd">
-                <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
-                  <img :src="`${'http://192.168.43.104:3000' + app}`" alt="" width="100%" height="100%">
+                <div class="ploAsd" v-for="img in thin.cover.slice(0,3)" :key="img.id">
+                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </router-link>
