@@ -5,7 +5,7 @@
     </div>
     <div class="second" v-for="item in card" :key="item.id">
       <a class="p">{{ item.time }}</a>
-      <div class="zore">{{ item.title }}</div>
+      <router-link :to="{name: 'details', query: { id: item.id, show: true, category: item.category } }" tag="div" class="zore">{{ item.title }}</router-link>
       <router-link :to="{name: 'details', query: { id: item.id, show: true, category: item.category } }" tag="span" class="thor" v-html="Array.from(item.introduce.replace(/<p><img .*?><\/p>/g, '')).slice(0, 90).join('')"></router-link>
       <!-- 发布的图片 -->
       <router-link :to="{name: 'details', query: { id: item.id, show: true, category: item.category} }" tag="div" class="img3">
