@@ -97,7 +97,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.myHeaders)
   },
   computed: {
     ...mapState('user', ['IsDialog'])

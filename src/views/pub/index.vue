@@ -65,7 +65,8 @@
                 </div>
                 <h3 class="zjKin-h3">{{thin.title}}</h3>
               </div>
-              <div class="sdfAdd" v-html="thin.introduce">
+              <!-- Array.from(thin.introduce).slice(3, 10).join('') -->
+              <div class="sdfAdd" v-html="Array.from(thin.introduce.replace(/<p><img .*?><\/p>/g, '')).slice(0, 90).join('')">
               </div>
               <div class="npiAdd">
                 <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
@@ -75,7 +76,7 @@
             </router-link>
             <div class="bhf">
               <div class="poiAdd1">
-                 <div class="ainHmi">
+                 <div v-if="thin.section" class="ainHmi">
                   <span>{{thin.section}}</span>
                 </div>
               </div>
@@ -86,11 +87,11 @@
                 </div>
                 <div class="blq">
                   <i class="el-icon-chat-dot-round"></i>
-                  <span>100</span>
+                    <span>{{thin.comment ? thin.comment: 0 }}</span>
                 </div>
                  <div class="second-data">
                   <i class="iconfont iconfont icon-dianzan"></i>
-                  <span>126</span>
+                    <span>{{thin.count ? thin.count: 0 }}</span>
                 </div>
               </div>
             </div>
@@ -161,44 +162,12 @@
           <a>更多</a>
         </div>
         <div class="side-body">
-          <div class="body-topic">
+          <div class="body-topic" v-for="item in ponAddSt" :key="item.id">
             <div class="topic-card">
-              <img src="@/image/pubimg/在心一水.jpg" />
+              <img :src="`${'http://192.168.43.104:3000' + item.avatar}`" />
             </div>
-            <div class="card-info">
-              <p>每日一水</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/pubimg/冒险家·集结.jpeg" />
-            </div>
-            <div class="card-info">
-              <p>冒险家·集结</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/pubimg/好友招募.jpeg" />
-            </div>
-            <div class="card-info">
-              <p>好友招募</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/pubimg/游戏战绩.jpg" />
-            </div>
-            <div class="card-info">
-              <p>游戏战绩</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/pubimg/祈愿分享.jpg" />
-            </div>
-            <div class="card-info">
-              <p>祈愿分享</p>
+            <div v-if="item.section" class="card-info">
+              <p>{{item.section}}</p>
             </div>
           </div>
         </div>
@@ -213,7 +182,10 @@ import { mapState } from 'vuex'
 export default {
   name: 'pub',
   computed: {
-    ...mapState('home', ['articleList'])
+    ...mapState('home', ['articleList', 'ponAddSt'])
+  },
+  mounted () {
+    this.$store.dispatch('home/getMiHuYoList')
   }
 }
 </script>

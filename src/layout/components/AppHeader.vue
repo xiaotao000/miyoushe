@@ -16,7 +16,7 @@
       <div class="header__navwrap">
         <div class="header__navbar">
             <router-link class="header__navitem"
-            :to="{path: '/home', query: {category: ''}}"
+            :to="{path: '/home', query: {category: ''} }"
             >
               首页
             </router-link>
@@ -36,7 +36,7 @@
             <router-link
             :to=" {path: '/cos', query: {category: 'cos'} }"
             class="header__navitem">
-              cos
+              COS
             </router-link>
             <router-link
             :to=" {path: '/hardcore', query: {category: '硬核'} }"
@@ -49,7 +49,7 @@
       <div class="header__right">
         <form class="header__search">
           <input type="text">
-          <i>搜索</i>
+          <i class="mhy-icon iconfont icon-sousuo"></i>
         </form>
         <template v-if="userInfo.nickname">
           <div class="header__notifycontainer">

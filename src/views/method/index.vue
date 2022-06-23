@@ -70,7 +70,7 @@
                 </div>
                 <h3 class="zjKin-h3">{{thin.title}}</h3>
               </div>
-              <div class="sdfAdd" v-html="thin.introduce">
+              <div class="sdfAdd" v-html="Array.from(thin.introduce.replace(/<p><img .*?><\/p>/g, '')).slice(0, 90).join('')">
               </div>
               <div class="npiAdd">
                 <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
@@ -80,7 +80,7 @@
             </router-link>
             <div class="bhf">
               <div class="poiAdd1">
-                 <div class="ainHmi">
+                 <div v-if="thin.section" class="ainHmi">
                   <span>{{thin.section}}</span>
                 </div>
               </div>
@@ -175,44 +175,12 @@
           <a>更多</a>
         </div>
         <div class="side-body">
-          <div class="body-topic">
+          <div class="body-topic" v-for="item in ponAddSt" :key="item.id">
             <div class="topic-card">
-              <img src="@/image/method/探索解谜.jpg" />
+              <img :src="`${'http://192.168.43.104:3000' + item.avatar}`" />
             </div>
             <div class="card-info">
-              <p>探索解谜</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/method/角色攻略.jpg" />
-            </div>
-            <div class="card-info">
-              <p>角色攻略</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/method/其他攻略.jpg" />
-            </div>
-            <div class="card-info">
-              <p>其他攻略</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/method/萌新指南.jpg" />
-            </div>
-            <div class="card-info">
-              <p>萌新指南</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/method/讨伐手册.jpg" />
-            </div>
-            <div class="card-info">
-              <p>讨伐手册</p>
+              <p>{{item.section}}</p>
             </div>
           </div>
         </div>
@@ -227,7 +195,10 @@ import { mapState } from 'vuex'
 export default {
   name: 'method',
   computed: {
-    ...mapState('home', ['articleList'])
+    ...mapState('home', ['articleList', 'ponAddSt'])
+  },
+  mounted () {
+    this.$store.dispatch('home/getMiHuYoList')
   }
 }
 </script>

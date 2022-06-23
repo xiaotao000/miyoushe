@@ -6,16 +6,16 @@
     <div class="second" v-for="item in card" :key="item.id">
       <a class="p">{{ item.time }}</a>
       <div class="zore">{{ item.title }}</div>
-      <span class="thor" v-html="item.introduce"></span>
+      <router-link :to="{name: 'details', query: { id: item.id, show: true, category: item.category } }" tag="span" class="thor" v-html="Array.from(item.introduce.replace(/<p><img .*?><\/p>/g, '')).slice(0, 90).join('')"></router-link>
       <!-- 发布的图片 -->
-      <div class="img3">
-        <img v-for="img, i in item.cover" :key="i" :src="`${'http://192.168.43.104:3000' + img}`" alt="" />
-      </div>
+      <router-link :to="{name: 'details', query: { id: item.id, show: true} }" tag="div" class="img3">
+        <!-- img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}` -->
+        <img v-for="img, i in item.cover" :key="i" :src="'http://192.168.43.104:3000' + img" alt="" />
+      </router-link>
       <div class="topi">
         <!-- 标签 -->
-        <div class="topces">
-          <span>冒险家·集结</span>
-          <span>每日一水</span>
+        <div class="topces" v-if="item.section">
+          <span>{{item.section}}</span>
         </div>
         <!-- 小图标 -->
         <div class="page">
@@ -48,9 +48,15 @@ export default {
   mounted () {
     this.getList()
   },
+  computed: {
+    isUrl () {
+      return this.card.filter(item => item.cover.includes('http://192.168.43.104:3000'))
+    }
+  },
   methods: {
     async getList () {
       const add = await reWgyh()
+      console.log(add)
       this.card = add
     }
   }
@@ -95,6 +101,8 @@ export default {
   white-space: nowrap;
 }
 .img3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
   display: flex;
   img {
     margin-right: 5px;

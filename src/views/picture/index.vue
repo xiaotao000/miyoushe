@@ -14,16 +14,20 @@
           </el-form-item>
           <el-form-item label="上传图片：">
             <el-upload
-              action="1"
+              action="http://192.168.43.104:3000/api/cover"
+              name="cover"
               list-type="picture-card"
               :on-preview="handlePictureCardPreview"
-              :auto-upload="false"
               :before-upload="beforeUpload"
               :on-remove="handleRemove"
-              :on-change="fileList"
-              >
+              :file-list="imgUrlList"
+              :on-success="successUpload"
+            >
               <i class="el-icon-plus"></i>
             </el-upload>
+            <el-dialog :visible.sync="dialogVisible">
+              <img width="100%" :src="dialogImageUrl" alt="" />
+            </el-dialog>
           </el-form-item>
           <el-form-item label="发布版块："  prop="category">
               <el-radio v-model="formData.category" label="同人图">同人图</el-radio>
@@ -42,7 +46,8 @@
 </template>
 
 <script>
-import { reqAddPicture } from '@/api/article'
+import { reqAddPicture, reqUpdatePicture } from '@/api/article'
+import { getDetailsList } from '@/api/home'
 
 export default {
   name: 'AddPicture',
@@ -51,6 +56,7 @@ export default {
       formData: {
         cover: []
       },
+      fileList: [],
       dialogImageUrl: '',
       dialogVisible: false,
       imgUrlList: [],
@@ -70,7 +76,27 @@ export default {
       }
     }
   },
+  mounted () {
+    this.getArticle()
+  },
   methods: {
+    async getArticle () {
+      if (!this.$route.query.id) return
+      const res = await getDetailsList({ id: this.$route.query.id })
+      const arr = res.map(item => ({ id: item.id, title: item.title, introduce: item.introduce, cover: item.cover, category: item.category, section: item.section }))
+      this.formData = arr[0]
+      console.log(arr[0].cover)
+      arr[0].cover.forEach(item => {
+        if (item.imgUrl.indexOf('http://192.168.43.104:3000')) {
+          this.imgUrlList.push({ url: 'http://192.168.43.104:3000' + item.imgUrl })
+        } else {
+          this.imgUrlList.push({ url: item.imgUrl })
+        }
+      })
+    },
+    successUpload (res, file, fileList) {
+      this.fileList = fileList
+    },
     // 删除图片
     handleRemove (file, fileList) {
       this.imgUrlList = fileList
@@ -93,44 +119,24 @@ export default {
         return false
       }
     },
-    // 已上传文件
-    fileList (file, fileList) {
-      this.formData.cover = fileList
-    },
     async submitArticle () {
+      console.log(111)
       try {
         await this.$refs.ruleForm.validate()
-        const formData = this.getFormData(this.formData)
-        this.formData.cover.forEach(item => {
-          formData.append('cover', item.raw)
-        })
-
-        await reqAddPicture(formData)
+        this.formData.cover = this.fileList.map(item => ({ imageName: item.name, imgUrl: (item.response && item.response.data[0].imgUrl) || item.url }))
+        this.formData.id ? await reqUpdatePicture(this.formData) : await reqAddPicture(this.formData)
+        this.$router.push('/home')
         this.$message.success('发布成功！！！')
+        Object.assign(this.$data, this.$options.data())
       } catch (error) {
         console.log('添加失败！！', error)
       }
-    },
-    getFormData (object) {
-      const formData = new FormData()
-      Object.keys(object).forEach(key => {
-        const value = object[key]
-        if (Array.isArray(value)) {
-          // value.forEach((subValue, i) =>
-          //   formData.append(key + `[${i}]`, subValue)
-          // )
-        } else {
-          formData.append(key, object[key])
-        }
-      })
-      return formData
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 .mhy-container {
   margin-top: 30px;
   margin-bottom: 60px;
