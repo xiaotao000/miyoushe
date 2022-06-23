@@ -128,6 +128,9 @@ export default {
         this.$router.push('/home')
         this.$message.success('发布成功！！！')
         Object.assign(this.$data, this.$options.data())
+        this.$nextTick(() => {
+          this.$refs.ruleForm.clearValidate()
+        })
       } catch (error) {
         console.log('添加失败！！', error)
       }
