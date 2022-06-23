@@ -18,10 +18,8 @@ export const getRecord = (data) => mockRequest({ method: 'get', url: '/record', 
 // 获取文章详情
 export const getDetailsList = (data) => request({ method: 'get', url: '/api/home/articledDetails', data })
 
-<<<<<<< HEAD
 // 搜索
 export const getSearch = (data) => request({ method: 'get', url: '/api/home/search', data })
-=======
+
 // 删除文章
 export const removeArticle = (id) => request({ method: 'delete', url: `/my/user/removeArticle/${id}` })
->>>>>>> c5a2d3dd03cd2ea2b8298b08f4022c9de43d66d7
