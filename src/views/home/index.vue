@@ -44,17 +44,17 @@
                 <h3 class="zjKin-h3">{{thin.title}}</h3>
               </div>
 
-              <div class="sdfAdd" v-html="Array.from(thin.introduce).slice(3, 10).join('')">
+              <div class="sdfAdd" v-html="Array.from(thin.introduce.replace(/<p><img .*?><\/p>/g, '')).slice(0, 90).join('')">
               </div>
               <div class="npiAdd">
-                <div class="ploAsd" v-for="app in thin.cover.slice(0,3)" :key="app">
-                  <img :src="`${'http://192.168.43.104:3000' + app}`" alt="" width="100%" height="100%">
+                <div class="ploAsd" v-for="img in thin.cover.slice(0,3)" :key="img.id">
+                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </router-link>
             <div class="bhf">
               <div class="poiAdd1">
-                 <div class="ainHmi">
+                 <div v-if="thin.section" class="ainHmi">
                   <span>{{thin.section}}</span>
                 </div>
               </div>
@@ -65,17 +65,17 @@
                 </div>
                 <div class="blq">
                   <i class="el-icon-chat-dot-round"></i>
-                  <span>100</span>
+                  <span>{{thin.comment ? thin.comment: 0 }}</span>
                 </div>
                  <div class="second-data">
             <i class="iconfont iconfont icon-dianzan"></i>
-            <span>126</span>
+            <span>{{ thin.count ? thin.count: 0 }}</span>
           </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- <dir class="npr">点击加载更多</dir> -->
+        <dir class="npr" @click="loading" v-loading="is_loading">点击加载更多</dir>
       </div>
     </div>
     <div class="yb">
@@ -197,13 +197,13 @@
     <Perfect>
     </Perfect>
     <!-- 返回顶部 -->
-    <Totop></Totop>
+    <Totop />
 </div>
 </template>
 
 <script>
 import Perfect from './components/perfect.vue'
-import { reqAdtdm, miHuYoList, miHuYoApp, getRecord } from '@/api/home.js'
+import { reqAdtdm, miHuYoApp, getRecord, articleList } from '@/api/home.js'
 import { mapState } from 'vuex'
 export default {
   name: 'home',
@@ -212,26 +212,29 @@ export default {
       // 弹出层的状态
       centerDialogVisible: true,
       adTml: [], // 官方资讯
-      ponAddSt: [], // 推荐话题
       appList: [], // 推荐用户
       recordList: [], // 战绩
       IsDialog: true,
       // 文章列表数据
-      category: ''
+      category: '',
+      articleList: [],
+      nowPage: 1,
+      is_loading: false
     }
   },
   components: {
     Perfect
   },
   computed: {
-    ...mapState('home', ['articleList'])
+    ...mapState('home', ['ponAddSt'])
   },
   mounted () {
     this.category = this.$route.query.category
     this.getRotation()
-    this.miHuYoLi()
     this.miHuYoAppList()
     this.getRecord()
+    this.$store.dispatch('home/getMiHuYoList')
+    this.getArticleList()
   },
   methods: {
     a1 () {
@@ -241,10 +244,6 @@ export default {
       const res = await reqAdtdm()
       this.adTml = res
     },
-    async miHuYoLi () {
-      const res = await miHuYoList()
-      this.ponAddSt = res
-    },
     async miHuYoAppList () {
       const res = await miHuYoApp()
       this.appList = res
@@ -252,6 +251,21 @@ export default {
     async getRecord () {
       const res = await getRecord()
       this.recordList = res.data.data
+    },
+    async getArticleList () {
+      const res = await articleList()
+      if (res.length <= 10) { // 10条数据一页
+        this.articleList = res
+      } else {
+        this.articleList = res.slice(0, 10)
+      }
+    },
+    async loading () {
+      this.is_loading = true
+      const res = await articleList()
+      this.articleList = this.articleList.concat(res.slice(this.nowPage * 10, (this.nowPage + 1) * 10))
+      this.nowPage++
+      this.is_loading = false
     }
   }
 }
@@ -289,8 +303,9 @@ a:hover{
   text-decoration: none;
 }
 .npr{
+  cursor: pointer;
   color: #ccc;
-    font-size: 16px;
+  font-size: 16px;
   height: 70px;
   display: flex;
   justify-content: center;

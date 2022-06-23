@@ -29,8 +29,8 @@
      <div class="filter-firs">
        <router-link class="article"  v-for="thin in articleList" :key="thin.id" :to="{ name: 'details', query: { id: thin.id } }">
         <div class="article-crad">
-          <div class="sacle sacle-img1">
-            <img :src="`${'http://192.168.43.104:3000' + thin.cover.slice(0,1)}`" alt="">
+          <div class="sacle sacle-img1" v-for="img in thin.cover.slice(0,1)" :key="img.id">
+            <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="">
           </div>
         </div>
          <div class="article-heard">
@@ -117,49 +117,18 @@
           <a>更多</a>
         </div>
         <div class="side-body">
-          <div class="body-topic">
+          <div class="body-topic" v-for="item in ponAddSt" :key="item.id">
             <div class="topic-card">
-              <img src="@/image/peerMap/同人图.jpg" />
+              <img :src="`${'http://192.168.43.104:3000' + item.avatar}`" />
             </div>
             <div class="card-info">
-              <p>同人图</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/peerMap/条漫.jpg" />
-            </div>
-            <div class="card-info">
-              <p>条漫</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/peerMap/壁纸.jpg" />
-            </div>
-            <div class="card-info">
-              <p>壁纸</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/peerMap/头像.jpg" />
-            </div>
-            <div class="card-info">
-              <p>头像</p>
-            </div>
-          </div>
-          <div class="body-topic">
-            <div class="topic-card">
-              <img src="@/image/peerMap/表情包.jpg" />
-            </div>
-            <div class="card-info">
-              <p>表情包</p>
+              <p>{{item.section}}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <Totop />
   </div>
 </template>
 
@@ -168,12 +137,25 @@ import { mapState } from 'vuex'
 export default {
   name: 'cos',
   computed: {
-    ...mapState('home', ['articleList'])
+    ...mapState('home', ['articleList', 'ponAddSt'])
+  },
+  mounted () {
+    this.$store.dispatch('home/getMiHuYoList')
   }
 }
 </script>
 
 <style scoped>
+.sacle {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.2s;
+}
+.sacle img:hover {
+    transform: scale(1.1);
+    transition: all 0.3s;
+ }
 .article-type{
   overflow: hidden;
   white-space: nowrap;

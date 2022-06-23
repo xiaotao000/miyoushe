@@ -1,9 +1,5 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import routes from './routes'
-Vue.use(VueRouter)
+import Layout from '@/layout'
 
-<<<<<<< HEAD
 const routes = [
   {
     path: '/',
@@ -32,8 +28,6 @@ const routes = [
       { path: '/picture', component: () => import('@/views/picture') },
       // 详情
       { path: '/details', component: () => import('@/views/details'), name: 'details' },
-      // 搜索
-      { path: '/search', component: () => import('@/views/search') },
       // 个人中心
       {
         path: '/personal',
@@ -68,20 +62,4 @@ const routes = [
   }
 ]
 
-=======
->>>>>>> c5a2d3dd03cd2ea2b8298b08f4022c9de43d66d7
-const router = new VueRouter({
-  routes,
-  scrollBehavior: (to, from, savedPosition) => {
-    if (savedPosition) return savedPosition
-    return { x: 0, y: 0, behavior: 'smooth' }
-  }
-})
-
-const vPush = VueRouter.prototype.push
-VueRouter.prototype.push = function (location, cb1, cb2) {
-  if (cb1 || cb2) return vPush.call(this, location, cb1, cb2)
-  return vPush.call(this, location, () => {})
-}
-
-export default router
+export default routes
