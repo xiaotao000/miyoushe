@@ -36,6 +36,7 @@ export default ({
     // 获取用户信息
     async getUserInfo ({ commit }) {
       const res = await getUser()
+      console.log(res.is_delete)
       commit('SET_USERINFO', res)
     },
     // 退出登录

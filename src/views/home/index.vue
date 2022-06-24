@@ -226,7 +226,8 @@ export default {
     Perfect
   },
   computed: {
-    ...mapState('home', ['ponAddSt'])
+    ...mapState('home', ['ponAddSt']),
+    ...mapState('user', ['userInfo'])
   },
   mounted () {
     this.category = this.$route.query.category
