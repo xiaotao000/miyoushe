@@ -14,7 +14,7 @@ router.beforeEach(async (to, from, next) => {
   // 判断是否有token
   if (token) {
     // 判断当前路由是否为登录
-    if (to.path === '/login') {
+    if (to.path === '/logon') {
       next('/')
     } else {
       // 有token 验证是否有用户信息
@@ -36,8 +36,8 @@ router.beforeEach(async (to, from, next) => {
     }
   } else {
     // 无token 验证当前路由是否需要权限
-    if (to.meta.isRole) {
-      next('/login?redirect=' + to.path)
+    if (to.path === '/pjns' || to.path === '/ginhan' || to.path === '/bnsen' || to.path === '/collection' || to.path === '/igent' || to.path === '/figns' || to.path === '/setup' || to.path === '/picture' || to.path === '/article' || to.path === '/details') {
+      next('/logon')
     } else {
       next()
     }
