@@ -211,6 +211,7 @@ export default {
     padding-right: 100px;
 }
 .npiAdd{
+  width: 100%;
   margin-top: 10px;
     overflow: hidden;
     display: inline-flex;

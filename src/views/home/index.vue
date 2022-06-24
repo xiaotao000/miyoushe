@@ -462,7 +462,8 @@ a:hover{
     cursor: pointer;
 }
 .npiAdd{
-  margin-top: 10px;
+    width: 100%;
+    margin-top: 10px;
     overflow: hidden;
     display: inline-flex;
     vertical-align: top;

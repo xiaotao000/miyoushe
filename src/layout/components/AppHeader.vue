@@ -164,8 +164,8 @@ export default {
       if (this.$route.path === '/search') {
         this.isShow = false
       } else {
-        this.searchData = ''
         this.isShow = true
+        this.searchData = ''
       }
     },
     search () {

@@ -198,6 +198,7 @@ export default {
     padding-right: 100px;
 }
 .npiAdd{
+  width: 100%;
   margin-top: 10px;
     overflow: hidden;
     display: inline-flex;
@@ -254,8 +255,8 @@ export default {
   border-radius: 6px;
 }
 .ploAsd{
-  margin-right: 5px;
-  display: inline-block;
+    margin-right: 5px;
+    display: inline-block;
     width: 120px;
     height: 120px;
     background-position: 50%;
