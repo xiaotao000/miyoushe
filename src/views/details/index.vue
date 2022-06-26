@@ -42,12 +42,14 @@
           <div class="miHyo-nri">
             <div>
               <div class="miHou-add" v-html="item.introduce"></div>
+              <template v-if="item.category ==='同人图' || item.category === 'COS' ">
               <img
                 v-for="(img, i) in item.cover"
                 :key="i"
-                :src="`http://192.168.43.104:3000${img}`"
+                :src="`http://192.168.43.104:3000${img.imgUrl}`"
                 alt=""
               />
+              </template>
             </div>
           </div>
         </div>
