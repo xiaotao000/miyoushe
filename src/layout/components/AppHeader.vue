@@ -34,6 +34,12 @@
             攻略
           </router-link>
           <router-link
+            class="header__navitem"
+            :to="{ path: '/official', query: { category: '官方' } }"
+          >
+            官方
+          </router-link>
+          <router-link
             :to="{ path: '/peermap', query: { category: '同人图' } }"
             class="header__navitem"
           >

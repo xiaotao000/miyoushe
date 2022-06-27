@@ -1,5 +1,5 @@
 <template>
-  <div class=" ">
+  <div class="nm ">
     <div class="forum">
       <div class="layout">
         <div class="forum-heard">
@@ -118,6 +118,9 @@ export default {
 </script>
 
 <style  scoped>
+.nm{
+  margin-top: 30px;
+}
 .npr{
   color: #ccc;
     font-size: 16px;
