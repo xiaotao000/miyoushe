@@ -21,21 +21,21 @@
       <div class="z">
         <div class="lfi">
           <div class="bnfGnm">
-            <div class="nmAsd" v-for="thin in 2" :key="thin">
+            <div class="nmAsd" v-for="thin in articleList" :key="thin.id">
               <div class="maSdf">
                 <div class="zsFgh">
                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAeCAYAAAEp2mxLAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjI2NjdBNjFDM0Y0NzExRTlCNEYyRkVCMTdFQkIyMEQ0IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjI2NjdBNjFEM0Y0NzExRTlCNEYyRkVCMTdFQkIyMEQ0Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6MjY2N0E2MUEzRjQ3MTFFOUI0RjJGRUIxN0VCQjIwRDQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6MjY2N0E2MUIzRjQ3MTFFOUI0RjJGRUIxN0VCQjIwRDQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4fkS2VAAABfklEQVR42mJ89vW/JwMDwzYGJMAIFPzPxcqAApgYsAAWkOpvvxECQF3/AQIIrB1DJbp5uM0EmscI5zAx/BflYGAECCCsTsIGmBiIBEQrxPAjFuAkycWwDyCAsPobC3jO+OEXUQpp4BkaBA9ydKEBWWCMPQIFHTB4GPGZ+BjZEIAAIjquqe6XUQPxGvicWob9/Q+JZUrMuARMIbqwtAUSAAggkIHPgLQklRzpRXQ2JQaAXDqaDkcNHJ4G/v1PVfNesPz8g7NSwQf2cbIwODJCdfKzQswA0mR72en7Hwb9X3+pG4aX/vwDtygeIwsCBBi4+GJnZpBkpnr0UFhY/2Ng+PmX4TnIWYPOcSAAdZPkIHQajfPdqANHHTjqwFEHDjEHgnrU3sD6by6QlqClRaCWAAswOFhxBAmoYgfWxcjgKRCnUdo3ISfGCoG4lY2ZgZ2FCbXXAOvfDGQUg8KoF4g5gCHGAXRUHxD/+/tvcKbBn0BcDAw1ZmCrRRDIXo5NEQBIW3cDEFn4OQAAAABJRU5ErkJggg==" alt="" class="nmdHjk">
-                  <span>600</span>
+                  <span>{{thin.comment}}</span>
                 </div>
               </div>
               <div class="bnGhj">
                 <div class="nmPlk">
-                  <h3 class="conSod">米游币乐-原神专场抽奖开启！</h3>
-                  <div class="conSon">本期活动时间：2022/6/10 11:00-2022/6/12 23:99活动入口：1、旅客可前往【米游社App-原神版区首页-抽抽乐】参与活动2、使用米游社App扫描二维码（建议更多</div>
-                  <div class="plojn">22小时前</div>
+                  <h3 class="conSod">{{thin.title}}</h3>
+                  <div class="conSon" v-html="Array.from(thin.introduce.replace(/<p><img .*?><\/p>/g, '')).slice(0, 90).join('')"></div>
+                  <div class="plojn">{{thin.time.slice(0,10)}}</div>
                 </div>
-                <div class="nmPkl1">
-                  <img src="https://bbs.mihoyo.com/_nuxt/img/loadingImg.d87f957.png" alt="" class="nmf">
+                <div class="nmPkl1" v-for="img in thin.cover.slice(0, 1)" :key="img.id">
+                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@
 </template>
 
 <script>
-
+import { mapState } from 'vuex'
 export default {
   name: 'official',
   data () {
@@ -113,6 +113,12 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapState('home', ['articleList', 'ponAddSt'])
+  },
+  mounted () {
+    this.$store.dispatch('home/getMiHuYoList')
   }
 }
 </script>
@@ -162,6 +168,9 @@ export default {
     height: 106px;
     flex-shrink: 0;
     margin-left: 20px;
+}
+.nmPkl1>img{
+  border-radius: 8px;
 }
 .nmPlk{
   display: block;
