@@ -36,7 +36,7 @@ router.beforeEach(async (to, from, next) => {
     }
   } else {
     // 无token 验证当前路由是否需要权限
-    if (to.path === '/pjns' || to.path === '/ginhan' || to.path === '/bnsen' || to.path === '/collection' || to.path === '/igent' || to.path === '/figns' || to.path === '/setup' || to.path === '/picture' || to.path === '/article' || to.path === '/details') {
+    if (to.path === '/pjns' || to.path === '/ginhan' || to.path === '/bnsen' || to.path === '/collection' || to.path === '/igent' || to.path === '/figns' || to.path === '/setup' || to.path === '/picture' || to.path === '/article') {
       next('/logon')
     } else {
       next()

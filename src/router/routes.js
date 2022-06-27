@@ -7,6 +7,10 @@ const routes = [
     component: Layout,
     redirect: '/home',
     children: [
+      // 404页面
+      {
+        path: '/404', component: () => import('@/views/404')
+      },
       // 首页
       { path: '/home', component: () => import('@/views/home') },
       // 酒馆
@@ -50,13 +54,6 @@ const routes = [
           // 编辑资料
           { path: '/pjns', component: () => import('@/views/personal/persook/pjns') }
         ]
-      },
-      // 404页面
-      {
-        path: '/404', component: () => import('@/views/404')
-      },
-      {
-        path: '*', redirect: '/404'
       }
     ]
   },
@@ -67,6 +64,9 @@ const routes = [
   {
     path: '/logon',
     component: () => import('@/views/logon')
+  },
+  {
+    path: '*', redirect: '/404'
   }
 ]
 
