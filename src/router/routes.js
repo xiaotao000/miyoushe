@@ -50,6 +50,13 @@ const routes = [
           // 编辑资料
           { path: '/pjns', component: () => import('@/views/personal/persook/pjns') }
         ]
+      },
+      // 404页面
+      {
+        path: '/404', component: () => import('@/views/404')
+      },
+      {
+        path: '*', redirect: '/404'
       }
     ]
   },
