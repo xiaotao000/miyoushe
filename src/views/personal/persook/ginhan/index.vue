@@ -34,6 +34,10 @@
         </div>
       </div>
     </div>
+    <div class="wgFy" v-if="!card.length">
+      <img class="npmIng" src="https://bbs.mihoyo.com/_nuxt/img/noData.a3d7135.png" alt="" width="200px">
+      <p>暂时没有帖子哟</p>
+    </div>
   </div>
 </template>
 
