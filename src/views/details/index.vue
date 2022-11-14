@@ -46,7 +46,7 @@
               <img
                 v-for="(img, i) in item.cover"
                 :key="i"
-                :src="`http://192.168.43.104:3000${img.imgUrl}`"
+                :src="`http://172.19.10.137:3000${img.imgUrl}`"
                 alt=""
               />
               </template>
@@ -122,7 +122,7 @@
       <div class="hin-mas">
         <a href="#">
           <div class="nmh-sdf">
-            <img :src="`http://192.168.43.104:3000${item.avatar}`" alt="" />
+            <img :src="`http://172.19.10.137:3000${item.avatar}`" alt="" />
           </div>
         </a>
         <div class="hgfAdd">

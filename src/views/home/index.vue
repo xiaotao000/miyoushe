@@ -21,7 +21,7 @@
               <div class="mlAsd">
                 <a href="" class="nmgPls">
                   <div class="yspAsd">
-                   <img :src="`${'http://192.168.43.104:3000' + thin.avatar}`" alt="" class="nmgHop">
+                   <img :src="`${'http://172.19.10.137:3000' + thin.avatar}`" alt="" class="nmgHop">
                   </div>
                 </a>
                 <div class="yhMna">
@@ -48,7 +48,7 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd" v-for="img in thin.cover.slice(0,3)" :key="img.id">
-                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="" width="100%" height="100%">
+                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://172.19.10.137:3000${img.imgUrl}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </router-link>
@@ -158,7 +158,7 @@
           <div class="mlpKer">
             <div class="xry" v-for="thin in ponAddSt" :key="thin.id">
               <div class="asdKcb">
-                <img :src="`${'http://192.168.43.104:3000' + thin.avatar}`" alt="" width="100%" height="100%">
+                <img :src="`${'http://172.19.10.137:3000' + thin.avatar}`" alt="" width="100%" height="100%">
               </div>
               <p class="xnaMe">{{thin.section}}</p>
             </div>
@@ -176,7 +176,7 @@
             <div class="igDas">
               <div>
                 <div class="tgZer">
-                  <img :src="`${'http://192.168.43.104:3000' + thin.avatar}`" alt="" class="nmDfg">
+                  <img :src="`${'http://172.19.10.137:3000' + thin.avatar}`" alt="" class="nmDfg">
                 </div>
               </div>
               <div class="sdFgh">

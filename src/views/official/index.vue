@@ -35,7 +35,7 @@
                   <div class="plojn">{{thin.time.slice(0,10)}}</div>
                 </div>
                 <div class="nmPkl1" v-for="img in thin.cover.slice(0, 1)" :key="img.id">
-                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="" width="100%" height="100%">
+                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://172.19.10.137:3000${img.imgUrl}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </router-link>

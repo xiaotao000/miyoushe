@@ -27,7 +27,7 @@
                   <a href="" class="nmgPls">
                     <div class="yspAsd">
                       <img
-                        :src="`${'http://192.168.43.104:3000' + thin.avatar}`"
+                        :src="`${'http://172.19.10.137:3000' + thin.avatar}`"
                         alt=""
                         class="nmgHop"
                       />
@@ -76,7 +76,7 @@
                       :src="
                         img.imgUrl.startsWith('http://')
                           ? img.imgUrl
-                          : `http://192.168.43.104:3000${img.imgUrl}`
+                          : `http://172.19.10.137:3000${img.imgUrl}`
                       "
                       alt=""
                       width="100%"

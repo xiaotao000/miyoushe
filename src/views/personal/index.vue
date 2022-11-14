@@ -154,7 +154,7 @@ export default {
   computed: {
     ...mapState('user', ['userInfo']),
     imgUrl () {
-      return this.userInfo.avatar ? 'http://192.168.43.104:3000' + this.userInfo.avatar : this.imgSrc
+      return this.userInfo.avatar ? 'http://172.19.10.137:3000' + this.userInfo.avatar : this.imgSrc
     }
   },
   methods: {

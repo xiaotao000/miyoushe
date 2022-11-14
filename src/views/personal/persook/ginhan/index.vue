@@ -10,7 +10,7 @@
       <!-- 发布的图片 -->
       <router-link :to="{name: 'details', query: { id: item.id, show: true, category: item.category} }" tag="div" class="img3">
         <!--  -->
-        <img v-for="img, i in item.cover" :key="i" :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="" />
+        <img v-for="img, i in item.cover" :key="i" :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://172.19.10.137:3000${img.imgUrl}`" alt="" />
       </router-link>
       <div class="topi">
         <!-- 标签 -->
@@ -54,7 +54,7 @@ export default {
   },
   computed: {
     isUrl () {
-      return this.card.filter(item => item.cover.includes('http://192.168.43.104:3000'))
+      return this.card.filter(item => item.cover.includes('http://172.19.10.137:3000'))
     }
   },
   methods: {

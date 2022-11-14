@@ -30,7 +30,7 @@
        <router-link class="article"  v-for="thin in articleList" :key="thin.id" :to="{ name: 'details', query: { id: thin.id } }">
         <div class="article-crad">
           <div class="sacle sacle-img1" v-for="img in thin.cover.slice(0,1)" :key="img.id">
-            <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="">
+            <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://172.19.10.137:3000${img.imgUrl}`" alt="">
           </div>
         </div>
          <div class="article-heard">
@@ -41,7 +41,7 @@
           <div class="article-footer">
               <div class="article-acount">
                 <div class="rankimg-xs">
-                <img :src="`${'http://192.168.43.104:3000' + thin.avatar}`" class="img4">
+                <img :src="`${'http://172.19.10.137:3000' + thin.avatar}`" class="img4">
                 </div>
                 <span class="user-a">{{thin.author}}</span>
               </div>
@@ -119,7 +119,7 @@
         <div class="side-body">
           <div class="body-topic" v-for="item in ponAddSt" :key="item.id">
             <div class="topic-card">
-              <img :src="`${'http://192.168.43.104:3000' + item.avatar}`" />
+              <img :src="`${'http://172.19.10.137:3000' + item.avatar}`" />
             </div>
             <div class="card-info">
               <p>{{item.section}}</p>

@@ -48,7 +48,7 @@
               <div class="mlAsd">
                 <a href="" class="nmgPls">
                   <div class="yspAsd">
-                   <img :src="`${'http://192.168.43.104:3000' + thin.avatar}`" alt="" class="nmgHop">
+                   <img :src="`${'http://172.19.10.137:3000' + thin.avatar}`" alt="" class="nmgHop">
                   </div>
                 </a>
                 <div class="yhMna">
@@ -74,7 +74,7 @@
               </div>
               <div class="npiAdd">
                 <div class="ploAsd" v-for="img in thin.cover.slice(0,3)" :key="img.id">
-                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://192.168.43.104:3000${img.imgUrl}`" alt="" width="100%" height="100%">
+                  <img :src="img.imgUrl.startsWith('http://') ? img.imgUrl : `http://172.19.10.137:3000${img.imgUrl}`" alt="" width="100%" height="100%">
                 </div>
               </div>
             </router-link>
@@ -177,7 +177,7 @@
         <div class="side-body">
           <div class="body-topic" v-for="item in ponAddSt" :key="item.id">
             <div class="topic-card">
-              <img :src="`${'http://192.168.43.104:3000' + item.avatar}`" />
+              <img :src="`${'http://172.19.10.137:3000' + item.avatar}`" />
             </div>
             <div class="card-info">
               <p>{{item.section}}</p>

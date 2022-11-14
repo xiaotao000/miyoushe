@@ -6,7 +6,8 @@ import { GET_TOKEN } from '@/utils/userToken'
 // 通过create创建axios实例
 const request = Axios.create({
   // 配置公共请求地址
-  baseURL: 'http://192.168.43.104:3000',
+  // 'http://172.19.10.137:3000'
+  baseURL: 'http://172.19.10.137:3000',
   // 请求超时时间
   timeout: 5000
 })
